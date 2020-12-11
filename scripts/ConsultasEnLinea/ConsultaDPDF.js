@@ -14,6 +14,11 @@ function Preload() {
 
 }
 
+
+
+
+
+
 function MostrarPreload() {
     // window.setTimeout(function () {
     $("#contenerdor_Carga").fadeTo(980, 1);
@@ -22,10 +27,10 @@ function MostrarPreload() {
 }
 
 function Verificar(){
-    //fnpintarformMenu("ConsultasEnLinea/DocumentAutPdf.html");
 
-    var UrlPdf ="https://docs.google.com/viewer?url=http://jornadasciberseguridad.riasc.unileon.es/archivos/ejemplo_esp.pdf&embedded=true";
 
+    MostrarPreload();
+    var UrlPdf=localStorage.getItem('urlpdfdoc');
     
    $("#ViewPdf").html("");
    $("#ViewPdf").append('<embed src='+UrlPdf+' type="application/pdf" width="100%" height="550px" />');
