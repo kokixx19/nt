@@ -7,6 +7,29 @@
 <body>
     <div class="container">
 
+        <link href="css/Preload.css" rel="stylesheet" />
+
+    <div class="loader" id="contenerdor_Carga">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+        <div id="textopre"><span>Cargando datos...</span></div>
+    </div>
+
         <form class="col s12" id="DivConsultasDeContrato" style="margin-top:3em;">
             <div class="card">
 
@@ -23,11 +46,11 @@
                     </div>
                     <div class="row">
                         <div class="col s5">
-                            <input placeholder="Serie" id="" name="" type="text" class="form-control col s12">
+                            <input placeholder="Serie" id="serie" name="" type="text" class="form-control col s12">
                             <span style="font-size: 10px;">Ejemplo: A001</span>
                         </div>
                         <div class="col s6">
-                            <input placeholder="Numero" id="" name="" type="text" class="form-control col s12">
+                            <input placeholder="Numero" id="numero" name="" type="text" class="form-control col s12">
                             <span style="font-size: 10px;">Ejemplo: 00001234</span>
                           
                         </div>
@@ -37,12 +60,12 @@
                             <label>Fecha de Emision</label>
                         </div>
                         <div class="col s12">
-                            <input placeholder="" id="" name="" type="date" class="form-control col s12">
+                            <input placeholder="" id="fecha" name="" type="date" class="form-control col s12">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <input placeholder="RUC o DNI" id="" name="" type="text" class="form-control col s12">
+                            <input placeholder="RUC o DNI" id="documento" name="" type="text" class="form-control col s12">
                         </div>
                     </div>
                     <div style="text-align:center;margin-top:3em;" class="col-lg-3">
