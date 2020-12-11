@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+
+    localStorage.setItem('urlpdf', '');    
     Preload();
     //Verificar();
 });
@@ -22,17 +25,90 @@ function MostrarPreload() {
 }
 $("#epdf").click(function () {
 
-    fnpintarformMenu("ConsultasEnLinea/DocumentEPDF.html");
+    //fnpintarformMenu("ConsultasEnLinea/DocumentEPDF.html");
+    
+    BuscarPDF();
+  
 
 });
 
-function Verificar(){
-    //fnpintarformMenu("ConsultasEnLinea/DocumentAutPdf.html");
 
-    var UrlPdf ="https://docs.google.com/viewer?url=http://jornadasciberseguridad.riasc.unileon.es/archivos/ejemplo_esp.pdf&embedded=true";
+function BuscarPDF() {
 
+    MostrarPreload();
+
+    var serie=$("#serie").val();
+    var numero=$("#numero").val();
+    var fecha=$("#fecha").val();
+    var documento=$("#documento").val();
+    console.log("Serie : ",serie," Numero : ",numero," Fecha :",fecha," Documento :",documento );
+
+    var PerTide = $("#CboTipoDocumento").val();
+    var PerIdeNro = $("#txtNumDocumento").val();
+    $.post("https://www.dotnetsa.com/PAINOSERVICE/app/controller/ControllerMisTramites.php", "op=sp_get_fact&serie=" + serie + "&numero=" + numero  +"&fecha=" + fecha+
+    "&documento="+documento, function (result) {
+        var arreglo = JSON.parse(result);
+
+        console.log(arreglo);
+        if (arreglo.length >0) {
+
+
+            
+            
+            Preload();
+           
+                Swal.fire({
+                    title: "Documento Encontrado",
+                    text: "",
+                    confirmButtonText: "Ver Ahora",
+                    icon: 'success',
+                })
+                .then(resultado => {
+
+                    $.each(arreglo, function (idxx, i) {
+
+
+                        if (resultado.value) {
+
+                            console.log("url pdf : ",i.url);   
+
+                            localStorage.setItem('urlpdf',i.url);
+                            console.log(localStorage.getItem('urlpdf'));
+                            fnpintarformMenu('ConsultasEnLinea/DocumentEPDF.html');
+                        } else {
     
-   $("#ViewPdf").html("");
-   $("#ViewPdf").append('<embed src='+UrlPdf+' type="application/pdf" width="100%" height="550px" />');
-   
+                        }
+        
+                        //console.log("Nombre ech",i.Nombre);
+        
+                    });
+
+                   
+                    
+                });
+           
+        } else  if (arreglo.length==0){
+
+            Preload();
+
+            Swal.fire({
+                title: "Documento no encontrado",
+                text: "verifique el codigo",
+                confirmButtonText: "Aceptar",
+                icon: 'waring',
+
+            })
+        }else{
+            Preload();
+
+            Swal.fire({
+                title: "Documento no encontrado",
+                text: "verifique el codigo",
+                confirmButtonText: "Aceptar",
+                icon: 'waring',
+
+            })
+        }
+    });
+
 }
