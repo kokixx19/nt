@@ -1,0 +1,1004 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/Preload.css" rel="stylesheet" />
+
+</head>
+<body>
+   
+    <div class="loader" id="contenerdor_Carga">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+        <div id="textopre"><span>Cargando, Espere...</span></div>
+    </div>
+
+
+    <div style="text-align:center">
+        <div class="containertimeline">
+            <ul class="timeline centrartimeline3">
+                <li id="liCSTranVehicular" name="liCSTranVehicular" class="pgactual"></li>
+                <li id="liCSDatosComprador" name="liCSDatosComprador"> </li>
+                <li id="liAVIDatosDistintasPadres" name="liAVIDatosDistintasPadres"> </li>
+            </ul>
+            <br />
+            <br />
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- DATOS DEL PADRE -->
+
+        <form class="col s12" id="DivCSTranVehicular" name="DivCSTranVehicular">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Transferencia Vehicular</span>
+                </div>
+                <div class="card-content p-3">
+                    <h6 style="text-align: center;"><strong style="font-weight:bold;">Datos del Vendedor </strong></h6>
+                    <div class="row">
+                        <div class="col s5"><label>Persona</label></div>
+                        <div class="col s7">
+                            <select class="browser-default" id="CboTipoDocumento">
+                                <option value="J">JURIDICO</option>
+                                <option value="N" selected="selected">NATURAL</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Documento</label></div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="col s5">
+                                <select class="browser-default" id="CboTipoDocumentoVendedor" name="CboTipoDocumentoVendedor"></select>
+                            </div>
+                            <input placeholder="Número" id="txtNumeroVendedor" name="txtNumeroVendedor" type="text" class="form-control col s5">
+                            <a href="javascript:LlenarCamposVendedor();" class="fas fa-search prefix col s2"></a>
+                        </div>
+                    </div>
+                    <div class="row hide" id="RazonSocial">
+                        <div class="col s12">
+
+                            <input placeholder="Razon Social" id="txtRazonSocial" name="txtRazonSocial" type="text" class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row" id="nombreV">
+                        <div class="col s12">
+
+                            <input placeholder="Nombres" id="txtNombresVendedor" name="txtNombresVendedor" type="text" class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row" id="ApPatV">
+                        <div class="col s12">
+                            <input placeholder="A.Paterno" id="ApellidoPaternoVendedor" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row" id="ApeMatV">
+                        <div class="col s12">
+                            <input placeholder="A.Materno" id="ApellidoMaternoVendedor" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row" id="EmailV">
+                        <div class="col s12">
+                            <input placeholder="E-mail" id="EmailVendedor" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row" id="TelfV">
+                        <div class="col s12">
+                            <input placeholder="Telefono" id="TelefonoVendedor" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row" id="EstadoCivilV">
+                        <div class="col s5"><label style="font-size:18px;">Estado Civil</label></div>
+                        <div class="col s5">
+                            <select class="browser-default " id="cboEstadoCivilVendedor"></select>
+                        </div>
+                        <div class="col s2 hide" id="married">
+                            <a class="btn-floating waves-effect waves-light blue" data-toggle="modalb" data-target="#ModalConyugue"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    
+
+                    <div class="row" id="OcupacionV">
+                        <div class="col s5"><label>Ocupación</label></div>
+                        <div class="col s7">
+                            <select id="cboTVOcupacionVendedor" name="cboTVOcupacionVendedor" class="browser-default ">
+                                <option value="" selected="selected">Ninguno</option>
+                                <option value="001">ABOGADO</option>
+                                <option value="002">ACTOR / ARTISTA / ESCRITOR</option>
+                                <option value="003">ACTUARIO</option>
+                                <option value="004">ADMINISTRADOR</option>
+                                <option value="005">ADUANERO/AGENTE DE ADUANAS/INS</option>
+                                <option value="006">AEROMOZO/ AZAFATA</option>
+                                <option value="007">AGENTE / INTERMEDIARIO / CORRE</option>
+                                <option value="008">AGENTE DE BOLSA</option>
+                                <option value="010">AGENTE DE TURISMO/VIAJES</option>
+                                <option value="011">AGENTE/INTERMEDIARIO/CORREDOR</option>
+                                <option value="012">AGRICULTOR / GANADERO Y AFINES</option>
+                                <option value="013">ALBAÑIL / OBRERO / ELECTRICIST</option>
+                                <option value="014">AMA DE CASA</option>
+                                <option value="015">ANALISTAS / TÉCNICOS / PROGRAM</option>
+                                <option value="016">APODERADO(A)</option>
+                                <option value="019">ARQUITECTO</option>
+                                <option value="021">ASISTENTE SOCIAL</option>
+                                <option value="024">BACTERIÓLOGO / FARMACÓLOGO / B</option>
+                                <option value="OT008">BIOLOGO</option>
+                                <option value="028">CAMBISTA / COMPRA/VENTA DE MON</option>
+                                <option value="OT004">CHEF</option>
+                                <option value="COMER">COMERCIANTE</option>
+                                <option value="036">COMERCIANTE / VENDEDOR</option>
+                                <option value="OT005">COMUNICADOR</option>
+                                <option value="037">CONDUCTOR / CHOFER / TAXISTA /</option>
+                                <option value="039">CONSTRUCTOR</option>
+                                <option value="040">CONTADOR</option>
+                                <option value="041">CONTRATISTA</option>
+                                <option value="042">CORTE Y CONFECCIÓN DE ROPA/ FA</option>
+                                <option value="044">DECORADOR, DIBUJANTE, PUBLICIS</option>
+                                <option value="045">DENTISTA / ODONTÓLOGO</option>
+                                <option value="046">DEPORTISTA PROFESIONAL, ATLETA</option>
+                                <option value="DIRECT">DIRECTOR</option>
+                                <option value="DIGRA">DISEÑADOR GRAFICO</option>
+                                <option value="047">DISTRIBUIDOR</option>
+                                <option value="048">DOCENTE</option>
+                                <option value="049">ECONOMISTA</option>
+                                <option value="051">EMPLEADA (O) DEL HOGAR / NANA</option>
+                                <option value="EMPL">EMPLEADO(A)</option>
+                                <option value="115">EMPRESARIO</option>
+                                <option value="052">EMPRESARIO EXPORTADOR/ EMPRESA</option>
+                                <option value="078">ENFERMERO / OBSTETRIZ / PARAMÉ</option>
+                                <option value="056">ESTUDIANTE</option>
+                                <option value="FUNC">FUNCIONARIO(A)</option>
+                                <option value="GEREN">GERENTE</option>
+                                <option value="GEREAA">GERENTE ADJUNTO DE AREA</option>
+                                <option value="GERENC">GERENTE COMERCIAL</option>
+                                <option value="GERENA">GERENTE DE ADMINISTRACION</option>
+                                <option value="GEREAR">GERENTE DE AREA</option>
+                                <option value="GERVEN">GERENTE DE VENTAS</option>
+                                <option value="GERENG">GERENTE GENERAL</option>
+                                <option value="OT002">INDEPENDIENTE</option>
+                                <option value="061">INGENIERO</option>
+                                <option value="066">JUBILADO / PENSIONISTA</option>
+                                <option value="068">LIQUIDADOR, RECLAMACIONES/SEGU</option>
+                                <option value="070">MARTILLERO / SUBASTADOR</option>
+                                <option value="071">MAYORISTA, COMERCIO AL POR MAY</option>
+                                <option value="OT001">MECANICO</option>
+                                <option value="073">MÉDICO / CIRUJANO</option>
+                                <option value="075">MIEMBRO DE LA POLICÍA / FUERZA</option>
+                                <option value="998">NO DECLARA</option>
+                                <option value="OFTAL">OFTALMÓLOGO</option>
+                                <option value="999">OTROS</option>
+                                <option value="082">PERIODISTA</option>
+                                <option value="085">PILOTO</option>
+                                <option value="PRESID">PRESIDENTE DEL DIRECTORIO</option>
+                                <option value="089">PRODUCTOR DE CINE / RADIO / TE</option>
+                                <option value="092">PSICÓLOGO/ TERAPEUTA</option>
+                                <option value="OT006">PUBLICISTA</option>
+                                <option value="OT007">QUIMICO FARMACEUTICO</option>
+                                <option value="REPRES">REPRESENTANTE</option>
+                                <option value="099">SACERDOTE / MONJA / RELIGIOSO</option>
+                                <option value="100">SECRETARIA, RECEPCIONISTA, TEL</option>
+                                <option value="SUBG">SUB GERENTE</option>
+                                <option value="GERENT">TITULAR - GERENTE</option>
+                                <option value="OT003">TRADUCTORA</option>
+                                <option value="TRANSP">TRANSPORTISTA</option>
+                                <option value="112">VENDEDOR AMBULANTE</option>
+                                <option value="113">VETERINARIO, ZOÓLOGO, ZOOTÉCNI</option>
+                                <option value="114">VISITADOR MÉDICO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class=" col s12">
+                        <p>Domicilio</p>
+                        <hr>
+                    </div>
+                    <div class=" col s12" id="DivDomicilioTB">
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col s5"><label>Representante </label></div>
+                        <div class="col s6">
+                            <div class="switch">
+                                <label>
+                                    No
+                                    <input type="checkbox" id="chbRepresentantePadre" name="chbRepresentantePadre">
+                                    <span class="lever"> </span>
+                                    Si
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" data-toggle="modalb" data-target="#ModalDomicilioV">
+                        <i class="fas fa-plus"></i>
+                    </button>
+
+                    <!--MODAL DATOS CONYUGUE-->
+                    <div class="modalb fade" id="ModalConyugue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modalb-dialog" role="document">
+                            <div class="modalb-content">
+                                <div class="modalb-header">
+                                    <h5 class="modalb-title" id="exampleModalLabel">Datos Conyugue</h5>
+                                </div>
+                                <div class="modalb-body">
+
+                                    <div class="row">
+                                        <div class="col s5"><label>Documento</label></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <div class="col s5">
+                                                <select class="browser-default" id="CboTipoDocumentoVendedorCon" name="CboTipoDocumentoVendedor"></select>
+                                            </div>
+                                            <input placeholder="Número" id="txtNumeroVendedorCon" name="txtNumeroVendedorCon" type="text" class="form-control col s5">
+                                            <a href="javascript:LlenarCamposVendedorCon();" class="fas fa-search prefix col s2"></a>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="">
+                                        <div class="col s12">
+
+                                            <input placeholder="Nombres" id="txtNombresVendedorCon" name="txtNombresVendedorCon" type="text" class="form-control col s12">
+                                        </div>
+                                    </div>
+                                    <div class="row" id="">
+                                        <div class="col s12">
+                                            <input placeholder="A.Paterno" id="ApellidoPaternoVendedorCon" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row" id="">
+                                        <div class="col s12">
+                                            <input placeholder="A.Materno" id="ApellidoMaternoVendedorCon" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modalb-footer">
+                                    <button type="button" id="btnGrabarIPDireccionCon" name="btnGrabarIPDireccionCon" class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                                    <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--HODAL DOMICLIO-->
+                    <div class="modalb fade" id="ModalDomicilioV" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modalb-dialog" role="document">
+                            <div class="modalb-content">
+                                <div class="modalb-header">
+                                    <h5 class="modalb-title" id="exampleModalLabel">Domicilio Vendedor</h5>
+                                </div>
+                                <div class="modalb-body">
+                                    <div class="row">
+                                        <div class="col s5"><label>Nacionalidad</label></div>
+                                        <div class="col s7">
+                                            <select name="cboNacionalidadVendedor" id="cboNacionalidadVendedor" class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Departamento</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDepartamentoVendedor" name="cboIPDepartamentoVendedor" class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Provincia</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPProvinciaVendedor" name="cboIPProvinciaVendedor" class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Distrito</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDIstritoVendedor" name="cboIPDIstritoVendedor" class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <input placeholder="Dirección" id="DireccionV" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modalb-footer">
+                                    <button type="button" id="btnGrabarIPDireccion" name="btnGrabarIPDireccion" class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                                    <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="representantePadre" name="representantePadre">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">DATOS DEL REPRESENTANTE</span>
+                    </div>
+                    <div class="card-content p-3">
+                        <div class="row">
+                            <div class="col s5"><label style="font-size: 16px;">Persona</label></div>
+                            <div class="col s7">
+                                <select class="browser-default" id="tipoPerRepresentante">
+                                    <option value="J">JURIDICO</option>
+                                    <option value="N" selected="selected">NATURAL</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Documento</label></div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div class="col s5">
+                                    <select class="browser-default" id="CboTipoDocumentoComprador" name="CboTipoDocumentoComprador"></select>
+                                </div>
+                                <input placeholder="Número" id="NumeroDocComprador" name="txtNumeroDocP" type="text" class="form-control col s5">
+                                <a href="javascript:LlenarCamposRepresentante();" class="fas fa-search prefix col s2"></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input placeholder="Nombres" id="NombreComprador" name="txtNombresP" type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input placeholder="A.Paterno" id="ApellidoPaternoComprador" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input placeholder="A.Materno" id="ApellidoMaternoComprador" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input placeholder="E-mail" id="EmailComprador" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input placeholder="Telefono" id="TelefonoComprador" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Estado Civil</label></div>
+                            <div class="col s7">
+                                <select class="browser-default " id="cboEstadoCivilComprador"></select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Responsable</label></div>
+                            <div class="col s7">
+                                <select class="browser-default " id="cboResponsable">
+                                    <option value="">Ninguno</option>
+                                    <option value="">R. Traslado</option>
+                                    <option value="">R. Estadia</option>
+                                    <option value="">Ambos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Ocupación</label></div>
+                            <div class="col s7">
+                                <select id="cboTVOcupacion" name="cboTVOcupacion" class="browser-default ">
+                                    <option value="" selected="selected">Ninguno</option>
+                                    <option value="001">ABOGADO</option>
+                                    <option value="002">ACTOR / ARTISTA / ESCRITOR</option>
+                                    <option value="003">ACTUARIO</option>
+                                    <option value="004">ADMINISTRADOR</option>
+                                    <option value="005">ADUANERO/AGENTE DE ADUANAS/INS</option>
+                                    <option value="006">AEROMOZO/ AZAFATA</option>
+                                    <option value="007">AGENTE / INTERMEDIARIO / CORRE</option>
+                                    <option value="008">AGENTE DE BOLSA</option>
+                                    <option value="010">AGENTE DE TURISMO/VIAJES</option>
+                                    <option value="011">AGENTE/INTERMEDIARIO/CORREDOR</option>
+                                    <option value="012">AGRICULTOR / GANADERO Y AFINES</option>
+                                    <option value="013">ALBAÑIL / OBRERO / ELECTRICIST</option>
+                                    <option value="014">AMA DE CASA</option>
+                                    <option value="015">ANALISTAS / TÉCNICOS / PROGRAM</option>
+                                    <option value="016">APODERADO(A)</option>
+                                    <option value="019">ARQUITECTO</option>
+                                    <option value="021">ASISTENTE SOCIAL</option>
+                                    <option value="024">BACTERIÓLOGO / FARMACÓLOGO / B</option>
+                                    <option value="OT008">BIOLOGO</option>
+                                    <option value="028">CAMBISTA / COMPRA/VENTA DE MON</option>
+                                    <option value="OT004">CHEF</option>
+                                    <option value="COMER">COMERCIANTE</option>
+                                    <option value="036">COMERCIANTE / VENDEDOR</option>
+                                    <option value="OT005">COMUNICADOR</option>
+                                    <option value="037">CONDUCTOR / CHOFER / TAXISTA /</option>
+                                    <option value="039">CONSTRUCTOR</option>
+                                    <option value="040">CONTADOR</option>
+                                    <option value="041">CONTRATISTA</option>
+                                    <option value="042">CORTE Y CONFECCIÓN DE ROPA/ FA</option>
+                                    <option value="044">DECORADOR, DIBUJANTE, PUBLICIS</option>
+                                    <option value="045">DENTISTA / ODONTÓLOGO</option>
+                                    <option value="046">DEPORTISTA PROFESIONAL, ATLETA</option>
+                                    <option value="DIRECT">DIRECTOR</option>
+                                    <option value="DIGRA">DISEÑADOR GRAFICO</option>
+                                    <option value="047">DISTRIBUIDOR</option>
+                                    <option value="048">DOCENTE</option>
+                                    <option value="049">ECONOMISTA</option>
+                                    <option value="051">EMPLEADA (O) DEL HOGAR / NANA</option>
+                                    <option value="EMPL">EMPLEADO(A)</option>
+                                    <option value="115">EMPRESARIO</option>
+                                    <option value="052">EMPRESARIO EXPORTADOR/ EMPRESA</option>
+                                    <option value="078">ENFERMERO / OBSTETRIZ / PARAMÉ</option>
+                                    <option value="056">ESTUDIANTE</option>
+                                    <option value="FUNC">FUNCIONARIO(A)</option>
+                                    <option value="GEREN">GERENTE</option>
+                                    <option value="GEREAA">GERENTE ADJUNTO DE AREA</option>
+                                    <option value="GERENC">GERENTE COMERCIAL</option>
+                                    <option value="GERENA">GERENTE DE ADMINISTRACION</option>
+                                    <option value="GEREAR">GERENTE DE AREA</option>
+                                    <option value="GERVEN">GERENTE DE VENTAS</option>
+                                    <option value="GERENG">GERENTE GENERAL</option>
+                                    <option value="OT002">INDEPENDIENTE</option>
+                                    <option value="061">INGENIERO</option>
+                                    <option value="066">JUBILADO / PENSIONISTA</option>
+                                    <option value="068">LIQUIDADOR, RECLAMACIONES/SEGU</option>
+                                    <option value="070">MARTILLERO / SUBASTADOR</option>
+                                    <option value="071">MAYORISTA, COMERCIO AL POR MAY</option>
+                                    <option value="OT001">MECANICO</option>
+                                    <option value="073">MÉDICO / CIRUJANO</option>
+                                    <option value="075">MIEMBRO DE LA POLICÍA / FUERZA</option>
+                                    <option value="998">NO DECLARA</option>
+                                    <option value="OFTAL">OFTALMÓLOGO</option>
+                                    <option value="999">OTROS</option>
+                                    <option value="082">PERIODISTA</option>
+                                    <option value="085">PILOTO</option>
+                                    <option value="PRESID">PRESIDENTE DEL DIRECTORIO</option>
+                                    <option value="089">PRODUCTOR DE CINE / RADIO / TE</option>
+                                    <option value="092">PSICÓLOGO/ TERAPEUTA</option>
+                                    <option value="OT006">PUBLICISTA</option>
+                                    <option value="OT007">QUIMICO FARMACEUTICO</option>
+                                    <option value="REPRES">REPRESENTANTE</option>
+                                    <option value="099">SACERDOTE / MONJA / RELIGIOSO</option>
+                                    <option value="100">SECRETARIA, RECEPCIONISTA, TEL</option>
+                                    <option value="SUBG">SUB GERENTE</option>
+                                    <option value="GERENT">TITULAR - GERENTE</option>
+                                    <option value="OT003">TRADUCTORA</option>
+                                    <option value="TRANSP">TRANSPORTISTA</option>
+                                    <option value="112">VENDEDOR AMBULANTE</option>
+                                    <option value="113">VETERINARIO, ZOÓLOGO, ZOOTÉCNI</option>
+                                    <option value="114">VISITADOR MÉDICO</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modalb" data-target="#ModalDomicilioVR">
+                            <i class="fas fa-plus"></i>
+                        </button>
+
+                        <div class="modalb fade" id="ModalDomicilioVR" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modalb-dialog" role="document">
+                                <div class="modalb-content">
+                                    <div class="modalb-header">
+                                        <h5 class="modalb-title" id="exampleModalLabel">Domicilio Representante Vendedor</h5>
+                                    </div>
+                                    <div class="modalb-body">
+                                        <div class="row">
+                                            <div class="col s5"><label>Nacionalidad</label></div>
+                                            <div class="col s7">
+                                                <select name="cboNacionalidad" class="browser-default " id="CboNacionalidad"></select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5"><label>Departamento</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPDepartamento" name="cboIPDepartamento" class="browser-default "></select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5"><label>Provincia</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPProvincia" name="cboIPProvincia" class="browser-default "></select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5"><label>Distrito</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPDIstrito" name="cboIPDIstrito" class="browser-default ">
+                                                    <option value="02" selected="selected">ANCON</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <input placeholder="Dirección" id="Direccion" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modalb-footer">
+                                        <button type="button" id="btnGrabarIPDireccionRV" name="btnGrabarIPDireccionRV" class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                                        <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- <div class="card-action p-2">
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div> -->
+            </div>
+        </form>
+
+
+
+
+        <!-- FIN DATOS DEL PADRE -->
+        <!-- DATOS DE LA MADRE -->
+        <form id="Formulario" name="Formulario">
+            <div class="col s12 " id="DivCSDatosComprador" name="DivCSDatosComprador">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Transferencia Vehicular</span>
+                    </div>
+                    <div class="card-content p-3">
+                        <h6 style="text-align: center;"><strong style="font-weight:bold;">Datos del Comprador </strong></h6>
+                        <div class="row">
+                            <div class="col s5"><label>Persona</label></div>
+                            <div class="col s7">
+                                <select class="browser-default" id="CboTipoDocumentoCompra">
+                                    <option value="J">JURIDICO</option>
+                                    <option value="N" selected="selected">NATURAL</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Documento</label></div>
+
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div class="col s5">
+                                    <select class="browser-default" id="CboTipoDocCompra"></select>
+                                </div>
+                                <input placeholder="Número" id="NumCompra" name="NumCompra" type="text" class="form-control col s5">
+                                <a href="javascript:LlenarCamposComprador()" class="fas fa-search prefix col s2"></a>
+                            </div>
+                        </div>
+                        <div class="row hide" id="RazSocC">
+                            <div class="col s12">
+                                <input placeholder="Razon Social" id="RazSocCompra" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" id="NomC">
+                            <div class="col s12">
+                                <input placeholder="Nombres" id="NomCompra" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" id="ApePatC">
+                            <div class="col s12">
+                                <input placeholder="A.Paterno" id="ApePaCompra" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" id="ApeMatC">
+                            <div class="col s12">
+                                <input placeholder="A.Materno" id="ApeMaCompra" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row" id="EmailC">
+                            <div class="col s12">
+                                <input placeholder="E-mail" id="EmailCompra" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" id="TelfC">
+                            <div class="col s12">
+                                <input placeholder="Telefono" id="TelCompra" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" id="CivilC">
+                            <div class="col s5"><label>Estado Civil</label></div>
+                            <div class="col s5">
+                                <select class="browser-default " id="cboEstadoCivilCompra"></select>
+                            </div>
+
+                            <div class="col s2 hide" id="marriedC">
+                                <a class="btn-floating waves-effect waves-light blue" data-toggle="modalb" data-target="#ModalConyugueC"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                        <div class="row" id="OcupacionC">
+                            <div class="col s5" id="">
+                                <label>Ocupación</label>
+                            </div>
+                            <div class="col s7">
+                                <select class="browser-default" id="OcupacionCOmpra">
+                                    <option value="" selected="selected">Ninguno</option>
+                                    <option value="001">ABOGADO</option>
+                                    <option value="002">ACTOR / ARTISTA / ESCRITOR</option>
+                                    <option value="003">ACTUARIO</option>
+                                    <option value="004">ADMINISTRADOR</option>
+                                    <option value="005">ADUANERO/AGENTE DE ADUANAS/INS</option>
+                                    <option value="006">AEROMOZO/ AZAFATA</option>
+                                    <option value="007">AGENTE / INTERMEDIARIO / CORRE</option>
+                                    <option value="008">AGENTE DE BOLSA</option>
+                                    <option value="010">AGENTE DE TURISMO/VIAJES</option>
+                                    <option value="011">AGENTE/INTERMEDIARIO/CORREDOR</option>
+                                    <option value="012">AGRICULTOR / GANADERO Y AFINES</option>
+                                    <option value="013">ALBAÑIL / OBRERO / ELECTRICIST</option>
+                                    <option value="014">AMA DE CASA</option>
+                                    <option value="015">ANALISTAS / TÉCNICOS / PROGRAM</option>
+                                    <option value="APODER">APODERADO(A)</option>
+                                    <option value="019">ARQUITECTO</option>
+                                    <option value="021">ASISTENTE SOCIAL</option>
+                                    <option value="024">BACTERIÓLOGO / FARMACÓLOGO / B</option>
+                                    <option value="OT008">BIOLOGO</option>
+                                    <option value="028">CAMBISTA / COMPRA/VENTA DE MON</option>
+                                    <option value="OT004">CHEF</option>
+                                    <option value="COMER">COMERCIANTE</option>
+                                    <option value="036">COMERCIANTE / VENDEDOR</option>
+                                    <option value="OT005">COMUNICADOR</option>
+                                    <option value="037">CONDUCTOR / CHOFER / TAXISTA /</option>
+                                    <option value="039">CONSTRUCTOR</option>
+                                    <option value="040">CONTADOR</option>
+                                    <option value="041">CONTRATISTA</option>
+                                    <option value="042">CORTE Y CONFECCIÓN DE ROPA/ FA</option>
+                                    <option value="044">DECORADOR, DIBUJANTE, PUBLICIS</option>
+                                    <option value="045">DENTISTA / ODONTÓLOGO</option>
+                                    <option value="046">DEPORTISTA PROFESIONAL, ATLETA</option>
+                                    <option value="DIRECT">DIRECTOR</option>
+                                    <option value="DIGRA">DISEÑADOR GRAFICO</option>
+                                    <option value="047">DISTRIBUIDOR</option>
+                                    <option value="048">DOCENTE</option>
+                                    <option value="049">ECONOMISTA</option>
+                                    <option value="051">EMPLEADA (O) DEL HOGAR / NANA</option>
+                                    <option value="EMPL">EMPLEADO(A)</option>
+                                    <option value="115">EMPRESARIO</option>
+                                    <option value="052">EMPRESARIO EXPORTADOR/ EMPRESA</option>
+                                    <option value="078">ENFERMERO / OBSTETRIZ / PARAMÉ</option>
+                                    <option value="056">ESTUDIANTE</option>
+                                    <option value="FUNC">FUNCIONARIO(A)</option>
+                                    <option value="GEREN">GERENTE</option>
+                                    <option value="GEREAA">GERENTE ADJUNTO DE AREA</option>
+                                    <option value="GERENC">GERENTE COMERCIAL</option>
+                                    <option value="GERENA">GERENTE DE ADMINISTRACION</option>
+                                    <option value="GEREAR">GERENTE DE AREA</option>
+                                    <option value="GERVEN">GERENTE DE VENTAS</option>
+                                    <option value="GERENG">GERENTE GENERAL</option>
+                                    <option value="OT002">INDEPENDIENTE</option>
+                                    <option value="061">INGENIERO</option>
+                                    <option value="066">JUBILADO / PENSIONISTA</option>
+                                    <option value="068">LIQUIDADOR, RECLAMACIONES/SEGU</option>
+                                    <option value="070">MARTILLERO / SUBASTADOR</option>
+                                    <option value="071">MAYORISTA, COMERCIO AL POR MAY</option>
+                                    <option value="OT001">MECANICO</option>
+                                    <option value="073">MÉDICO / CIRUJANO</option>
+                                    <option value="075">MIEMBRO DE LA POLICÍA / FUERZA</option>
+                                    <option value="998">NO DECLARA</option>
+                                    <option value="OFTAL">OFTALMÓLOGO</option>
+                                    <option value="999">OTROS</option>
+                                    <option value="082">PERIODISTA</option>
+                                    <option value="085">PILOTO</option>
+                                    <option value="PRESID">PRESIDENTE DEL DIRECTORIO</option>
+                                    <option value="089">PRODUCTOR DE CINE / RADIO / TE</option>
+                                    <option value="092">PSICÓLOGO/ TERAPEUTA</option>
+                                    <option value="OT006">PUBLICISTA</option>
+                                    <option value="OT007">QUIMICO FARMACEUTICO</option>
+                                    <option value="REPRES">REPRESENTANTE</option>
+                                    <option value="099">SACERDOTE / MONJA / RELIGIOSO</option>
+                                    <option value="100">SECRETARIA, RECEPCIONISTA, TEL</option>
+                                    <option value="SUBG">SUB GERENTE</option>
+                                    <option value="GERENT">TITULAR - GERENTE</option>
+                                    <option value="OT003">TRADUCTORA</option>
+                                    <option value="TRANSP">TRANSPORTISTA</option>
+                                    <option value="112">VENDEDOR AMBULANTE</option>
+                                    <option value="113">VETERINARIO, ZOÓLOGO, ZOOTÉCNI</option>
+                                    <option value="114">VISITADOR MÉDICO</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class=" col s12">
+                            <p>Domicilio</p>
+                            <hr>
+                        </div>
+                        <div class=" col s12" id="DivDomicilioRV">
+
+                        </div>
+                        <br />
+
+                        <br />
+
+                        <div class="row">
+                            <div class="col s5"><label>Representante </label></div>
+                            <div class="col s6">
+                                <div class="switch">
+                                    <label>
+                                        No
+                                        <input type="checkbox" id="chbRepresentanteMadre" name="chbRepresentanteMadre">
+                                        <span class="lever"></span>
+                                        Si
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modalb" data-target="#ModalDomicilioC">
+                            <i class="fas fa-plus"></i>
+                        </button>
+
+                        <div class="modalb fade" id="ModalConyugueC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modalb-dialog" role="document">
+                                <div class="modalb-content">
+                                    <div class="modalb-header">
+                                        <h5 class="modalb-title" id="exampleModalLabel">Datos Conyugue</h5>
+                                    </div>
+                                    <div class="modalb-body">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <div class="col s5">
+                                                    <select class="browser-default" id="CboTipoDocCompraCon"></select>
+                                                </div>
+                                                <input placeholder="Número" id="NumCompraCon" name="NumCompraCon" type="text" class="form-control col s5">
+                                                <a href="javascript:LlenarCamposCompradorCon()" class="fas fa-search prefix col s2"></a>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="">
+                                            <div class="col s12">
+                                                <input placeholder="Nombres" id="NomCompraCon" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row" id="">
+                                            <div class="col s12">
+                                                <input placeholder="A.Paterno" id="ApePaCompraCon" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row" id="">
+                                            <div class="col s12">
+                                                <input placeholder="A.Materno" id="ApeMaCompraCon" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="modalb-footer">
+                                        <button type="button" id="btnGrabarIPDireccion" name="btnGrabarIPDireccion" class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                                        <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                                    </div>
+                                </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modalb fade" id="ModalDomicilioC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modalb-dialog" role="document">
+                                <div class="modalb-content">
+                                    <div class="modalb-header">
+                                        <h5 class="modalb-title" id="exampleModalLabel">Domicilio</h5>
+                                    </div>
+                                    <div class="modalb-body">
+                                        <div class="row">
+                                            <div class="col s5"><label>Nacionalidad</label></div>
+                                            <div class="col s7">
+                                                <select class="browser-default " id="cboNacionalidadTVCompra"></select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <label>Departamento</label>
+                                            </div>
+                                            <div class="col s7">
+                                                <select class="browser-default" id="cboDepartamentoCompra">
+                                                    <option value="">Prueba </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <label>Provincia</label>
+                                            </div>
+                                            <div class="col s7">
+                                                <select class="browser-default" id="cboProvinciaCompra">
+                                                    <option value="">Prueba </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <label>Distrito </label>
+                                            </div>
+                                            <div class="col s7">
+                                                <select class="browser-default" id="cboDistritoCompra"></select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <input placeholder="Dirección" id="direccion" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modalb-footer">
+                                        <button type="button" id="btnGrabarIPDireccionC" name="btnGrabarIPDireccionC" class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                                        <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="" id="representanteMadre">
+                        <div class="card-panel m-0 p-3 red darken-4 rounded-0">
+                            <span class="font-weight-bold red darken-4 colorwhite" style="font-size: 16px;">
+                                DATOS DEL REPRESENTANTE
+                            </span>
+                        </div>
+                        <div class="card-content p-3">
+                            <div class="row">
+                                <div class="col s5"><label>Documento</label></div>
+
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <div class="col s5">
+                                        <select class="browser-default" id="CboTipoDocumentoRMadre">
+                                            <option value="A">DNI</option>
+                                            <option value="P">C. EXTRANJ</option>
+                                            <option value="M">PASAPORTE</option>
+                                            <option value="M">T. IDENTIDAD</option>
+                                        </select>
+                                    </div>
+                                    <input placeholder="Número" id="NumeroDocRepresentanteMadre" type="text" class="form-control col s5">
+                                    <a class="fas fa-search prefix col s2" href="javascript:LlenarCamposRepresentanteMadre();"></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <input placeholder="Nombres" id="NombreCompraMadre" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <input placeholder="A.Paterno" id="ApePaCompraMadre" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <input placeholder="A.Materno" id="ApeMaCompraMadre" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <!--<div class="row">
+                                <div class="col s12">
+                                    <input placeholder="Nacionalidad" id="first_name" type="text" class="form-control">
+                                </div>
+                            </div>-->
+                            <div class="row">
+                                <div class="col s12">
+                                    <input placeholder="E-Mail" id="EmailMadre" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <input placeholder="Telefono" id="TeflMadre" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <input placeholder="Dirección" id="first_name" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="card-action p-2">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div> -->
+                </div>
+            </div>
+        </form>
+        <!-- FIN DATOS DE LA MADRE -->
+        <!-- PERSONAS DISTINTAS A LOS PADRES -->
+        <div class="col s12" id="DivCSDatosVehiculo" name="DivCSDatosVehiculo">
+
+            <div class="card">
+                <div class="" id="responsableTrasladod">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Transferencia Vehicular</span>
+                    </div>
+                    <div class="card-content p-3"> 
+                        <div class="row">
+                            <div class="col s12">
+                                <input placeholder="Placa" id="Placa" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Moneda</label></div>
+                            <div class="col s7">
+                                <select id="vKVEHMONC1" name="vKVEHMONC1" class="browser-default">
+                                    <option value="US$" selected="selected">DOLARES</option>
+                                    <option value="S/.">SOLES</option>
+                                    <option value="EUR">EUROS</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input placeholder="Monto" id="Monto" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <br />
+                        <a class="btn-floating  pulse" id="agregarsoli"><i class="fas fa-plus"></i></i></a>
+                        <!--<div class="row">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Placa</th>
+                                        <th>Moneda</th>
+                                        <th>Monto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Placa">KIL-5786</td>
+                                        <td data-label="Moneda">DOLARES AMERICANOS</td>
+                                        <td data-label="Monto">1230.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Placa">KIL-1486</td>
+                                        <td data-label="Moneda">NUEVOS SOLES</td>
+                                        <td data-label="Monto">7411.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Placa">KIL-7456</td>
+                                        <td data-label="Moneda">EURO</td>
+                                        <td data-label="Monto">18540.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Placa">KIL-9858</td>
+                                        <td data-label="Moneda">DOLARES AMERICANOS</td>
+                                        <td data-label="Monto">1110.0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background-color:#a73924;margin-bottom:0px">
+        <div class="col s4">
+            <a id="ahrefatras" name="ahrefatras" href="javascript:fnNextAVEMadre();" style="color:white;font-size:120%">
+                <i class="fas fa-chevron-left"> </i>Anterior
+            </a>
+        </div>
+        <div class="col s4">
+            <a id="btnGrabarIntPais" name="btnGrabarIntPais" style="color:white;font-size:120%"><i class="fas fa-save"></i> Guardar</a>
+        </div>
+        <div class="col s4" style="text-align:right">
+            <a id="ahrefSiguiente" name="ahrefSiguiente" href="javascript:fnNextCSDatosCompra();" style="color:white;font-size:120%">
+                Siguiente<i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+
+    <script src="scripts/TramiteEnLinea/TransferVehicular/CrearSolicitud.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title></title>
+</head>
+
+
+    
+    
+
+
+<body>
+    <link href="css/Preload.css" rel="stylesheet" />
+
+    <div class="loader" id="contenerdor_Carga">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            
+        </div>
+        <div id="textopre"><span>Cargando datos...</span></div>
+    </div>
+    <div class="container">
+    
+        <form class="col s12" id="DivPerfilUsuario">
+            <div class="card">
+
+                <div class="row">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="    border-radius: 30px !important;
+                text-align: center;">
+                    <span class="font-weight-bold" style="font-size: 14px; color:#fff;">PERFIL</span>
+                </div>
+                <br>
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;" >DNI/CE</label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" onKeyPress="return soloNumeros(event)" id="txtDocPerfil"
+                                name="txtDocPerfil" type="number" class="form-control col s12" readonly >
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;">Nombre </label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" id="txtNomPerfil" name="txtNomPerfil" type="text"
+                                class="form-control col s12" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;">Apellido Paterno</label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" id="txtApePerfil" name="txtApePerfil" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;" >Apellido Materno</label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" id="txtApeMaPerfil" name="txtApeMaPerfil" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;">Dirección</label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" id="txtDireccionPerfil" name="txtDireccionPerfil" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6" style="padding-left: 43px;">
+                            <label style="font-size: 13px;">Teléfono</label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" id="txtTelefonoPerfil" onKeyPress="return soloNumeros(event)"
+                                name="txtTelefonoPerfil" type="number" class="form-control col s12">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;" >Email</label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" id="txtEmailPerfil" name="txtEmailPerfil" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;" >Usuario</label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" id="txtUsuarioPerfil" name="txtUsuarioPerfil" type="text"
+                                class="form-control col s12" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;" >Clave</label>
+                        </div>
+                        <div class="col s5">
+                            <input placeholder="" id="txtClavePerfil" name="txtClavePerfil" type="password"
+                                class="form-control col s12" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label style="font-size: 13px;" >Estado Perfil</label>
+                        </div>
+                        <div class="col s5">
+                            <label id="statusval"for="" style="font-size: 13px;" >No verificado</label>
+                            <img  id="checkval"style="width:20px;margin-left:1em    ;" src="images/ok_mail.svg" alt="">
+                            
+                           
+                        </div>
+
+                        
+                       
+                    </div>
+                </div>
+
+
+
+                <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+
+                            
+                            <div id="btncode"style=""> 
+
+                                <a style="border-radius: 20px;background: #357f90 !important;text-align: left;font-size: 12px;"class="btn waves-effect waves-light red" id="inCode">Ingresar código</a>
+                            </div>
+                        </div>
+                        <div id="sendmail"class="col s5">
+                            <div style=""> 
+
+                                <a style="border-radius: 20px;background: #357f90 !important;text-align: left;"class="btn waves-effect waves-light red" id="verMail">Verificar</a>
+                            </div>
+                            
+                           
+                        </div>
+
+                        
+                       
+                    </div>
+                </div>
+                
+
+                
+
+            </div>
+<div class="row">
+
+    <div class="col s12">
+        <span style="font-size: 10px; color: red;margin: 5px;">Nota: Algunas operaciones de la App requieren la verificación del correo</span>
+    </div>
+    
+
+</div>
+                
+                <!-- 
+                   <div class="card-content p-0">
+                    <div class="row" style="margin-bottom:2px;">
+                        <div class="col s6 margin-box" style="padding-left: 43px;">
+                            <label>Adjuntar DNI</label>
+                        </div>
+                        <div class="col s5">
+                            <input type="file" id="txtClavePerfil" name="txtClavePerfil" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                </div>
+            -->
+             
+            </div>
+            <br>
+            <div style="text-align:center !important;" class="row">
+                <div class="col s12">
+                    <a style="border-radius: 20px;"class="btn waves-effect waves-light red" id="registro">Guardar</a>
+                </div>
+               
+            </div>
+
+
+    </div>
+
+    </div>
+    <script src="scripts/Perfil/Perfil.js"></script>
+
+
+   
+
+</body>
+
+</html>

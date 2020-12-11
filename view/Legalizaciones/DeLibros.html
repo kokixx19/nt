@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+
+  
+
+    <div class="container">
+        <div class="col s12" id="DivConsultaLibros" style="margin-top:3em;">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 14px;">Legalización de Libros</span>
+                </div>
+                <div class="card-content p-3">
+                    <div class="row ">
+                        <div class="col s12">
+                            <span class=" font-weight-bold" style="font-size: 22px;color:#a73924;">Seleccione una Opcion:</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+
+                            <ul class="collection d-none ">
+                                <li class="collection-header"><label>Persona Natural</label></li>
+                                <li class="collection-item"><div>Primeros Libros<a class="secondary-content"><i class="far fa-angle-left"></i></a></div></li>
+                                <li class="collection-item"><div>Segundos Libros u Hojas sueltas<a class="secondary-content"><i style="font-size:14px;" class="far fa-angle-left"></i></a></div></li>
+                            </ul>
+                            <ul class="collection with-header">
+                                <li class="collection-header"><label style="font-size:18px;">Persona Natural</label></li>
+                                <li class="collection-item" id="PersonaNPL"><div>Primeros Libros<a class="secondary-content"><i class="far fa-angle-left"></i></a></div></li>
+                                <li class="collection-item" id="PersonaNSL"><div>Segundos Libros u Hojas sueltas<a class="secondary-content"><i style="font-size:14px;" class="far fa-angle-left"></i></a></div></li>
+                            </ul>
+                            <ul class="collection with-header">
+                                <li class="collection-header"><label style="font-size:18px;">Persona Jurídica</label></li>
+                                <li class="collection-item" id="PersonaJPL"><div>Primeros Libros<a class="secondary-content"><i class="far fa-angle-left"></i></a></div></li>
+                                <li class="collection-item" id="PersonaJSL"><div>Segundos Libros u Hojas Sueltas<a class="secondary-content"><i style="font-size:14px;" class="far fa-angle-left"></i></a></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Persona Natural-->
+        <!--Primer Libro-->
+        <div class="row">
+            <div class="col s12" id="DivPrimerosPN" style="margin-top:3em;">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 14px;">PRIMER LIBRO PERSONA NATURAL</span>
+                        <span class="red darken-4 colorwhite font-weight-bold left-align" style="font-size: 14px;float:right;"><i style="font-size:22px;" class="far fa-eye-slash" id="OcultarPLPN"></i></span>
+                    </div>
+                    <div class="card-content p-3">
+                        <div class="row ">
+                            <div class="col s12">
+                                <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Requisitos:</span>
+                            </div>
+                        </div><br /><br />
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="container">
+                                        <p>
+                                            1- Solicitud Firmada por el Titular.<br /><br />
+
+                                            2- Copia del Ruc de la Persona Natural.<br /><br />
+
+                                            3- Copia del Dni Vigente o Documento de Identidad del Titular.<br /><br />
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col s12">
+                                <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Costos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Segundo Libro-->
+        <div class="row">
+            <div class="col s12" id="DivSegundoLPN" style="margin-top:3em;">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 14px;">SEGUNDO LIBRO PERSONA NATURAL</span>
+                        <span class="red darken-4 colorwhite font-weight-bold left-align" style="font-size: 14px;float:right;"><i style="font-size:22px;" class="far fa-eye-slash" id="OcultarSLPN"></i></span>
+                    </div>
+                    <div class="card-content p-3">
+                        <div class="row ">
+                            <div class="col s12">
+                                <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Requisitos:</span>
+                            </div>
+                        </div><br /><br />
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="container">
+                                        <p>
+                                            1–  Todos los requisitos señalados el numeral 1 (Primeros Libros).<br /><br />
+
+                                            2–  Acreditar el hecho de haberse concluido el libro anterior. En caso de pérdida del libro, presentar la Certificación que demuestre de forma fehaciente dicha pérdida (Denuncia Policial).
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col s12">
+                                <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Costos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Persona Juridica-->
+        <!--Persona Natural-->
+        <div class="row">
+            <div class="col s12" id="DivPrimerosPJ" style="margin-top:3em;">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 14px;">PRIMER LIBRO PERSONA JURÍDICA</span>
+                        <span class="red darken-4 colorwhite font-weight-bold left-align" style="font-size: 14px;float:right;"><i style="font-size:22px;" class="far fa-eye-slash" id="OcultarPLPJ"></i></span>
+                    </div>
+                    <div class="card-content p-3">
+                        <div class="row ">
+                            <div class="col s12">
+                                <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Requisitos:</span>
+                            </div>
+                        </div><br /><br />
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="container">
+                                        <p>
+                                            1–  Solicitud firmada por el Apoderado o Representante Legal de la Persona Jurídica.<br /><br />
+
+                                            2–  Vigencia de Poder con una antigüedad no mayor a 30 días calendario.<br /><br />
+
+                                            3–  Copia del RUC de la Persona Jurídica.<br /><br />
+
+                                            4–  Copia del DNI vigente o Documento de Identidad del Apoderado o Representante Legal.<br /><br />
+
+                                            5–  En el caso de Libro de Actas, Matrícula de Acciones y Padrón de Socios, el Apoderado o Representante Legal deberá ser identificado por medio de comparación biométrica (Toma de Huella por Biometría).<br /><br />
+
+                                            <b>(Base Legal: Artículos 55 y 116 de la Ley del Notariado)</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col s12">
+                                <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Costos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Segundo Libro-->
+        <div class="row">
+            <div class="col s12" id="DivSegundoLPJ" style="margin-top:3em;">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 14px;">SEGUNDO LIBRO PERSONA JURÍDICA</span>
+                        <span class="red darken-4 colorwhite font-weight-bold left-align" style="font-size: 14px;float:right;"><i style="font-size:22px;" class="far fa-eye-slash" id="OcultarSLPJ"></i></span>
+                    </div>
+                    <div class="card-content p-3">
+                        <div class="row ">
+                            <div class="col s12">
+                                <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Requisitos:</span>
+                            </div>
+                        </div><br /><br />
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="container">
+                                        <p>
+                                            1–  Todos los requisitos señalados el numeral 1 (Primeros Libros).<br /><br />
+
+                                            2–  Acreditar el hecho de haberse concluido el libro anterior. En caso de pérdida del libro, presentar la Certificación que demuestre de forma fehaciente dicha pérdida (Denuncia Policial).<br /><br />
+
+                                            3–  Tratándose de pérdida de Libros de Actas de una Personas Jurídica, se deberá presentar en hojas simples el Acta de la Junta o Asamblea General donde se informe de la pérdida del libro, debiendo contar con la Certificación Notarial de la firma de cada interviniente en el acuerdo.<br /><br />
+
+                                            4–  Tratándose de pérdida de Libros Contables, se deberá adjuntar la Denuncia Policial en la que se precise el nombre y número de los libros extraviados y carta presentada a la SUNAT informando del hecho; ambos en originales.<br /><br />
+
+                                            <b>(Base Legal: Resolución de Superintendencia N° 234-2006/SUNAT. Artículo 9 inciso 9.1 y artículo 115 de la Ley del Notariado)</b>
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="row ">
+                            <div class="col s12">
+                                <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Costos</span>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="wsp" href="https://api.whatsapp.com/send?phone=51924060249&text=Hola%20Notar%c3%ada%20Paino%21%20Me%20conecto%20desde%20su%20sitio%20web%2c%20en%20la%20ventana%20Home%20%28https%3a%2f%2fwww.notariapaino.com.pe%2f%29&source=&data=">
+        <img class="wsp" src="images/img/whatsApp-clic-para-chatear.png" />
+    </a>
+    <script src="scripts/DeLibros/Libro.js"></script>
+    <script src="scripts/EventFormularios/EventFormularios.js"></script>
+</body>
+</html>

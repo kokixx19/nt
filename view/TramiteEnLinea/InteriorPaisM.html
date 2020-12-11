@@ -1,0 +1,826 @@
+﻿<link href="css/Preload.css" rel="stylesheet" />
+
+<div class="loader" id="contenerdor_Carga">
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+    <div id="textopre"><span>Cargando, Espere...</span></div>
+</div>
+
+
+<div style="text-align:center" id="LineaDeTiempo">
+    <div class="containertimeline">
+        <ul class="timeline centrartimeline">
+            <li id="liAVIPDatosPadres" name="liAVIPDatosPadres" class="pgactual"></li>
+            <li id="liAVIDatosRepesentantes" name="liAVIDatosRepesentantes"> </li>
+            <li id="liAVIDatosHijos" name="liAVIDatosHijos"> </li>
+            <li id="liAVPIDeclaracionDatos" name="liAVPIDeclaracionDatos"> </li>
+
+        </ul>
+        <br />
+        <br />
+    </div>
+</div>
+
+<!--<input  id="txtFechaSYSTEM" name="txtFechaSYSTEM" type="text">
+
+<input id="txtAutoCod" name="txtAutoCod" type="text">-->
+
+<div class="container" id="DivContenedorDIVS">
+
+    <div class="col s12" id="DivInfoViajeIP" style="margin-top:3em;">
+        <div class="card">
+            <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Autoriza viaje de
+                    menores - Interior</span>
+            </div>
+            <div class="card-content p-3">
+                <div class="row ">
+                    <div class="col s12">
+                        <span class=" font-weight-bold" style="font-size: 14px;color:#a73924;">Antes de acceder a
+                            nuestro servicio en línea, le pedimos tener en cuenta la siguiente información.</span>
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="container">
+                                <p style="font-size: 12px;">
+                                    Requisitos:<br /><br />
+                                    1- Documento de Identidad de los padres.<br /><br />
+
+                                    2- Documento de Identidad del menor y Partida de Nacimiento con una vigencia de 3
+                                    meses.<br /><br />
+
+                                    3- En el caso que los padres e hijo sean extranjeros, sólo será necesario presentar
+                                    sus Documentos de Identidad.<br /><br />
+
+                                    4- En el caso que uno de los padres esté en el extranjero, presentar Poder otorgado
+                                    ante el Consulado Peruano debidamente apostillado.<br /><br />
+
+                                    5- En el caso de tener Poder por Escritura Pública, debe traer la Vigencia de Poder
+                                    de la SUNARP.<br /><br />
+
+                                    6- En el caso que uno de los padres otorgue la Autorización en un Notario de
+                                    Provincia, esta deberá estar visada por el Decano del Colegio de Notarios de
+                                    Lima.<br /><br />
+
+                                    7- En el caso que uno de los padres esté fallecido, deberá presentar el Acta de
+                                    Defunción original.<br /><br />
+
+                                    8- En el caso que la madre sea la única declarante, deberá presentar la Partida de
+                                    Nacimiento original y el Documento de Identidad del menor<br /><br />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+
+                </div>
+
+                <div style="text-align:center;margin-top:3em;" class="col-lg-3">
+                    <button id="btnFrmVIP" name="btnFrmVIP" class="waves-effect red darken-4 btn">Formulario</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <form id="DivAVIPDatosPadres">
+        <div class="col s12" id="">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Autoriza viaje de
+                        menores - Interior</span>
+                </div>
+                <div class="card-content p-3 ">
+
+                    <div class="row">
+                        <div class="col s5"><label>Representante</label></div>
+                        <div class="col s7">
+                            <select class="browser-default" id="cboRepresentante">
+                                <option value="P" selected="selected">Padre</option>
+                                <option value="M">Madre</option>
+                                <option value="A">Apoderado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Documento</label></div>
+                        <div class="col s7">
+                            <select id="CboTipoDocumento" name="CboTipoDocumento" class="browser-default" style="">
+                                <option value="D">DNI</option>
+                                <option value="CE">C. EXTRANJ</option>
+                                <option value="PS">PASAPORTE</option>
+                                <option value="TI">T. IDENTIDAD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s10 ">
+                            <input placeholder="Numero" id="txtNumDocumento" name="txtNumDocumento" type="number"
+                                class="form-control">
+                        </div>
+                        <div class="col s2">
+                            <a class="fas fa-search prefix" style="font-size:2rem;top: -0.2px;left: -5px;"
+                                href="javascript:fnBuscarPerPadres();"></a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="Nombres" id="txtNombreP" name="txtNombreP" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="A.Paterno" id="txtApePaterno" name="txtApePaterno" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="A.Materno" id="txtApeMaterno" name="txtApeMaterno" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="E-Mail " id="txtEmail" name="txtEmail" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="Telefono " id="txtTelefono" name="txtTelefono" type="number"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Estado Civil</label></div>
+                        <div class="col s7">
+                            <select id="cboEstadoCivil" name="cboEstadoCivil" class="browser-default ">
+                                <option value="" selected="selected">(Ninguno)</option>
+                                <option value="06">(NO DEFINIDO)</option>
+                                <option value="08">CASADO(A)</option>
+                                <option value="10">DIVORCIADO(A)</option>
+                                <option value="13">SEPARACION PATRIM.</option>
+                                <option value="11">SEPARADO(A)</option>
+                                <option value="07">SOLTERO(A)</option>
+                                <option value="12">UNION LIBRE</option>
+                                <option value="09">VIUDO(A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Nacionalidad</label></div>
+                        <div class="col s7">
+                            <select id="cboNacionalidad" name="cboNacionalidad" class="browser-default "></select>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Modal -->
+                    <div class="modalb fade" id="ModalDomicilio" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modalb-dialog" role="document">
+                            <div class="modalb-content">
+                                <div class="modalb-header">
+                                    <h5 class="modalb-title" id="exampleModalLabel">Domicilio</h5>
+                                </div>
+                                <div class="modalb-body">
+                                    <div class="row">
+                                        <div class="col s5"><label>País</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPPais" name="cboIPPais" class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Departamento</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDepartamento" name="cboIPDepartamento"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Provincia</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPProvincia" name="cboIPProvincia"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Distrito</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDIstrito" name="cboIPDIstrito"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 ">
+                                            <input placeholder="Dirección" id="txtIPDireccion" name="txtIPDireccion"
+                                                type="text" class="form-control col s12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modalb-footer">
+                                    <button type="button" id="btnGrabarIPDireccion" name="btnGrabarIPDireccion"
+                                        class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                                    <button type="button" class="btn red lighten-1"
+                                        data-dismiss="modalb">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+
+                    <div class="modalb fade" id="ModalEdicionDomicilio" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modalb-dialog" role="document">
+                            <div class="modalb-content">
+                                <div class="modalb-header">
+                                    <h5 class="modalb-title" id="exampleModalLabel">Actualizar Domicilio</h5>
+                                </div>
+                                <div class="modalb-body">
+
+                                    <input id="txtCodigoDomicilio" name="txtCodigoDomicilio" type="text">
+
+                                    <div class="row">
+                                        <div class="col s5"><label>País</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPPaisEdicion" name="cboIPPaisEdicion"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Departamento</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDepartamentoEdicion" name="cboIPDepartamentoEdicion"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Provincia</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPProvinciaEdicion" name="cboIPProvinciaEdicion"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Distrito</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDIstritoEdicion" name="cboIPDIstritoEdicion"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 ">
+                                            <input placeholder="Dirección" id="txtIPDireccionEdicion"
+                                                name="txtIPDireccionEdicion" type="text" class="form-control col s12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modalb-footer">
+                                    <button type="button" id="btnActualizarDomicilio" name="btnActualizarDomicilio"
+                                        class="btn btn blue lighten-1" data-dismiss="modalb">Actualizar</button>
+                                    <button type="button" class="btn red lighten-1"
+                                        data-dismiss="modalb">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class=" col s12">
+            <p>Domicilio</p>
+            <hr>
+        </div>
+        <div class=" col s12" id="DivDomicilioTB">
+
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col s12">
+                <button type="button" class="btn btn-primary" data-toggle="modalb" data-target="#ModalDomicilio">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        <br />
+        <br />
+    </form>
+
+    <div class="">
+        <form class="col s12" id="DivAVIDatosRepesentantes">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Autoriza viaje de
+                        menores - Interior</span>
+                </div>
+                <div class="card-content p-3">
+                    <div id="DivAVIDatosRepesentantes" name="DivAVIDatosRepesentantes" class="col s12 ">
+                        <div class="row">
+                            <br />
+                            <div class="col s6"> <label>Representante</label> </div>
+                            <div class="col s6">
+                                <div class="switch">
+                                    <label>
+                                        No
+                                        <input type="checkbox" id="chbRepresentante" name="chbRepresentante">
+                                        <span class="lever"></span>
+                                        Si
+                                    </label>
+                                </div>
+                                <input type="hidden" id="txtRepresentante" name="txtRepresentante" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="divRepresentanteOn" name="divRepresentanteOn">
+                        <div class="row">
+                            <div class="col s5"><label>Documento</label></div>
+                            <div class="col s7">
+                                <select class="browser-default " id="CboDocRepresentante"></select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 ">
+                                <a class="fas fa-search prefix" href="javascript:fnBuscarPerRepre();"></a>
+                                <input placeholder="Numero" id="txtNumDocumentoRepre" name="txtNumDocumentoRepre"
+                                    type="number" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Nombres" id="txtNombreRepre" name="txtNombreRepre" type="text"
+                                    class="form-control s12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="A.Paterno" id="txtApePaternoRepre" name="txtApePaternoRepre"
+                                    type="text" class="form-control s12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="A.Materno" id="txtApeMaternoRepre" name="txtApeMaternoRepre"
+                                    type="text" class="form-control s12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s5"><label>Nacionalidad</label></div>
+                            <div class="col s7">
+                                <select id="cboNacionalidadRepre" name="cboNacionalidadRepre"
+                                    class="browser-default "></select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="E-Mail" id="EmailRepre" name="EmailRepre" type="text"
+                                    class="form-control s12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Telefono" id="TelefonoRepre" type="number" class="form-control s12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <textarea name="txtPoder" id="txtPoder"
+                                    class="form-control indigo-text font-weight-bold w-100"
+                                    rows="4">SEGÚN PODER INSCRITO EN LA PARTIDA Nº ............ DEL REGISTRO DE MANDATOS Y PODERES DE LIMA.</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Dirección" id="txtDireccionRepre" type="text"
+                                    class="form-control s12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="DivAVIDatosHijos">
+        <div class="">
+            <form class="col s12" id="">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Autoriza viaje
+                            de menores - Interior</span>
+                    </div>
+
+                    <!-- Tabla Hijo -->
+                    <div class="card-content p-3">
+                        <div class="row">
+                            <div class="col s12">
+                                <label>Agregar Hijos</label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col s12">
+                                <button type="button" class="btn btn-primary" data-toggle="modalb"
+                                    data-target="#ModalHijos">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col s12" id="DivHijosTB">
+
+        </div>
+
+        <div class="" style="margin-top:2em;">
+            <div class="col s12">
+                <div class="row">
+                    <div class="col s12">
+                        <label>Observaciones</label>
+                        <textarea id="txtObservacion" name="txtObservacion" class="form-control"
+                            data-length="120"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modalb fade" id="ModalHijos" tabindex="-1" role="dialog" aria-labelledby="ModalHijos"
+        aria-hidden="true">
+        <div class="modalb-dialog" role="document">
+            <div class="modalb-content">
+                <div class="modalb-header">
+                    <h5 class="modalb-title" id="exampleModalLabel">Adicionar hijos</h5>
+                </div>
+                <div class="card-content p-3" id="">
+                    <div class="">
+
+                        <div class="card-content p-3">
+                            <div class="row">
+                                <div class="col s5"><label>Documento</label></div>
+                                <div class="col s7">
+                                    <select id="CboTipoDocumentoHijo" name="CboTipoDocumentoHijo"
+                                        class="browser-default" style="">
+                                        <option value="D">DNI</option>
+                                        <option value="CE">C. EXTRANJ</option>
+                                        <option value="PS">PASAPORTE</option>
+                                        <option value="TI">T. IDENTIDAD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <input placeholder="Numero" id="txtNumDocumentoHijo" name="txtNumDocumentoHijo"
+                                        type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <input placeholder="Nombres" id="txtNombreHijo" name="txtNombreHijo" type="text"
+                                        class="form-control col s12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <input placeholder="A.Paterno" id="txtApePaternoHijo" name="txtApePaternoHijo"
+                                        type="text" class="form-control col s12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <input placeholder="A.Materno" id="txtApeMaternoHijo" name="txtApeMaternoHijo"
+                                        type="text" class="form-control col s12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s5"><label>Fecha Nacimiento</label></div>
+                                <div class="col s7">
+                                    <input id="txtFechaNacimiento" name="txtFechaNacimiento" type="date"
+                                        class="form-control col s12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalb-footer">
+                    <button type="button" id="btnGrabarHijos" name="btnGrabarHijos" class="btn btn-primary"
+                        data-dismiss="modalb">Grabar</button>
+                    <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modalb fade" id="ModalActualizarHijos" tabindex="-1" role="dialog"
+        aria-labelledby="ModalActualizarHijos" aria-hidden="true">
+        <div class="modalb-dialog" role="document">
+            <div class="modalb-content">
+                <div class="modalb-header">
+                    <h5 class="modalb-title" id="exampleModalLabel">Actualizar Hijo</h5>
+                </div>
+                <div class="card-content p-3" id="">
+                    <div class="">
+
+                        <div class="card-content p-3">
+                            <div class="row">
+                                <div class="col s5"><label>Documento</label></div>
+                                <div class="col s7">
+                                    <select id="CboTipoDocumentoHijoUpdate" name="CboTipoDocumentoHijoUpdate"
+                                        class="browser-default" style="">
+                                        <option value="D">DNI</option>
+                                        <option value="CE">C. EXTRANJ</option>
+                                        <option value="PS">PASAPORTE</option>
+                                        <option value="TI">T. IDENTIDAD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <input placeholder="Numero" id="txtNumDocumentoHijoUpdate"
+                                        name="txtNumDocumentoHijo" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <input placeholder="Nombres" id="txtNombreHijoUpdate" name="txtNombreHijo"
+                                        type="text" class="form-control col s12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <input placeholder="A.Paterno" id="txtApePaternoHijoUpdate" name="txtApePaternoHijo"
+                                        type="text" class="form-control col s12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <input placeholder="A.Materno" id="txtApeMaternoHijoUpdate" name="txtApeMaternoHijo"
+                                        type="text" class="form-control col s12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s5"><label>Fecha Nacimiento</label></div>
+                                <div class="col s7">
+                                    <input id="txtFechaNacimientoUpdate" name="txtFechaNacimientoUpdate" type="date"
+                                        class="form-control col s12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalb-footer">
+                    <button type="button" id="btnActualizarHijos" name="btnActualizarHijos" class="btn btn-primary"
+                        data-dismiss="modalb">Actualizar</button>
+                    <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="">
+        <form class="col s12" id="DIvAVPIDeclaracionDatos" name="DIvAVPIDeclaracionDatos">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Autoriza viaje de
+                        menores - Interior</span>
+                </div>
+
+                <!-- Tabla Hijo -->
+                <div class="card-content p-3">
+                    <div class="row">
+                        <div class="col s12">
+                            <label>Destino de Viaje</label>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col s1 ">
+                        </div>
+                        <div class="col s10 ">
+                            <select id="cboDestinoViaje"   name="cboDestinoViaje"  multiple>
+                                <option value="00" disabled selected>Seleccionar</option>
+                                <option value="01">AMAZONAS</option>
+                                <option value="02">ANCASH</option>
+                                <option value="03">APURIMAC</option>
+                                <option value="04">AREQUIPA</option>
+                                <option value="05">AYACUCHO</option>
+                                <option value="06">CAJAMARCA</option>
+                                <option value="07">CALLAO.PRV.CONST.</option>
+                                <option value="08">CUZCO</option>
+                                <option value="09">HUANCAVELICA</option>
+                                <option value="10">HUANUCO</option>
+                                <option value="11">ICA</option>
+                                <option value="12">JUNIN</option>
+                                <option value="13">LA LIBERTAD</option>
+                                <option value="14">LAMBAYEQUE</option>
+                                <option value="16">LORETO</option>
+                                <option value="17">MADRE DE DIOS</option>
+                                <option value="18">MOQUEGUA</option>
+                                <option value="19">PASCO</option>
+                                <option value="20">PIURA</option>
+                                <option value="21">PUNO</option>
+                                <option value="22">SAN MARTIN</option>
+                                <option value="23">TACNA</option>
+                                <option value="24">TUMBES</option>
+                                <option value="25">UCAYALI</option>
+                                <option value="1502">LIMA &gt; BARRANCA</option>
+                                <option value="1503">LIMA &gt; CAJATAMBO</option>
+                                <option value="1505">LIMA &gt; CAÑETE</option>
+                                <option value="1504">LIMA &gt; CANTA</option>
+                                <option value="1506">LIMA &gt; HUARAL</option>
+                                <option value="1507">LIMA &gt; HUAROCHIRI</option>
+                                <option value="1508">LIMA &gt; HUAURA</option>
+                                <option value="1501">LIMA &gt; LIMA</option>
+                                <option value="1509">LIMA &gt; OYON</option>
+                                <option value="1510">LIMA &gt; YAUYOS</option>
+                            </select>
+                        </div>
+                        <div class="col s1 ">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <p>
+                                DECLARO DAR CONSENTIMIENTO EXPRESO PARA EL TRATAMIENTO DE LOS DATOS PERSONALES Y LA
+                                FINALIDAD QUE SE LE DARAN DE CONFORMIDAD CON LO ESTABLECIDO POR LA LEY 29733 Y SU
+                                REGLAMENTO
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="switch">
+                                <label>
+                                    No
+                                    <input type="checkbox" id="chbDeclaracionDatos" name="chbDeclaracionDatos">
+                                    <span class="lever"></span>
+                                    Si
+                                </label>
+                                <input type="hidden" id="txtDeclaracionDatos">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4  rounded-0">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">CÓDIGO
+                        PROMOCIONAL</span>
+                </div>
+                <div class="card-content p-3">
+                    <div class="row">
+                        <div class="col s12 pb-1"><label>Código</label></div>
+                        <div class="col s12">
+                            <input class="form-control" placeholder="Ingrese código promocional" type="text"
+                                id="txtCodigoPromocional" name="txtCodigoPromocional" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<!-- .events-content -->
+<!--siguiente y atras-->
+<!-- Modal Structure -->
+<div class="modalb fade" id="MDLNuevoHijo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modalb-dialog" role="document">
+        <div class="modalb-content">
+            <div class="modalb-header">
+                <h5 class="modalb-title" id="MDLNuevoHijoLabel">Nuevo hijo</h5>
+            </div>
+            <div class="modalb-body">
+                <div class="row">
+                    <div class="col s5"><label>Documento</label></div>
+                    <div class="col s7">
+                        <select class="browser-default">
+                            <option value="D">DNI</option>
+                            <option value="CE">C. EXTRANJ</option>
+                            <option value="PS">PASAPORTE</option>
+                            <option value="TI">T. IDENTIDAD</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <input id="txtNumeroDocHijo" name="txtNumeroDocHijo" type="number" class="form-control"
+                            placeholder="Numero" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>F. Nacimiento</label>
+                        <input id="txtNacimientoHijo" name="txtNacimientoHijo" type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <input id="txtNombreHijo" name="txtNombreHijo" type="text" class="form-control"
+                            placeholder="Nombres" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <input id="txtApellidosPHijo" name="txtApellidosPHijo" type="text" class="form-control"
+                            placeholder="Apellido Paterno" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <input id="txtApellidoMPHijo" name="txtApellidoMPHijo" type="text" class="form-control"
+                            placeholder="Apellido Materno" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="modalb-footer">
+                <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                <button type="button" id="btnGuardarHijos" name="btnGuardarHijos" class="btn btn-primary"
+                    data-dismiss="modalb">Grabar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer style="width:100%; bottom: 0; position: fixed;" id="BtnSAS">
+    <div class="row" style="background-color:#a73924;margin-bottom:0px">
+        <div class="col s4">
+            <a id="ahrefatras" name="ahrefatras" href="javascript:fnNextRepresentante();"
+                style="color:white;font-size:120%">
+                <i class="fas fa-chevron-left"> </i>Anterior
+            </a>
+        </div>
+        <div class="col s4">
+            <a id="btnGrabarIntPais" name="btnGrabarIntPais" href="#" style="color:white;font-size:120%">
+                <i class="fas fa-save"> </i> Guardar
+            </a>
+        </div>
+
+        <div class="col s4" style="text-align:right">
+            <a id="ahrefSiguiente" name="ahrefSiguiente" href="javascript:fnNextAVIRepresentante();"
+                style="color:white;font-size:120%">
+                Siguiente<i class="fas fa-chevron-right"></i>
+            </a>
+            <a id="ahrefSiguiente2" name="ahrefSiguiente2" href="javascript:fnNextAVIRepresentante();"
+                style="color:white;font-size:120%">
+                Siguiente<i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+    </div>
+</footer>
+
+
+<script src="scripts/TramiteEnLinea/InteriorPaisM.js"></script>

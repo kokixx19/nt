@@ -1,0 +1,2712 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+</head>
+
+<body>
+
+
+    <!--Preload html css-->
+
+    <link href="css/Preload.css" rel="stylesheet" />
+
+
+    <div class="loader" id="contenerdor_Carga">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+        <div id="textopre"><span>Cargando, Espere...</span></div>
+    </div>
+
+    <!--Preload html css-->
+
+
+
+
+
+
+    <div class="container">
+        <form class="col s12" id="divtextointro" style="margin-top:3em;">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Poderes - Cobro de
+                        pensión ONP</span>
+                </div>
+                <div class="card-content p-3">
+                    <div class="row ">
+                        <div class="col s12">
+                            <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Requisitos:</span>
+                        </div>
+                    </div><br /><br />
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="container">
+                                    <p>
+                                        Sin Información<br /><br /></b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row ">
+                        <div class="col s12">
+                            <span class=" font-weight-bold" style="font-size: 20px;color:#a73924;">Costos</span>
+                        </div>
+                    </div>-->
+                    <div class="right-align">
+                        <a id="btnSiguientePoderSinMinuta" name="btnSiguientePoderSinMinuta"
+                            class="waves-effect red darken-4 btn">Siguiente <i class="fas fa-chevron-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div id="DivFormPoderSinMinuta" name="DivFormPoderSinMinuta">
+        <div style="text-align:center">
+            <div class="containertimeline">
+                <ul class="timeline centrartimeline3">
+                    <li id="liCSTranVehicular" name="liCSTranVehicular" class="pgactual"></li>
+                    <li id="liCSDatosComprador" name="liCSDatosComprador"> </li>
+                    <li id="liAVIDatosDistintasPadres" name="liAVIDatosDistintasPadres"> </li>
+                </ul>
+                <br />
+                <br />
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- DATOS DEL PoderDante -->
+
+            <form class="col s12" id="DivCSTranVehicular" name="DivCSTranVehicular">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                        <span class="font-weight-bold red darken-4 colorwhite" style="font-size: 16px;">Poderes - Cobro
+                            de pensión ONP</span>
+                    </div>
+
+
+
+                    <div class="card-content p-3">
+                        <h6><strong>Datos del poderdante:</strong></h6>
+                        <!--<div class="row">
+                            <div class="col s5"><label>Documento</label></div>
+                            <div class="col s7">
+                                <select class="browser-default" id="CboTipoDocumento">
+                                    <option value="A">DNI</option>
+                                    <option value="P">C. EXTRANJ</option>
+                                    <option value="M">PASAPORTE</option>
+                                    <option value="M">T. IDENTIDAD</option>
+                                </select>
+                            </div>
+                        </div>-->
+
+
+                        <br />
+
+                        <div class="row">
+
+                            <div class="col s1" style="margin-top:3px;"><label>Doc.</label></div>
+
+                            <div class="col s4">
+                                <select class="browser-default" style="margin-left:10px;" id="CBO_T_DOC_PO_SM"></select>
+
+
+
+                            </div>
+
+
+                            <div class="col s5">
+
+                                <div class="cold s6">
+                                    <input placeholder="N° Doc" id="TXT_N_PSM" name="TXT_N_PSM" type="number"
+                                        class="form-control">
+                                    <input placeholder="N° Doc" id="autocod" name="autocod" type="hidden"
+                                        class="form-control">
+                                </div>
+
+                            </div>
+                            <div class="cold s2" style="font-size:28px;">
+                                <a class="fas fa-search prefix" id="buscarapo" href="javascript:fnBuscarCliente();"></a>
+                            </div>
+                            <!--<div class="col s1">
+
+                                <a class="fas fa-search prefix " href="javascript:FnBuscarPerPadre();"></a>
+
+                            </div>-->
+
+                        </div>
+
+
+
+                        <div class="row">
+
+                            <div class="col s6">
+                                <div><label>Nombres</label></div>
+
+                            </div>
+
+
+
+                            <div class="col s6">
+                                <input placeholder="Nombres" id="txtNombresP" name="txtNombresP" type="text"
+                                    class="form-control col s12">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <div><label>Apellido Pat.</label></div>
+
+                            </div>
+                            <div class="col s6">
+                                <input placeholder="A.Paterno" id="ApellidoPaterno" name="ApellidoPaterno" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+
+                                <div><label>Apellido Mat.</label></div>
+                            </div>
+                            <div class="col s6">
+                                <input placeholder="A.Materno" id="ApellidoMaterno" name="ApellidoMaterno" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s6">
+
+                                <div><label>Correo Electr.</label></div>
+                            </div>
+                            <div class="col s6">
+                                <input placeholder="E-mail" id="Email" name="Email" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col s6">
+                                <div><label>Telef.</label></div>
+
+                            </div>
+                            <div class="col s6">
+                                <input placeholder="Telefono" id="telefono_po" name="telefono_po" type="number" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s6"><label>Estado Civil</label></div>
+                            <div class="col s6">
+                                <select class="browser-default " id="cboEstadoCivil_PO">
+                                    <option value="" selected="selected">(Ninguno)</option>
+                                    <option value="06">(NO DEFINIDO)</option>
+                                    <option value="08">CASADO(A)</option>
+                                    <option value="10">DIVORCIADO(A)</option>
+                                    <option value="13">SEPARACION PATRIM.</option>
+                                    <option value="11">SEPARADO(A)</option>
+                                    <option value="07">SOLTERO(A)</option>
+                                    <option value="12">UNION LIBRE</option>
+                                    <option value="09">VIUDO(A)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6"><label>Nacionalidad</label></div>
+                            <div class="col s6">
+                                <select name="cboNacionalidad" class="browser-default " id="cboNacionalidad_PO">
+                                    <option value="4001">AFGANA</option>
+                                    <option value="2001">ALBANES</option>
+                                    <option value="2002">ALEMANA</option>
+                                    <option value="2003">ALEMANA</option>
+                                    <option value="2004">ANDORRANO</option>
+                                    <option value="1401">ANTILLANA</option>
+                                    <option value="1408">ANTILLANA</option>
+                                    <option value="3002">ARGELINA</option>
+                                    <option value="1301">ARGENTINA</option>
+                                    <option value="5001">AUSTRALIANA</option>
+                                    <option value="2005">AUSTRIACA</option>
+                                    <option value="4003">BAHREINI</option>
+                                    <option value="2006">BELGA</option>
+                                    <option value="1202">BELICEÑA</option>
+                                    <option value="4039">BENGALÍ</option>
+                                    <option value="3010">BENINES</option>
+                                    <option value="1402">BERMUDEÑA</option>
+                                    <option value="4004">BIRMANA</option>
+                                    <option value="1302">BOLIVIANA</option>
+                                    <option value="3003">BOTSWANES</option>
+                                    <option value="1303">BRASILEÑA</option>
+                                    <option value="2027">BRITANICA</option>
+                                    <option value="4040">BRUNEANA</option>
+                                    <option value="2007">BULGARA</option>
+                                    <option value="3001">BURKINES</option>
+                                    <option value="3004">BURUNDIANA</option>
+                                    <option value="4005">BUTANESA</option>
+                                    <option value="4006">CAMBOYANA</option>
+                                    <option value="3005">CAMERUNESA</option>
+                                    <option value="1101">CANADIENSE</option>
+                                    <option value="4007">CEILANESA</option>
+                                    <option value="3006">CENTROAFRICANA</option>
+                                    <option value="3009">CHADIANA</option>
+                                    <option value="2008">CHECOSLOVACA</option>
+                                    <option value="1305">CHILENA</option>
+                                    <option value="4009">CHINA</option>
+                                    <option value="4010">CHIPRIOTA</option>
+                                    <option value="1304">COLOMBIANA</option>
+                                    <option value="3007">CONGOLEÑA</option>
+                                    <option value="4008">COREANA</option>
+                                    <option value="4042">CORERANA</option>
+                                    <option value="1201">COSTARRICENSE</option>
+                                    <option value="2039">CROATA</option>
+                                    <option value="1403">CUBANA</option>
+                                    <option value="2009">DANESA</option>
+                                    <option value="1413">DOMINICANA</option>
+                                    <option value="1405">DOMINICANA</option>
+                                    <option value="1306">ECUATORIANA</option>
+                                    <option value="3029">EGIPCIA</option>
+                                    <option value="4041">EMIRATENSEA</option>
+                                    <option value="2035">ESCOCESA</option>
+                                    <option value="2040">ESLOVACA</option>
+                                    <option value="2010">ESPAÑOLA</option>
+                                    <option value="1102">ESTADOUNIDENSE</option>
+                                    <option value="2036">ESTONIO</option>
+                                    <option value="3011">ETIOPE</option>
+                                    <option value="4011">FILIPINA</option>
+                                    <option value="2011">FINLANDESA</option>
+                                    <option value="5005">FIYIANA</option>
+                                    <option value="2012">FRANCESA</option>
+                                    <option value="5006">FRANCOPOLINESIA</option>
+                                    <option value="3012">GABONESA</option>
+                                    <option value="3013">GAMBIANA</option>
+                                    <option value="3014">GHANESA</option>
+                                    <option value="2013">GIBRALTAREÑA</option>
+                                    <option value="2014">GRIEGA</option>
+                                    <option value="1406">GUADALUPENSE</option>
+                                    <option value="1207">GUATEMALTECA</option>
+                                    <option value="1312">GUAYANES</option>
+                                    <option value="3016">GUINEANA</option>
+                                    <option value="3015">GUINEANA</option>
+                                    <option value="1307">GUYANESA</option>
+                                    <option value="1407">HAITIANA</option>
+                                    <option value="2015">HOLANDESA</option>
+                                    <option value="1203">HONDUREÑA</option>
+                                    <option value="2016">HUNGARA</option>
+                                    <option value="4012">INDIA</option>
+                                    <option value="4013">INDONESIA</option>
+                                    <option value="4014">IRAKI</option>
+                                    <option value="4015">IRANI</option>
+                                    <option value="2017">IRLANDESA</option>
+                                    <option value="2018">ISLANDESA</option>
+                                    <option value="4016">ISRAELI</option>
+                                    <option value="2019">ITALIANA</option>
+                                    <option value="1409">JAMAIQUINA</option>
+                                    <option value="4017">JAPONESA</option>
+                                    <option value="4018">JORDANA</option>
+                                    <option value="3017">KENIATA</option>
+                                    <option value="4019">KUWAITI</option>
+                                    <option value="4020">LAOSIANA</option>
+                                    <option value="3018">LESOTENSE</option>
+                                    <option value="2037">LETONA</option>
+                                    <option value="4021">LIBANES</option>
+                                    <option value="3019">LIBERIANA</option>
+                                    <option value="3020">LIBIA</option>
+                                    <option value="2020">LIECHTENSTEINIANA</option>
+                                    <option value="2038">LITUANA</option>
+                                    <option value="2021">LUXEMBURGUESA</option>
+                                    <option value="3022">MALAWIANA</option>
+                                    <option value="4022">MALAYA</option>
+                                    <option value="4023">MALDIVA</option>
+                                    <option value="3035">MALGACHE</option>
+                                    <option value="3021">MALGACHE</option>
+                                    <option value="3023">MALI</option>
+                                    <option value="2022">MALTESA</option>
+                                    <option value="3008">MARFILEÑA</option>
+                                    <option value="3024">MARROQUI</option>
+                                    <option value="1410">MARTINIQUES</option>
+                                    <option value="3025">MAURICIANA</option>
+                                    <option value="3026">MAURITANA</option>
+                                    <option value="1103">MEXICANA</option>
+                                    <option value="2023">MONEGASCA</option>
+                                    <option value="4025">MONGOLA</option>
+                                    <option value="5002">NAURUANA</option>
+                                    <option value="5003">NEOZELANDES</option>
+                                    <option value="4026">NEPALI</option>
+                                    <option value="1204">NICARAGÜENSE</option>
+                                    <option value="3028">NIGERIANA</option>
+                                    <option value="3027">NIGERINA</option>
+                                    <option value="2024">NORUEGA</option>
+                                    <option value="4034">NORVIETNAMITA</option>
+                                    <option value="4024">OMANESA</option>
+                                    <option value="4027">PAKISTANI</option>
+                                    <option value="1404">PANAMEÃ‘A</option>
+                                    <option value="1205">PANAMEÑA</option>
+                                    <option value="1308">PARAGUAYA</option>
+                                    <option value="1309" selected="selected">PERUANA</option>
+                                    <option value="2025">POLACA</option>
+                                    <option value="2026">PORTUGUESA</option>
+                                    <option value="4038">POSESIONES EUROPEAS</option>
+                                    <option value="1411">PUERTORRIQUEÑA</option>
+                                    <option value="3030">RHODESIA</option>
+                                    <option value="3031">RUANDES</option>
+                                    <option value="2028">RUMANA</option>
+                                    <option value="2032">RUSA</option>
+                                    <option value="9676">RUSO</option>
+                                    <option value="3045">SAHARIANA</option>
+                                    <option value="1206">SALVADOREÑA</option>
+                                    <option value="2029">SAN MARINENSE</option>
+                                    <option value="5004">SAOMANA</option>
+                                    <option value="4002">SAUDITA</option>
+                                    <option value="3032">SENEGALES</option>
+                                    <option value="2041">SERBIA</option>
+                                    <option value="3033">SIERRALEONESA</option>
+                                    <option value="4028">SIKKIMESES</option>
+                                    <option value="4029">SINGAPURENSE</option>
+                                    <option value="4030">SIRIA</option>
+                                    <option value="3034">SOMALI</option>
+                                    <option value="3038">SUAZI</option>
+                                    <option value="3036">SUDAFRICANA</option>
+                                    <option value="3037">SUDANES</option>
+                                    <option value="2030">SUECA</option>
+                                    <option value="2031">SUIZA</option>
+                                    <option value="1313">SURINAMES</option>
+                                    <option value="4035">SURVIETNAMITA</option>
+                                    <option value="4031">TAILANDESA</option>
+                                    <option value="4032">TAIWANESA</option>
+                                    <option value="3039">TANZANA</option>
+                                    <option value="3040">TOGOLES</option>
+                                    <option value="1412">TRINITENSE</option>
+                                    <option value="3041">TUNECINA</option>
+                                    <option value="4033">TURCA</option>
+                                    <option value="9830">UCRANIANO</option>
+                                    <option value="3042">UGANDES</option>
+                                    <option value="1310">URUGUAYA</option>
+                                    <option value="2034">VATICANA</option>
+                                    <option value="1311">VENEZOLANA</option>
+                                    <option value="4043">VIETNAMITA</option>
+                                    <option value="4037">YEMENÍ</option>
+                                    <option value="4036">YEMENÍ</option>
+                                    <option value="2033">YUGOSLAVA</option>
+                                    <option value="3044">ZAIREÑA</option>
+                                    <option value="3043">ZAMBIANA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col s6">
+                                <div><label>Ocupacion</label></div>
+
+                            </div>
+                            <div class="col s6">
+                                <select id="ocupo" name="ocupo" class="browser-default ">
+                                    <option value="" selected="selected">Ninguno</option>
+                                    <option value="001">ABOGADO</option>
+                                    <option value="002">ACTOR / ARTISTA / ESCRITOR</option>
+                                    <option value="003">ACTUARIO</option>
+                                    <option value="004">ADMINISTRADOR</option>
+                                    <option value="005">ADUANERO/AGENTE DE ADUANAS/INS</option>
+                                    <option value="006">AEROMOZO/ AZAFATA</option>
+                                    <option value="007">AGENTE / INTERMEDIARIO / CORRE</option>
+                                    <option value="008">AGENTE DE BOLSA</option>
+                                    <option value="010">AGENTE DE TURISMO/VIAJES</option>
+                                    <option value="011">AGENTE/INTERMEDIARIO/CORREDOR</option>
+                                    <option value="012">AGRICULTOR / GANADERO Y AFINES</option>
+                                    <option value="013">ALBAÑIL / OBRERO / ELECTRICIST</option>
+                                    <option value="014">AMA DE CASA</option>
+                                    <option value="015">ANALISTAS / TÉCNICOS / PROGRAM</option>
+                                    <option value="016">APODERADO(A)</option>
+                                    <option value="019">ARQUITECTO</option>
+                                    <option value="021">ASISTENTE SOCIAL</option>
+                                    <option value="024">BACTERIÓLOGO / FARMACÓLOGO / B</option>
+                                    <option value="OT008">BIOLOGO</option>
+                                    <option value="028">CAMBISTA / COMPRA/VENTA DE MON</option>
+                                    <option value="OT004">CHEF</option>
+                                    <option value="COMER">COMERCIANTE</option>
+                                    <option value="036">COMERCIANTE / VENDEDOR</option>
+                                    <option value="OT005">COMUNICADOR</option>
+                                    <option value="037">CONDUCTOR / CHOFER / TAXISTA /</option>
+                                    <option value="039">CONSTRUCTOR</option>
+                                    <option value="040">CONTADOR</option>
+                                    <option value="041">CONTRATISTA</option>
+                                    <option value="042">CORTE Y CONFECCIÓN DE ROPA/ FA</option>
+                                    <option value="044">DECORADOR, DIBUJANTE, PUBLICIS</option>
+                                    <option value="045">DENTISTA / ODONTÓLOGO</option>
+                                    <option value="046">DEPORTISTA PROFESIONAL, ATLETA</option>
+                                    <option value="DIRECT">DIRECTOR</option>
+                                    <option value="DIGRA">DISEÑADOR GRAFICO</option>
+                                    <option value="047">DISTRIBUIDOR</option>
+                                    <option value="048">DOCENTE</option>
+                                    <option value="049">ECONOMISTA</option>
+                                    <option value="051">EMPLEADA (O) DEL HOGAR / NANA</option>
+                                    <option value="EMPL">EMPLEADO(A)</option>
+                                    <option value="115">EMPRESARIO</option>
+                                    <option value="052">EMPRESARIO EXPORTADOR/ EMPRESA</option>
+                                    <option value="078">ENFERMERO / OBSTETRIZ / PARAMÉ</option>
+                                    <option value="056">ESTUDIANTE</option>
+                                    <option value="FUNC">FUNCIONARIO(A)</option>
+                                    <option value="GEREN">GERENTE</option>
+                                    <option value="GEREAA">GERENTE ADJUNTO DE AREA</option>
+                                    <option value="GERENC">GERENTE COMERCIAL</option>
+                                    <option value="GERENA">GERENTE DE ADMINISTRACION</option>
+                                    <option value="GEREAR">GERENTE DE AREA</option>
+                                    <option value="GERVEN">GERENTE DE VENTAS</option>
+                                    <option value="GERENG">GERENTE GENERAL</option>
+                                    <option value="OT002">INDEPENDIENTE</option>
+                                    <option value="061">INGENIERO</option>
+                                    <option value="066">JUBILADO / PENSIONISTA</option>
+                                    <option value="068">LIQUIDADOR, RECLAMACIONES/SEGU</option>
+                                    <option value="070">MARTILLERO / SUBASTADOR</option>
+                                    <option value="071">MAYORISTA, COMERCIO AL POR MAY</option>
+                                    <option value="OT001">MECANICO</option>
+                                    <option value="073">MÉDICO / CIRUJANO</option>
+                                    <option value="075">MIEMBRO DE LA POLICÍA / FUERZA</option>
+                                    <option value="998">NO DECLARA</option>
+                                    <option value="OFTAL">OFTALMÓLOGO</option>
+                                    <option value="999">OTROS</option>
+                                    <option value="082">PERIODISTA</option>
+                                    <option value="085">PILOTO</option>
+                                    <option value="PRESID">PRESIDENTE DEL DIRECTORIO</option>
+                                    <option value="089">PRODUCTOR DE CINE / RADIO / TE</option>
+                                    <option value="092">PSICÓLOGO/ TERAPEUTA</option>
+                                    <option value="OT006">PUBLICISTA</option>
+                                    <option value="OT007">QUIMICO FARMACEUTICO</option>
+                                    <option value="REPRES">REPRESENTANTE</option>
+                                    <option value="099">SACERDOTE / MONJA / RELIGIOSO</option>
+                                    <option value="100">SECRETARIA, RECEPCIONISTA, TEL</option>
+                                    <option value="SUBG">SUB GERENTE</option>
+                                    <option value="GERENT">TITULAR - GERENTE</option>
+                                    <option value="OT003">TRADUCTORA</option>
+                                    <option value="TRANSP">TRANSPORTISTA</option>
+                                    <option value="112">VENDEDOR AMBULANTE</option>
+                                    <option value="113">VETERINARIO, ZOÓLOGO, ZOOTÉCNI</option>
+                                    <option value="114">VISITADOR MÉDICO</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col s6">
+                                <div><label>Cod. Pensionista</label></div>
+
+                            </div>
+                            <div class="col s6">
+                                <input placeholder="Cod. Pensionista" id="codpen" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <div><label>Tipo Pension</label></div>
+
+                            </div>
+                            <div class="col s6">
+                                <select name="tpension" class="browser-default " id="tpension">
+                                    <option value="JU" selected="">Jubilacion</option>
+                                    <option value="VI">Viudez</option>
+                                    <option value="CE">Cesantia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <center><strong for="">Datos del domicilio <i class="fa fa-home"
+                                    aria-hidden="true"></i></strong></center>
+                        <hr>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6"><label>País</label></div>
+                            <div class="col s6">
+                                <select id="cboIPPais_PO" name="cboIPPais_PO" class="browser-default valid"
+                                    aria-invalid="false"></select>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col s6"><label>Departamento</label></div>
+                            <div class="col s6">
+                                <select id="cboIPDepartamento" name="cboIPDepartamento" class="browser-default ">
+                                    <option value="01">AMAZONAS</option>
+                                    <option value="02">ANCASH</option>
+                                    <option value="03">APURIMAC</option>
+                                    <option value="04">AREQUIPA</option>
+                                    <option value="05">AYACUCHO</option>
+                                    <option value="06">CAJAMARCA</option>
+                                    <option value="07">CALLAO.PRV.CONST.</option>
+                                    <option value="08">CUZCO</option>
+                                    <option value="09">HUANCAVELICA</option>
+                                    <option value="10">HUANUCO</option>
+                                    <option value="11">ICA</option>
+                                    <option value="12">JUNIN</option>
+                                    <option value="13">LA LIBERTAD</option>
+                                    <option value="14">LAMBAYEQUE</option>
+                                    <option value="15" selected="selected">LIMA</option>
+                                    <option value="16">LORETO</option>
+                                    <option value="17">MADRE DE DIOS</option>
+                                    <option value="18">MOQUEGUA</option>
+                                    <option value="19">PASCO</option>
+                                    <option value="20">PIURA</option>
+                                    <option value="21">PUNO</option>
+                                    <option value="22">SAN MARTIN</option>
+                                    <option value="23">TACNA</option>
+                                    <option value="24">TUMBES</option>
+                                    <option value="25">UCAYALI</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6"><label>Provincia</label></div>
+                            <div class="col s6">
+                                <select id="cboIPProvincia" name="cboIPProvincia" class="browser-default ">
+                                    <option value="02">BARRANCA</option>
+                                    <option value="03">CAJATAMBO</option>
+                                    <option value="05">CAÑETE</option>
+                                    <option value="04">CANTA</option>
+                                    <option value="06">HUARAL</option>
+                                    <option value="07">HUAROCHIRI</option>
+                                    <option value="08">HUAURA</option>
+                                    <option value="01" selected="selected">LIMA</option>
+                                    <option value="09">OYON</option>
+                                    <option value="10">YAUYOS</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6"><label>Distrito</label></div>
+                            <div class="col s6">
+                                <select id="cboIPDIstrito" name="cboIPDIstrito" class="browser-default ">
+                                    <option value="02" selected="selected">ANCON</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input placeholder="Dirección" id="txtIPDireccion" type="text" class="form-control">
+                            </div>
+                        </div>
+
+
+                        <div id="DivDomicilioTB">
+                        </div>
+
+                        <!-- <div class="row">
+                             Modal
+                            <br />
+                            <div class="col s6">
+                                <button type="button" class="btn btn-primary" data-toggle="modalb" data-target="#modalDepartamento">
+                                    <i class="fas fa-plus">
+                                        <label style="color: white;font-family: arial;font-size: 13px;">Más</label>
+                                    </i>
+                                </button>
+                            </div>
+
+
+                        </div>-->
+
+
+                        <!--comienzo modal-->
+
+                        <div class="modalb fade" id="modalDepartamento" tabindex="-1" role="dialog"
+                            aria-labelledby="modalDepartamentoLabel" aria-hidden="true">
+                            <div class="modalb-dialog" role="document">
+                                <div class="modalb-content">
+                                    <div class="modalb-header">
+                                        <h5 class="modalb-title" id="modalDepartamentoTitle">Domicilio</h5>
+                                    </div>
+                                    <div class="modalb-body">
+
+                                        <!--<div class="row">
+                                            <div class="col s5"><label>País</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPPais_PO" name="cboIPPais_PO" class="browser-default valid" aria-invalid="false"></select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col s5"><label>Departamento</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPDepartamento" name="cboIPDepartamento" class="browser-default ">
+                                                    <option value="01">AMAZONAS</option>
+                                                    <option value="02">ANCASH</option>
+                                                    <option value="03">APURIMAC</option>
+                                                    <option value="04">AREQUIPA</option>
+                                                    <option value="05">AYACUCHO</option>
+                                                    <option value="06">CAJAMARCA</option>
+                                                    <option value="07">CALLAO.PRV.CONST.</option>
+                                                    <option value="08">CUZCO</option>
+                                                    <option value="09">HUANCAVELICA</option>
+                                                    <option value="10">HUANUCO</option>
+                                                    <option value="11">ICA</option>
+                                                    <option value="12">JUNIN</option>
+                                                    <option value="13">LA LIBERTAD</option>
+                                                    <option value="14">LAMBAYEQUE</option>
+                                                    <option value="15" selected="selected">LIMA</option>
+                                                    <option value="16">LORETO</option>
+                                                    <option value="17">MADRE DE DIOS</option>
+                                                    <option value="18">MOQUEGUA</option>
+                                                    <option value="19">PASCO</option>
+                                                    <option value="20">PIURA</option>
+                                                    <option value="21">PUNO</option>
+                                                    <option value="22">SAN MARTIN</option>
+                                                    <option value="23">TACNA</option>
+                                                    <option value="24">TUMBES</option>
+                                                    <option value="25">UCAYALI</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5"><label>Provincia</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPProvincia" name="cboIPProvincia" class="browser-default ">
+                                                    <option value="02">BARRANCA</option>
+                                                    <option value="03">CAJATAMBO</option>
+                                                    <option value="05">CAÑETE</option>
+                                                    <option value="04">CANTA</option>
+                                                    <option value="06">HUARAL</option>
+                                                    <option value="07">HUAROCHIRI</option>
+                                                    <option value="08">HUAURA</option>
+                                                    <option value="01" selected="selected">LIMA</option>
+                                                    <option value="09">OYON</option>
+                                                    <option value="10">YAUYOS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5"><label>Distrito</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPDIstrito" name="cboIPDIstrito" class="browser-default ">
+                                                    <option value="02" selected="selected">ANCON</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <input placeholder="Dirección" id="txtIPDireccion" type="text" class="form-control">
+                                            </div>
+                                        </div>-->
+                                        <div class="modalb-footer">
+                                            <button type="button" class="btn red lighten-1"
+                                                data-dismiss="modalb">Cerrar</button>
+                                            <button type="button" id="btnGrabarIPDir_po" name="btnGrabarIPDir_po"
+                                                class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Termino del Modal-->
+                        <!--comienzo modal-->
+
+                        <div class="modalb fade" id="ModalEdicionDomicilio" tabindex="-1" role="dialog"
+                            aria-labelledby="modalDepartamentoLabel" aria-hidden="true">
+                            <div class="modalb-dialog" role="document">
+                                <div class="modalb-content">
+                                    <div class="modalb-header">
+                                        <h5 class="modalb-title" id="modalDepartamentoTitle">Domicilio</h5>
+                                    </div>
+                                    <div class="modalb-body">
+                                        <input placeholder="Dirección" id="txtCodigoDomicilio" type="text"
+                                            class="form-control">
+                                        <div class="row">
+                                            <div class="col s5"><label>País</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPPaisEdicion" name="cboIPPaisEdicion"
+                                                    class="browser-default valid" aria-invalid="false"></select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col s5"><label>Departamento</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPDepartamentoEdicion" name="cboIPDepartamentoEdicion"
+                                                    class="browser-default "></select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5"><label>Provincia</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPProvinciaEdicion" name="cboIPProvinciaEdicion"
+                                                    class="browser-default "></select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s5"><label>Distrito</label></div>
+                                            <div class="col s7">
+                                                <select id="cboIPDIstritoEdicion" name="cboIPDIstritoEdicion"
+                                                    class="browser-default ">
+                                                    <option value="02" selected="selected">ANCON</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <input placeholder="Dirección" id="txtIPDireccionEdicion"
+                                                    name="txtIPDireccionEdicion" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="modalb-footer">
+                                            <button type="button" class="btn red lighten-1"
+                                                data-dismiss="modalb">Cerrar</button>
+                                            <button type="button" id="btnGrabarIPDir_po_edit"
+                                                name="btnGrabarIPDir_po_edit" class="btn btn-primary"
+                                                data-dismiss="modalb">Grabar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Termino del Modal-->
+                        <!--poderante adicional-->
+                        <!--/////////////////////////////////////
+                        ////////////////////////////////////////////
+                        /////////////////////////////////////-->
+
+                        <div id="PO_ADD">
+                            <div class="card-content p-3">
+                                <h6><strong>Datos del Poderdante</strong></h6>
+
+
+
+                                <br />
+
+                                <div class="row">
+
+                                    <div class="col s1" style="margin-top:3px;"><label>Doc.</label></div>
+
+                                    <div class="col s4">
+                                        <select class="browser-default" style="margin-left:10px;"
+                                            id="CBO_T_DOC_PO_SM_ADD"></select>
+
+
+
+                                    </div>
+
+
+                                    <div class="col s5">
+
+                                        <div class="cold s6">
+                                            <input placeholder="N° Doc" id="TXT_N_PSM_ADD" name="TXT_N_PSM_ADD"
+                                                type="number" class="form-control">
+                                            <input placeholder="N° Doc" id="autocod_add" name="autocod_add"
+                                                type="hidden" class="form-control">
+                                        </div>
+
+                                    </div>
+                                    <div class="cold s2" style="font-size:28px;">
+                                        <a class="fas fa-search prefix" id="buscarapo_add"
+                                            href="javascript:FnBuscarPerPadre_add();"></a>
+                                    </div>
+
+
+
+                                </div>
+
+
+
+                                <div class="row">
+
+                                    <div class="col s6">
+                                        <div><label>Nombres</label></div>
+
+                                    </div>
+
+
+
+                                    <div class="col s6">
+                                        <input placeholder="Nombres" id="txtNombresP_ADD" name="txtNombresP" type="text"
+                                            class="form-control col s12">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col s6">
+                                        <div><label>Apellido Pat.</label></div>
+
+                                    </div>
+                                    <div class="col s6">
+                                        <input placeholder="A.Paterno" id="ApellidoPaterno_ADD" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6">
+
+                                        <div><label>Apellido Mat.</label></div>
+                                    </div>
+                                    <div class="col s6">
+                                        <input placeholder="A.Materno" id="ApellidoMaterno_ADD" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col s6">
+
+                                        <div><label>Correo Electr.</label></div>
+                                    </div>
+                                    <div class="col s6">
+                                        <input placeholder="E-mail" id="Email_ADD" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col s6">
+                                        <div><label>Telef.</label></div>
+
+                                    </div>
+                                    <div class="col s6">
+                                        <input placeholder="Telefono" id="telefono_po_ADD" type="number"
+                                            class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col s6"><label>Estado Civil</label></div>
+                                    <div class="col s6">
+                                        <select class="browser-default " id="cboEstadoCivil_PO_ADD">
+                                            <option value="" selected="selected">(Ninguno)</option>
+                                            <option value="06">(NO DEFINIDO)</option>
+                                            <option value="08">CASADO(A)</option>
+                                            <option value="10">DIVORCIADO(A)</option>
+                                            <option value="13">SEPARACION PATRIM.</option>
+                                            <option value="11">SEPARADO(A)</option>
+                                            <option value="07">SOLTERO(A)</option>
+                                            <option value="12">UNION LIBRE</option>
+                                            <option value="09">VIUDO(A)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6"><label>Nacionalidad</label></div>
+                                    <div class="col s6">
+                                        <select name="cboNacionalidad" class="browser-default "
+                                            id="cboNacionalidad_PO_ADD">
+                                            <option value="4001">AFGANA</option>
+                                            <option value="2001">ALBANES</option>
+                                            <option value="2002">ALEMANA</option>
+                                            <option value="2003">ALEMANA</option>
+                                            <option value="2004">ANDORRANO</option>
+                                            <option value="1401">ANTILLANA</option>
+                                            <option value="1408">ANTILLANA</option>
+                                            <option value="3002">ARGELINA</option>
+                                            <option value="1301">ARGENTINA</option>
+                                            <option value="5001">AUSTRALIANA</option>
+                                            <option value="2005">AUSTRIACA</option>
+                                            <option value="4003">BAHREINI</option>
+                                            <option value="2006">BELGA</option>
+                                            <option value="1202">BELICEÑA</option>
+                                            <option value="4039">BENGALÍ</option>
+                                            <option value="3010">BENINES</option>
+                                            <option value="1402">BERMUDEÑA</option>
+                                            <option value="4004">BIRMANA</option>
+                                            <option value="1302">BOLIVIANA</option>
+                                            <option value="3003">BOTSWANES</option>
+                                            <option value="1303">BRASILEÑA</option>
+                                            <option value="2027">BRITANICA</option>
+                                            <option value="4040">BRUNEANA</option>
+                                            <option value="2007">BULGARA</option>
+                                            <option value="3001">BURKINES</option>
+                                            <option value="3004">BURUNDIANA</option>
+                                            <option value="4005">BUTANESA</option>
+                                            <option value="4006">CAMBOYANA</option>
+                                            <option value="3005">CAMERUNESA</option>
+                                            <option value="1101">CANADIENSE</option>
+                                            <option value="4007">CEILANESA</option>
+                                            <option value="3006">CENTROAFRICANA</option>
+                                            <option value="3009">CHADIANA</option>
+                                            <option value="2008">CHECOSLOVACA</option>
+                                            <option value="1305">CHILENA</option>
+                                            <option value="4009">CHINA</option>
+                                            <option value="4010">CHIPRIOTA</option>
+                                            <option value="1304">COLOMBIANA</option>
+                                            <option value="3007">CONGOLEÑA</option>
+                                            <option value="4008">COREANA</option>
+                                            <option value="4042">CORERANA</option>
+                                            <option value="1201">COSTARRICENSE</option>
+                                            <option value="2039">CROATA</option>
+                                            <option value="1403">CUBANA</option>
+                                            <option value="2009">DANESA</option>
+                                            <option value="1413">DOMINICANA</option>
+                                            <option value="1405">DOMINICANA</option>
+                                            <option value="1306">ECUATORIANA</option>
+                                            <option value="3029">EGIPCIA</option>
+                                            <option value="4041">EMIRATENSEA</option>
+                                            <option value="2035">ESCOCESA</option>
+                                            <option value="2040">ESLOVACA</option>
+                                            <option value="2010">ESPAÑOLA</option>
+                                            <option value="1102">ESTADOUNIDENSE</option>
+                                            <option value="2036">ESTONIO</option>
+                                            <option value="3011">ETIOPE</option>
+                                            <option value="4011">FILIPINA</option>
+                                            <option value="2011">FINLANDESA</option>
+                                            <option value="5005">FIYIANA</option>
+                                            <option value="2012">FRANCESA</option>
+                                            <option value="5006">FRANCOPOLINESIA</option>
+                                            <option value="3012">GABONESA</option>
+                                            <option value="3013">GAMBIANA</option>
+                                            <option value="3014">GHANESA</option>
+                                            <option value="2013">GIBRALTAREÑA</option>
+                                            <option value="2014">GRIEGA</option>
+                                            <option value="1406">GUADALUPENSE</option>
+                                            <option value="1207">GUATEMALTECA</option>
+                                            <option value="1312">GUAYANES</option>
+                                            <option value="3016">GUINEANA</option>
+                                            <option value="3015">GUINEANA</option>
+                                            <option value="1307">GUYANESA</option>
+                                            <option value="1407">HAITIANA</option>
+                                            <option value="2015">HOLANDESA</option>
+                                            <option value="1203">HONDUREÑA</option>
+                                            <option value="2016">HUNGARA</option>
+                                            <option value="4012">INDIA</option>
+                                            <option value="4013">INDONESIA</option>
+                                            <option value="4014">IRAKI</option>
+                                            <option value="4015">IRANI</option>
+                                            <option value="2017">IRLANDESA</option>
+                                            <option value="2018">ISLANDESA</option>
+                                            <option value="4016">ISRAELI</option>
+                                            <option value="2019">ITALIANA</option>
+                                            <option value="1409">JAMAIQUINA</option>
+                                            <option value="4017">JAPONESA</option>
+                                            <option value="4018">JORDANA</option>
+                                            <option value="3017">KENIATA</option>
+                                            <option value="4019">KUWAITI</option>
+                                            <option value="4020">LAOSIANA</option>
+                                            <option value="3018">LESOTENSE</option>
+                                            <option value="2037">LETONA</option>
+                                            <option value="4021">LIBANES</option>
+                                            <option value="3019">LIBERIANA</option>
+                                            <option value="3020">LIBIA</option>
+                                            <option value="2020">LIECHTENSTEINIANA</option>
+                                            <option value="2038">LITUANA</option>
+                                            <option value="2021">LUXEMBURGUESA</option>
+                                            <option value="3022">MALAWIANA</option>
+                                            <option value="4022">MALAYA</option>
+                                            <option value="4023">MALDIVA</option>
+                                            <option value="3035">MALGACHE</option>
+                                            <option value="3021">MALGACHE</option>
+                                            <option value="3023">MALI</option>
+                                            <option value="2022">MALTESA</option>
+                                            <option value="3008">MARFILEÑA</option>
+                                            <option value="3024">MARROQUI</option>
+                                            <option value="1410">MARTINIQUES</option>
+                                            <option value="3025">MAURICIANA</option>
+                                            <option value="3026">MAURITANA</option>
+                                            <option value="1103">MEXICANA</option>
+                                            <option value="2023">MONEGASCA</option>
+                                            <option value="4025">MONGOLA</option>
+                                            <option value="5002">NAURUANA</option>
+                                            <option value="5003">NEOZELANDES</option>
+                                            <option value="4026">NEPALI</option>
+                                            <option value="1204">NICARAGÜENSE</option>
+                                            <option value="3028">NIGERIANA</option>
+                                            <option value="3027">NIGERINA</option>
+                                            <option value="2024">NORUEGA</option>
+                                            <option value="4034">NORVIETNAMITA</option>
+                                            <option value="4024">OMANESA</option>
+                                            <option value="4027">PAKISTANI</option>
+                                            <option value="1404">PANAMEÃ‘A</option>
+                                            <option value="1205">PANAMEÑA</option>
+                                            <option value="1308">PARAGUAYA</option>
+                                            <option value="1309" selected="selected">PERUANA</option>
+                                            <option value="2025">POLACA</option>
+                                            <option value="2026">PORTUGUESA</option>
+                                            <option value="4038">POSESIONES EUROPEAS</option>
+                                            <option value="1411">PUERTORRIQUEÑA</option>
+                                            <option value="3030">RHODESIA</option>
+                                            <option value="3031">RUANDES</option>
+                                            <option value="2028">RUMANA</option>
+                                            <option value="2032">RUSA</option>
+                                            <option value="9676">RUSO</option>
+                                            <option value="3045">SAHARIANA</option>
+                                            <option value="1206">SALVADOREÑA</option>
+                                            <option value="2029">SAN MARINENSE</option>
+                                            <option value="5004">SAOMANA</option>
+                                            <option value="4002">SAUDITA</option>
+                                            <option value="3032">SENEGALES</option>
+                                            <option value="2041">SERBIA</option>
+                                            <option value="3033">SIERRALEONESA</option>
+                                            <option value="4028">SIKKIMESES</option>
+                                            <option value="4029">SINGAPURENSE</option>
+                                            <option value="4030">SIRIA</option>
+                                            <option value="3034">SOMALI</option>
+                                            <option value="3038">SUAZI</option>
+                                            <option value="3036">SUDAFRICANA</option>
+                                            <option value="3037">SUDANES</option>
+                                            <option value="2030">SUECA</option>
+                                            <option value="2031">SUIZA</option>
+                                            <option value="1313">SURINAMES</option>
+                                            <option value="4035">SURVIETNAMITA</option>
+                                            <option value="4031">TAILANDESA</option>
+                                            <option value="4032">TAIWANESA</option>
+                                            <option value="3039">TANZANA</option>
+                                            <option value="3040">TOGOLES</option>
+                                            <option value="1412">TRINITENSE</option>
+                                            <option value="3041">TUNECINA</option>
+                                            <option value="4033">TURCA</option>
+                                            <option value="9830">UCRANIANO</option>
+                                            <option value="3042">UGANDES</option>
+                                            <option value="1310">URUGUAYA</option>
+                                            <option value="2034">VATICANA</option>
+                                            <option value="1311">VENEZOLANA</option>
+                                            <option value="4043">VIETNAMITA</option>
+                                            <option value="4037">YEMENÍ</option>
+                                            <option value="4036">YEMENÍ</option>
+                                            <option value="2033">YUGOSLAVA</option>
+                                            <option value="3044">ZAIREÑA</option>
+                                            <option value="3043">ZAMBIANA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6"><label>Ocupación</label></div>
+                                    <div class="col s6">
+                                        <select id="cboTVOcupacion_PO_ADD" name="cboTVOcupacion_PO"
+                                            class="browser-default ">
+                                            <option value="" selected="selected">Ninguno</option>
+                                            <option value="001">ABOGADO</option>
+                                            <option value="002">ACTOR / ARTISTA / ESCRITOR</option>
+                                            <option value="003">ACTUARIO</option>
+                                            <option value="004">ADMINISTRADOR</option>
+                                            <option value="005">ADUANERO/AGENTE DE ADUANAS/INS</option>
+                                            <option value="006">AEROMOZO/ AZAFATA</option>
+                                            <option value="007">AGENTE / INTERMEDIARIO / CORRE</option>
+                                            <option value="008">AGENTE DE BOLSA</option>
+                                            <option value="010">AGENTE DE TURISMO/VIAJES</option>
+                                            <option value="011">AGENTE/INTERMEDIARIO/CORREDOR</option>
+                                            <option value="012">AGRICULTOR / GANADERO Y AFINES</option>
+                                            <option value="013">ALBAÑIL / OBRERO / ELECTRICIST</option>
+                                            <option value="014">AMA DE CASA</option>
+                                            <option value="015">ANALISTAS / TÉCNICOS / PROGRAM</option>
+                                            <option value="APODER">APODERADO(A)</option>
+                                            <option value="019">ARQUITECTO</option>
+                                            <option value="021">ASISTENTE SOCIAL</option>
+                                            <option value="024">BACTERIÓLOGO / FARMACÓLOGO / B</option>
+                                            <option value="OT008">BIOLOGO</option>
+                                            <option value="028">CAMBISTA / COMPRA/VENTA DE MON</option>
+                                            <option value="OT004">CHEF</option>
+                                            <option value="COMER">COMERCIANTE</option>
+                                            <option value="036">COMERCIANTE / VENDEDOR</option>
+                                            <option value="OT005">COMUNICADOR</option>
+                                            <option value="037">CONDUCTOR / CHOFER / TAXISTA /</option>
+                                            <option value="039">CONSTRUCTOR</option>
+                                            <option value="040">CONTADOR</option>
+                                            <option value="041">CONTRATISTA</option>
+                                            <option value="042">CORTE Y CONFECCIÓN DE ROPA/ FA</option>
+                                            <option value="044">DECORADOR, DIBUJANTE, PUBLICIS</option>
+                                            <option value="045">DENTISTA / ODONTÓLOGO</option>
+                                            <option value="046">DEPORTISTA PROFESIONAL, ATLETA</option>
+                                            <option value="DIRECT">DIRECTOR</option>
+                                            <option value="DIGRA">DISEÑADOR GRAFICO</option>
+                                            <option value="047">DISTRIBUIDOR</option>
+                                            <option value="048">DOCENTE</option>
+                                            <option value="049">ECONOMISTA</option>
+                                            <option value="051">EMPLEADA (O) DEL HOGAR / NANA</option>
+                                            <option value="EMPL">EMPLEADO(A)</option>
+                                            <option value="115">EMPRESARIO</option>
+                                            <option value="052">EMPRESARIO EXPORTADOR/ EMPRESA</option>
+                                            <option value="078">ENFERMERO / OBSTETRIZ / PARAMÉ</option>
+                                            <option value="056">ESTUDIANTE</option>
+                                            <option value="FUNC">FUNCIONARIO(A)</option>
+                                            <option value="GEREN">GERENTE</option>
+                                            <option value="GEREAA">GERENTE ADJUNTO DE AREA</option>
+                                            <option value="GERENC">GERENTE COMERCIAL</option>
+                                            <option value="GERENA">GERENTE DE ADMINISTRACION</option>
+                                            <option value="GEREAR">GERENTE DE AREA</option>
+                                            <option value="GERVEN">GERENTE DE VENTAS</option>
+                                            <option value="GERENG">GERENTE GENERAL</option>
+                                            <option value="OT002">INDEPENDIENTE</option>
+                                            <option value="061">INGENIERO</option>
+                                            <option value="066">JUBILADO / PENSIONISTA</option>
+                                            <option value="068">LIQUIDADOR, RECLAMACIONES/SEGU</option>
+                                            <option value="070">MARTILLERO / SUBASTADOR</option>
+                                            <option value="071">MAYORISTA, COMERCIO AL POR MAY</option>
+                                            <option value="OT001">MECANICO</option>
+                                            <option value="073">MÉDICO / CIRUJANO</option>
+                                            <option value="075">MIEMBRO DE LA POLICÍA / FUERZA</option>
+                                            <option value="998">NO DECLARA</option>
+                                            <option value="OFTAL">OFTALMÓLOGO</option>
+                                            <option value="999">OTROS</option>
+                                            <option value="082">PERIODISTA</option>
+                                            <option value="085">PILOTO</option>
+                                            <option value="PRESID">PRESIDENTE DEL DIRECTORIO</option>
+                                            <option value="089">PRODUCTOR DE CINE / RADIO / TE</option>
+                                            <option value="092">PSICÓLOGO/ TERAPEUTA</option>
+                                            <option value="OT006">PUBLICISTA</option>
+                                            <option value="OT007">QUIMICO FARMACEUTICO</option>
+                                            <option value="REPRES">REPRESENTANTE</option>
+                                            <option value="099">SACERDOTE / MONJA / RELIGIOSO</option>
+                                            <option value="100">SECRETARIA, RECEPCIONISTA, TEL</option>
+                                            <option value="SUBG">SUB GERENTE</option>
+                                            <option value="GERENT">TITULAR - GERENTE</option>
+                                            <option value="OT003">TRADUCTORA</option>
+                                            <option value="TRANSP">TRANSPORTISTA</option>
+                                            <option value="112">VENDEDOR AMBULANTE</option>
+                                            <option value="113">VETERINARIO, ZOÓLOGO, ZOOTÉCNI</option>
+                                            <option value="114">VISITADOR MÉDICO</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <!--<div class="row ">
+                                    <div class="col <s></s>7"><label>Poderante Adicional</label></div>
+                                    <div class="col s5">
+                                        <div class="switch">
+                                            <label>
+                                                No
+                                                <input type="checkbox" id="chbpoderante_add" name="chbpoderante_add">
+                                                <span class="lever"></span>
+                                                Si
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <br />
+                                <div>
+
+
+
+
+
+                                </div>
+
+                                <div class="row">
+                                    <!-- Modal-->
+                                    <br />
+                                    <div class="col s6">
+                                        <button type="button" class="btn btn-primary" data-toggle="modalb_ADD"
+                                            data-target="#modalDepartamento_ADD">
+                                            <i class="fas fa-plus">
+                                                <label style="color: white;
+                                                font-family: arial;
+                                                font-size: 13px;">Más</label>
+                                            </i>
+                                        </button>
+
+
+                                    </div>
+
+
+                                </div>
+
+                                <!--comienzo modal-->
+
+
+                            </div>
+
+
+                        </div>
+                        <!--ULTIMO ID-->
+
+
+                    </div>
+                </div>
+            </form>
+
+
+
+
+            <!-- FIN DATOS DEL PoderDante -->
+            <!-- DATOS DE Apoderado -->
+            <!--<div class="row">
+
+                <div class="col s2" style="margin-top:3px;"><label>Doc.</label></div>
+
+                <div class="col s4">
+                    <select class="browser-default" id="CboTipoDocumento">
+                        <option value="A">DNI</option>
+                        <option value="P">C. EXTRANJ</option>
+                        <option value="M">PASAPORTE</option>
+                        <option value="M">T. IDENTIDAD</option>
+                    </select>
+                </div>
+
+
+                <div class="col s4">
+                    <input placeholder="N° Doc" id="txtNumeroDocP" name="txtNumeroDocP" type="text" class="form-control">
+
+                </div>
+                <div class="col s2" style="font-size:25px;">
+                    <a class="fas fa-search prefix" href="javascript:FnBuscarPerPadre();"></a>
+                </div>
+
+            </div>-->
+
+
+
+
+
+
+            <form id="DivCSDatosComprador" name="DivCSDatosComprador">
+                <div class="col s12 " >
+                    <div class="card">
+                        <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                            <span class="font-weight-bold red darken-4 colorwhite" style="font-size: 16px;">Poderes -
+                                Cobro de pensión ONP</span>
+                        </div>
+                        <div class="card-content p-3">
+
+                            <h6><strong>Datos del Apoderado</strong></h6>
+                            <br />
+                            <div class="row">
+
+                                <div class="col s2" style="margin-top:3px;"><label>Doc.</label></div>
+
+                                <div class="col s4">
+                                    <select class="browser-default" id="CBO_T_APO">
+                                        <option value="A">DNI</option>
+                                        <option value="P">C. EXTRANJ</option>
+                                        <option value="M">PASAPORTE</option>
+                                        <option value="M">T. IDENTIDAD</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="col s4">
+                                    <input placeholder="N° Doc" id="TXT_N_COMPRA" name="TXT_N_COMPRA" type="number"
+                                        class="form-control">
+
+                                </div>
+                                <div class="col s2" style="font-size:25px;">
+                                    <a class="fas fa-search prefix" href="javascript:FnBuscarApo();"></a>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col s6">
+                                    <div><label>Nombres</label></div>
+
+                                </div>
+
+
+
+                                <div class="col s6">
+                                    <input placeholder="Nombres" id="txtNombresPApo" name="txtNombresPApo" type="text"
+                                        class="form-control col s12">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <div><label>Apellido Pat.</label></div>
+
+                                </div>
+                                <div class="col s6">
+                                    <input placeholder="A.Paterno" id="ApellidoPaternoApo" name="ApellidoPaternoApo" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+
+                                    <div><label>Apellido Mat.</label></div>
+                                </div>
+                                <div class="col s6">
+                                    <input placeholder="A.Materno" id="ApellidoMaternoApo" name="ApellidoMaternoApo" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s6">
+
+                                    <div><label>Correo Electr.</label></div>
+                                </div>
+                                <div class="col s6">
+                                    <input placeholder="E-mail" id="EmailApo" name="EmailApo" type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col s6">
+                                    <div><label>Telef.</label></div>
+
+                                </div>
+                                <div class="col s6">
+                                    <input placeholder="Telefono" id="TelApo" name="TelApo" type="number" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s6"><label>Estado Civil</label></div>
+                                <div class="col s6">
+                                    <select class="browser-default " id="cboEstadoCivil_AP">
+                                        <option value="">(Ninguno)</option>
+                                        <option value="06" selected="selected">(NO DEFINIDO)</option>
+                                        <option value="08">CASADO(A)</option>
+                                        <option value="10">DIVORCIADO(A)</option>
+                                        <option value="13">SEPARACION PATRIM.</option>
+                                        <option value="11">SEPARADO(A)</option>
+                                        <option value="07">SOLTERO(A)</option>
+                                        <option value="12">UNION LIBRE</option>
+                                        <option value="09">VIUDO(A)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6"><label>Nacionalidad</label></div>
+                                <div class="col s6">
+                                    <select name="cboNacionalidadApo" class="browser-default " id="cboNacionalidad_AP">
+                                        <option value="4001">AFGANA</option>
+                                        <option value="2001">ALBANES</option>
+                                        <option value="2002">ALEMANA</option>
+                                        <option value="2003">ALEMANA</option>
+                                        <option value="2004">ANDORRANO</option>
+                                        <option value="1401">ANTILLANA</option>
+                                        <option value="1408">ANTILLANA</option>
+                                        <option value="3002">ARGELINA</option>
+                                        <option value="1301">ARGENTINA</option>
+                                        <option value="5001">AUSTRALIANA</option>
+                                        <option value="2005">AUSTRIACA</option>
+                                        <option value="4003">BAHREINI</option>
+                                        <option value="2006">BELGA</option>
+                                        <option value="1202">BELICEÑA</option>
+                                        <option value="4039">BENGALÍ</option>
+                                        <option value="3010">BENINES</option>
+                                        <option value="1402">BERMUDEÑA</option>
+                                        <option value="4004">BIRMANA</option>
+                                        <option value="1302">BOLIVIANA</option>
+                                        <option value="3003">BOTSWANES</option>
+                                        <option value="1303">BRASILEÑA</option>
+                                        <option value="2027">BRITANICA</option>
+                                        <option value="4040">BRUNEANA</option>
+                                        <option value="2007">BULGARA</option>
+                                        <option value="3001">BURKINES</option>
+                                        <option value="3004">BURUNDIANA</option>
+                                        <option value="4005">BUTANESA</option>
+                                        <option value="4006">CAMBOYANA</option>
+                                        <option value="3005">CAMERUNESA</option>
+                                        <option value="1101">CANADIENSE</option>
+                                        <option value="4007">CEILANESA</option>
+                                        <option value="3006">CENTROAFRICANA</option>
+                                        <option value="3009">CHADIANA</option>
+                                        <option value="2008">CHECOSLOVACA</option>
+                                        <option value="1305">CHILENA</option>
+                                        <option value="4009">CHINA</option>
+                                        <option value="4010">CHIPRIOTA</option>
+                                        <option value="1304">COLOMBIANA</option>
+                                        <option value="3007">CONGOLEÑA</option>
+                                        <option value="4008">COREANA</option>
+                                        <option value="4042">CORERANA</option>
+                                        <option value="1201">COSTARRICENSE</option>
+                                        <option value="2039">CROATA</option>
+                                        <option value="1403">CUBANA</option>
+                                        <option value="2009">DANESA</option>
+                                        <option value="1413">DOMINICANA</option>
+                                        <option value="1405">DOMINICANA</option>
+                                        <option value="1306">ECUATORIANA</option>
+                                        <option value="3029">EGIPCIA</option>
+                                        <option value="4041">EMIRATENSEA</option>
+                                        <option value="2035">ESCOCESA</option>
+                                        <option value="2040">ESLOVACA</option>
+                                        <option value="2010">ESPAÑOLA</option>
+                                        <option value="1102">ESTADOUNIDENSE</option>
+                                        <option value="2036">ESTONIO</option>
+                                        <option value="3011">ETIOPE</option>
+                                        <option value="4011">FILIPINA</option>
+                                        <option value="2011">FINLANDESA</option>
+                                        <option value="5005">FIYIANA</option>
+                                        <option value="2012">FRANCESA</option>
+                                        <option value="5006">FRANCOPOLINESIA</option>
+                                        <option value="3012">GABONESA</option>
+                                        <option value="3013">GAMBIANA</option>
+                                        <option value="3014">GHANESA</option>
+                                        <option value="2013">GIBRALTAREÑA</option>
+                                        <option value="2014">GRIEGA</option>
+                                        <option value="1406">GUADALUPENSE</option>
+                                        <option value="1207">GUATEMALTECA</option>
+                                        <option value="1312">GUAYANES</option>
+                                        <option value="3016">GUINEANA</option>
+                                        <option value="3015">GUINEANA</option>
+                                        <option value="1307">GUYANESA</option>
+                                        <option value="1407">HAITIANA</option>
+                                        <option value="2015">HOLANDESA</option>
+                                        <option value="1203">HONDUREÑA</option>
+                                        <option value="2016">HUNGARA</option>
+                                        <option value="4012">INDIA</option>
+                                        <option value="4013">INDONESIA</option>
+                                        <option value="4014">IRAKI</option>
+                                        <option value="4015">IRANI</option>
+                                        <option value="2017">IRLANDESA</option>
+                                        <option value="2018">ISLANDESA</option>
+                                        <option value="4016">ISRAELI</option>
+                                        <option value="2019">ITALIANA</option>
+                                        <option value="1409">JAMAIQUINA</option>
+                                        <option value="4017">JAPONESA</option>
+                                        <option value="4018">JORDANA</option>
+                                        <option value="3017">KENIATA</option>
+                                        <option value="4019">KUWAITI</option>
+                                        <option value="4020">LAOSIANA</option>
+                                        <option value="3018">LESOTENSE</option>
+                                        <option value="2037">LETONA</option>
+                                        <option value="4021">LIBANES</option>
+                                        <option value="3019">LIBERIANA</option>
+                                        <option value="3020">LIBIA</option>
+                                        <option value="2020">LIECHTENSTEINIANA</option>
+                                        <option value="2038">LITUANA</option>
+                                        <option value="2021">LUXEMBURGUESA</option>
+                                        <option value="3022">MALAWIANA</option>
+                                        <option value="4022">MALAYA</option>
+                                        <option value="4023">MALDIVA</option>
+                                        <option value="3035">MALGACHE</option>
+                                        <option value="3021">MALGACHE</option>
+                                        <option value="3023">MALI</option>
+                                        <option value="2022">MALTESA</option>
+                                        <option value="3008">MARFILEÑA</option>
+                                        <option value="3024">MARROQUI</option>
+                                        <option value="1410">MARTINIQUES</option>
+                                        <option value="3025">MAURICIANA</option>
+                                        <option value="3026">MAURITANA</option>
+                                        <option value="1103">MEXICANA</option>
+                                        <option value="2023">MONEGASCA</option>
+                                        <option value="4025">MONGOLA</option>
+                                        <option value="5002">NAURUANA</option>
+                                        <option value="5003">NEOZELANDES</option>
+                                        <option value="4026">NEPALI</option>
+                                        <option value="1204">NICARAGÜENSE</option>
+                                        <option value="3028">NIGERIANA</option>
+                                        <option value="3027">NIGERINA</option>
+                                        <option value="2024">NORUEGA</option>
+                                        <option value="4034">NORVIETNAMITA</option>
+                                        <option value="4024">OMANESA</option>
+                                        <option value="4027">PAKISTANI</option>
+                                        <option value="1404">PANAMEÃ‘A</option>
+                                        <option value="1205">PANAMEÑA</option>
+                                        <option value="1308">PARAGUAYA</option>
+                                        <option value="1309" selected="selected">PERUANA</option>
+                                        <option value="2025">POLACA</option>
+                                        <option value="2026">PORTUGUESA</option>
+                                        <option value="4038">POSESIONES EUROPEAS</option>
+                                        <option value="1411">PUERTORRIQUEÑA</option>
+                                        <option value="3030">RHODESIA</option>
+                                        <option value="3031">RUANDES</option>
+                                        <option value="2028">RUMANA</option>
+                                        <option value="2032">RUSA</option>
+                                        <option value="9676">RUSO</option>
+                                        <option value="3045">SAHARIANA</option>
+                                        <option value="1206">SALVADOREÑA</option>
+                                        <option value="2029">SAN MARINENSE</option>
+                                        <option value="5004">SAOMANA</option>
+                                        <option value="4002">SAUDITA</option>
+                                        <option value="3032">SENEGALES</option>
+                                        <option value="2041">SERBIA</option>
+                                        <option value="3033">SIERRALEONESA</option>
+                                        <option value="4028">SIKKIMESES</option>
+                                        <option value="4029">SINGAPURENSE</option>
+                                        <option value="4030">SIRIA</option>
+                                        <option value="3034">SOMALI</option>
+                                        <option value="3038">SUAZI</option>
+                                        <option value="3036">SUDAFRICANA</option>
+                                        <option value="3037">SUDANES</option>
+                                        <option value="2030">SUECA</option>
+                                        <option value="2031">SUIZA</option>
+                                        <option value="1313">SURINAMES</option>
+                                        <option value="4035">SURVIETNAMITA</option>
+                                        <option value="4031">TAILANDESA</option>
+                                        <option value="4032">TAIWANESA</option>
+                                        <option value="3039">TANZANA</option>
+                                        <option value="3040">TOGOLES</option>
+                                        <option value="1412">TRINITENSE</option>
+                                        <option value="3041">TUNECINA</option>
+                                        <option value="4033">TURCA</option>
+                                        <option value="9830">UCRANIANO</option>
+                                        <option value="3042">UGANDES</option>
+                                        <option value="1310">URUGUAYA</option>
+                                        <option value="2034">VATICANA</option>
+                                        <option value="1311">VENEZOLANA</option>
+                                        <option value="4043">VIETNAMITA</option>
+                                        <option value="4037">YEMENÍ</option>
+                                        <option value="4036">YEMENÍ</option>
+                                        <option value="2033">YUGOSLAVA</option>
+                                        <option value="3044">ZAIREÑA</option>
+                                        <option value="3043">ZAMBIANA</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col s6">
+                                    <div><label>Ocupacion</label></div>
+
+                                </div>
+                                <div class="col s6">
+                                    <select id="ocuapo" name="ocuapo" class="browser-default ">
+                                        <option value="" selected="selected">Ninguno</option>
+                                        <option value="001">ABOGADO</option>
+                                        <option value="002">ACTOR / ARTISTA / ESCRITOR</option>
+                                        <option value="003">ACTUARIO</option>
+                                        <option value="004">ADMINISTRADOR</option>
+                                        <option value="005">ADUANERO/AGENTE DE ADUANAS/INS</option>
+                                        <option value="006">AEROMOZO/ AZAFATA</option>
+                                        <option value="007">AGENTE / INTERMEDIARIO / CORRE</option>
+                                        <option value="008">AGENTE DE BOLSA</option>
+                                        <option value="010">AGENTE DE TURISMO/VIAJES</option>
+                                        <option value="011">AGENTE/INTERMEDIARIO/CORREDOR</option>
+                                        <option value="012">AGRICULTOR / GANADERO Y AFINES</option>
+                                        <option value="013">ALBAÑIL / OBRERO / ELECTRICIST</option>
+                                        <option value="014">AMA DE CASA</option>
+                                        <option value="015">ANALISTAS / TÉCNICOS / PROGRAM</option>
+                                        <option value="016">APODERADO(A)</option>
+                                        <option value="019">ARQUITECTO</option>
+                                        <option value="021">ASISTENTE SOCIAL</option>
+                                        <option value="024">BACTERIÓLOGO / FARMACÓLOGO / B</option>
+                                        <option value="OT008">BIOLOGO</option>
+                                        <option value="028">CAMBISTA / COMPRA/VENTA DE MON</option>
+                                        <option value="OT004">CHEF</option>
+                                        <option value="COMER">COMERCIANTE</option>
+                                        <option value="036">COMERCIANTE / VENDEDOR</option>
+                                        <option value="OT005">COMUNICADOR</option>
+                                        <option value="037">CONDUCTOR / CHOFER / TAXISTA /</option>
+                                        <option value="039">CONSTRUCTOR</option>
+                                        <option value="040">CONTADOR</option>
+                                        <option value="041">CONTRATISTA</option>
+                                        <option value="042">CORTE Y CONFECCIÓN DE ROPA/ FA</option>
+                                        <option value="044">DECORADOR, DIBUJANTE, PUBLICIS</option>
+                                        <option value="045">DENTISTA / ODONTÓLOGO</option>
+                                        <option value="046">DEPORTISTA PROFESIONAL, ATLETA</option>
+                                        <option value="DIRECT">DIRECTOR</option>
+                                        <option value="DIGRA">DISEÑADOR GRAFICO</option>
+                                        <option value="047">DISTRIBUIDOR</option>
+                                        <option value="048">DOCENTE</option>
+                                        <option value="049">ECONOMISTA</option>
+                                        <option value="051">EMPLEADA (O) DEL HOGAR / NANA</option>
+                                        <option value="EMPL">EMPLEADO(A)</option>
+                                        <option value="115">EMPRESARIO</option>
+                                        <option value="052">EMPRESARIO EXPORTADOR/ EMPRESA</option>
+                                        <option value="078">ENFERMERO / OBSTETRIZ / PARAMÉ</option>
+                                        <option value="056">ESTUDIANTE</option>
+                                        <option value="FUNC">FUNCIONARIO(A)</option>
+                                        <option value="GEREN">GERENTE</option>
+                                        <option value="GEREAA">GERENTE ADJUNTO DE AREA</option>
+                                        <option value="GERENC">GERENTE COMERCIAL</option>
+                                        <option value="GERENA">GERENTE DE ADMINISTRACION</option>
+                                        <option value="GEREAR">GERENTE DE AREA</option>
+                                        <option value="GERVEN">GERENTE DE VENTAS</option>
+                                        <option value="GERENG">GERENTE GENERAL</option>
+                                        <option value="OT002">INDEPENDIENTE</option>
+                                        <option value="061">INGENIERO</option>
+                                        <option value="066">JUBILADO / PENSIONISTA</option>
+                                        <option value="068">LIQUIDADOR, RECLAMACIONES/SEGU</option>
+                                        <option value="070">MARTILLERO / SUBASTADOR</option>
+                                        <option value="071">MAYORISTA, COMERCIO AL POR MAY</option>
+                                        <option value="OT001">MECANICO</option>
+                                        <option value="073">MÉDICO / CIRUJANO</option>
+                                        <option value="075">MIEMBRO DE LA POLICÍA / FUERZA</option>
+                                        <option value="998">NO DECLARA</option>
+                                        <option value="OFTAL">OFTALMÓLOGO</option>
+                                        <option value="999">OTROS</option>
+                                        <option value="082">PERIODISTA</option>
+                                        <option value="085">PILOTO</option>
+                                        <option value="PRESID">PRESIDENTE DEL DIRECTORIO</option>
+                                        <option value="089">PRODUCTOR DE CINE / RADIO / TE</option>
+                                        <option value="092">PSICÓLOGO/ TERAPEUTA</option>
+                                        <option value="OT006">PUBLICISTA</option>
+                                        <option value="OT007">QUIMICO FARMACEUTICO</option>
+                                        <option value="REPRES">REPRESENTANTE</option>
+                                        <option value="099">SACERDOTE / MONJA / RELIGIOSO</option>
+                                        <option value="100">SECRETARIA, RECEPCIONISTA, TEL</option>
+                                        <option value="SUBG">SUB GERENTE</option>
+                                        <option value="GERENT">TITULAR - GERENTE</option>
+                                        <option value="OT003">TRADUCTORA</option>
+                                        <option value="TRANSP">TRANSPORTISTA</option>
+                                        <option value="112">VENDEDOR AMBULANTE</option>
+                                        <option value="113">VETERINARIO, ZOÓLOGO, ZOOTÉCNI</option>
+                                        <option value="114">VISITADOR MÉDICO</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <br>
+                            <hr>
+                            <center><strong for="">Datos del domicilio <i class="fa fa-home"
+                                        aria-hidden="true"></i></strong></center>
+                            <hr>
+                            <br>
+
+
+                            <div class="row">
+                                <div class="col s5"><label>País</label></div>
+                                <div class="col s7">
+                                    <select id="cboIPPais_APO" name="cboIPPais_APO" class="browser-default valid"
+                                        aria-invalid="false"></select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s5"><label>Departamento</label></div>
+                                <div class="col s7">
+                                    <select id="cboIPDepartamentoApo" name="cboIPDepartamentoApo"
+                                        class="browser-default "></select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s5"><label>Provincia</label></div>
+                                <div class="col s7">
+                                    <select id="cboIPProvinciaApo" name="cboIPProvinciaApo"
+                                        class="browser-default "></select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s5"><label>Distrito</label></div>
+                                <div class="col s7">
+                                    <select id="cboIPDIstritoApo" name="cboIPDIstritoApo" class="browser-default ">
+                                        <option value="02" selected="selected">ANCON</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <input placeholder="Dirección" id="DireccionApo" type="text" class="form-control">
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="DivDomicilioTBApo">
+                            </div>
+
+
+                            <!-- Modal
+                            <br />
+                           <div class="row">
+
+                                <div class="col s6">
+                                    <button type="button" class="btn btn-primary" data-toggle="modalb" data-target="#modalDepartamentoApo">
+                                        <i class="fas fa-plus">
+                                            <label style="color: white;
+                                                font-family: arial;
+                                                font-size: 13px;">MÁS</label>
+                                        </i>
+                                    </button>
+                                </div>
+                                <div class="col s6 actualizar_apo">
+                                    <button type="button" class="btn btn-primary">
+                                        <i id="update_apo" class="fas fa-sync" alt="Actualizar">
+                                            
+                                        </i>
+                                    </button>
+                                </div>
+                            </div>-->
+
+                            <div class="modalb fade" id="modalDepartamentoApo" tabindex="-1" role="dialog"
+                                aria-labelledby="modalDepartamentoLabelApo" aria-hidden="true">
+                                <div class="modalb-dialog" role="document">
+                                    <div class="modalb-content">
+                                        <div class="modalb-header">
+                                            <h5 class="modalb-title" id="modalDepartamentoTitleApo">Domicilio</h5>
+                                        </div>
+                                        <div class="modalb-body">
+                                            <!--<div class="row">
+                                                <div class="col s5"><label>País</label></div>
+                                                <div class="col s7">
+                                                    <select id="cboIPPais_APO" name="cboIPPais_APO" class="browser-default valid" aria-invalid="false"></select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col s5"><label>Departamento</label></div>
+                                                <div class="col s7">
+                                                    <select id="cboIPDepartamentoApo" name="cboIPDepartamentoApo" class="browser-default "></select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s5"><label>Provincia</label></div>
+                                                <div class="col s7">
+                                                    <select id="cboIPProvinciaApo" name="cboIPProvinciaApo" class="browser-default "></select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s5"><label>Distrito</label></div>
+                                                <div class="col s7">
+                                                    <select id="cboIPDIstritoApo" name="cboIPDIstritoApo" class="browser-default ">
+                                                        <option value="02" selected="selected">ANCON</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s12">
+                                                    <input placeholder="Dirección" id="DireccionApo" type="text" class="form-control">
+                                                </div>
+                                            </div>-->
+                                            <div class="modalb-footer">
+                                                <button type="button" class="btn red lighten-1"
+                                                    data-dismiss="modalb">Cerrar</button>
+                                                <button type="button" id="btnGrabarIPDir" name="btnGrabarIPDir"
+                                                    class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Termino del Modal-->
+                            <!--////////////////////////////////////////////////////////////////
+                            //////////////////////////////////////////////////////////////////
+                            /////////////////////////////////////////////////////////////////////-->
+                            <br>
+                            <hr>
+                            <div class="row ">
+                                <div class="col s7"><label>Datos del apoderado:</label></div>
+                                <div class="col s5">
+                                    <div class="switch">
+                                        <label>
+                                            No
+                                            <input type="checkbox" id="chbapoderado_add" name="chbapoderado_add">
+                                            <span class="lever"></span>
+                                            Si
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row ">
+                                <div class="col s7"><label>Testigo a Ruego</label></div>
+                                <div class="col s5">
+                                    <div class="switch">
+                                        <label>
+                                            No
+                                            <input type="checkbox" id="chkTestigoRuego" name="chkTestigoRuego" class="">
+                                            <span class="lever"></span>
+                                            Si
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="APO_ADD">
+                                <hr>
+                                <div class="card-content p-3">
+                                    <h6><strong>Datos del apoderado adicional:</strong></h6>
+
+
+
+                                    <br />
+
+                                    <div class="row">
+
+                                        <div class="col s1" style="margin-top:3px;"><label>Doc.</label></div>
+
+                                        <div class="col s4">
+                                            <select class="browser-default" style="margin-left:10px;"
+                                                id="CBO_T_DOC_PO_SM_APOADD">
+                                                <option value="D">DNI</option>
+                                                <option value="CE">C. EXTRANJ</option>
+                                                <option value="CI">C. IDENTID</option>
+                                                <option value="FA">C.FF ARMAD</option>
+                                                <option value="FP">C.FF POLIC</option>
+                                                <option value="LE">LIB ELECTO</option>
+                                                <option value="PS">PASAPORTE</option>
+                                                <option value="R">RUC</option>
+                                                <option value="SD">SIN DNI</option>
+                                                <option value="SR">SIN RUC</option>
+                                                <option value="TI">TARJ IDENT</option>
+                                                <option value="VC">VIPCAM</option>
+                                            </select>
+
+
+
+                                        </div>
+
+
+                                        <div class="col s5">
+
+                                            <div class="cold s6">
+                                                <input placeholder="N° Doc" id="TXT_N_PSM_APOADD"
+                                                    name="TXT_N_PSM_APOADD" type="number" class="form-control">
+                                                <input placeholder="N° Doc" id="autocod_add" name="autocod_add"
+                                                    type="hidden" class="form-control">
+                                            </div>
+
+                                        </div>
+                                        <div class="cold s2" style="font-size:28px;">
+                                            <a class="fas fa-search prefix" id="buscarapo_add"
+                                                href="javascript:FnBuscarPerPadre_add();"></a>
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                    <div class="row">
+
+                                        <div class="col s6">
+                                            <div><label>Nombres</label></div>
+
+                                        </div>
+
+
+
+                                        <div class="col s6">
+                                            <input placeholder="Nombres" id="txtNombresP_APOADD" name="txtNombresP"
+                                                type="text" class="form-control col s12">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <div><label>Apellido Pat.</label></div>
+
+                                        </div>
+                                        <div class="col s6">
+                                            <input placeholder="A.Paterno" id="ApellidoPaterno_APOADD" type="text"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s6">
+
+                                            <div><label>Apellido Mat.</label></div>
+                                        </div>
+                                        <div class="col s6">
+                                            <input placeholder="A.Materno" id="ApellidoMaterno_APOADD" type="text"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col s6">
+
+                                            <div><label>Correo Electr.</label></div>
+                                        </div>
+                                        <div class="col s6">
+                                            <input placeholder="E-mail" id="Email_APOADD" type="text"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col s6">
+                                            <div><label>Telef.</label></div>
+
+                                        </div>
+                                        <div class="col s6">
+                                            <input placeholder="Telefono" id="telefono_APOADD" type="number"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col s6"><label>Estado Civil</label></div>
+                                        <div class="col s6">
+                                            <select class="browser-default " id="cboEstadoCivil_APOADD">
+                                                <option value="">(Ninguno)</option>
+                                                <option value="06" selected="selected">(NO DEFINIDO)</option>
+                                                <option value="08">CASADO(A)</option>
+                                                <option value="10">DIVORCIADO(A)</option>
+                                                <option value="13">SEPARACION PATRIM.</option>
+                                                <option value="11">SEPARADO(A)</option>
+                                                <option value="07">SOLTERO(A)</option>
+                                                <option value="12">UNION LIBRE</option>
+                                                <option value="09">VIUDO(A)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col s6">
+                                            <div><label>Ocupación.</label></div>
+
+                                        </div>
+                                        <div class="col s6">
+                                            <input placeholder="Ocupación" id="ocuapoadd" type="text"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s6"><label>Nacionalidad</label></div>
+                                        <div class="col s6">
+                                            <select name="cboNacionalidad" class="browser-default "
+                                                id="cboNacionalidad_APOADD">
+                                                <option value="4001">AFGANA</option>
+                                                <option value="2001">ALBANES</option>
+                                                <option value="2002">ALEMANA</option>
+                                                <option value="2003">ALEMANA</option>
+                                                <option value="2004">ANDORRANO</option>
+                                                <option value="1401">ANTILLANA</option>
+                                                <option value="1408">ANTILLANA</option>
+                                                <option value="3002">ARGELINA</option>
+                                                <option value="1301">ARGENTINA</option>
+                                                <option value="5001">AUSTRALIANA</option>
+                                                <option value="2005">AUSTRIACA</option>
+                                                <option value="4003">BAHREINI</option>
+                                                <option value="2006">BELGA</option>
+                                                <option value="1202">BELICEÑA</option>
+                                                <option value="4039">BENGALÍ</option>
+                                                <option value="3010">BENINES</option>
+                                                <option value="1402">BERMUDEÑA</option>
+                                                <option value="4004">BIRMANA</option>
+                                                <option value="1302">BOLIVIANA</option>
+                                                <option value="3003">BOTSWANES</option>
+                                                <option value="1303">BRASILEÑA</option>
+                                                <option value="2027">BRITANICA</option>
+                                                <option value="4040">BRUNEANA</option>
+                                                <option value="2007">BULGARA</option>
+                                                <option value="3001">BURKINES</option>
+                                                <option value="3004">BURUNDIANA</option>
+                                                <option value="4005">BUTANESA</option>
+                                                <option value="4006">CAMBOYANA</option>
+                                                <option value="3005">CAMERUNESA</option>
+                                                <option value="1101">CANADIENSE</option>
+                                                <option value="4007">CEILANESA</option>
+                                                <option value="3006">CENTROAFRICANA</option>
+                                                <option value="3009">CHADIANA</option>
+                                                <option value="2008">CHECOSLOVACA</option>
+                                                <option value="1305">CHILENA</option>
+                                                <option value="4009">CHINA</option>
+                                                <option value="4010">CHIPRIOTA</option>
+                                                <option value="1304">COLOMBIANA</option>
+                                                <option value="3007">CONGOLEÑA</option>
+                                                <option value="4008">COREANA</option>
+                                                <option value="4042">CORERANA</option>
+                                                <option value="1201">COSTARRICENSE</option>
+                                                <option value="2039">CROATA</option>
+                                                <option value="1403">CUBANA</option>
+                                                <option value="2009">DANESA</option>
+                                                <option value="1413">DOMINICANA</option>
+                                                <option value="1405">DOMINICANA</option>
+                                                <option value="1306">ECUATORIANA</option>
+                                                <option value="3029">EGIPCIA</option>
+                                                <option value="4041">EMIRATENSEA</option>
+                                                <option value="2035">ESCOCESA</option>
+                                                <option value="2040">ESLOVACA</option>
+                                                <option value="2010">ESPAÑOLA</option>
+                                                <option value="1102">ESTADOUNIDENSE</option>
+                                                <option value="2036">ESTONIO</option>
+                                                <option value="3011">ETIOPE</option>
+                                                <option value="4011">FILIPINA</option>
+                                                <option value="2011">FINLANDESA</option>
+                                                <option value="5005">FIYIANA</option>
+                                                <option value="2012">FRANCESA</option>
+                                                <option value="5006">FRANCOPOLINESIA</option>
+                                                <option value="3012">GABONESA</option>
+                                                <option value="3013">GAMBIANA</option>
+                                                <option value="3014">GHANESA</option>
+                                                <option value="2013">GIBRALTAREÑA</option>
+                                                <option value="2014">GRIEGA</option>
+                                                <option value="1406">GUADALUPENSE</option>
+                                                <option value="1207">GUATEMALTECA</option>
+                                                <option value="1312">GUAYANES</option>
+                                                <option value="3016">GUINEANA</option>
+                                                <option value="3015">GUINEANA</option>
+                                                <option value="1307">GUYANESA</option>
+                                                <option value="1407">HAITIANA</option>
+                                                <option value="2015">HOLANDESA</option>
+                                                <option value="1203">HONDUREÑA</option>
+                                                <option value="2016">HUNGARA</option>
+                                                <option value="4012">INDIA</option>
+                                                <option value="4013">INDONESIA</option>
+                                                <option value="4014">IRAKI</option>
+                                                <option value="4015">IRANI</option>
+                                                <option value="2017">IRLANDESA</option>
+                                                <option value="2018">ISLANDESA</option>
+                                                <option value="4016">ISRAELI</option>
+                                                <option value="2019">ITALIANA</option>
+                                                <option value="1409">JAMAIQUINA</option>
+                                                <option value="4017">JAPONESA</option>
+                                                <option value="4018">JORDANA</option>
+                                                <option value="3017">KENIATA</option>
+                                                <option value="4019">KUWAITI</option>
+                                                <option value="4020">LAOSIANA</option>
+                                                <option value="3018">LESOTENSE</option>
+                                                <option value="2037">LETONA</option>
+                                                <option value="4021">LIBANES</option>
+                                                <option value="3019">LIBERIANA</option>
+                                                <option value="3020">LIBIA</option>
+                                                <option value="2020">LIECHTENSTEINIANA</option>
+                                                <option value="2038">LITUANA</option>
+                                                <option value="2021">LUXEMBURGUESA</option>
+                                                <option value="3022">MALAWIANA</option>
+                                                <option value="4022">MALAYA</option>
+                                                <option value="4023">MALDIVA</option>
+                                                <option value="3035">MALGACHE</option>
+                                                <option value="3021">MALGACHE</option>
+                                                <option value="3023">MALI</option>
+                                                <option value="2022">MALTESA</option>
+                                                <option value="3008">MARFILEÑA</option>
+                                                <option value="3024">MARROQUI</option>
+                                                <option value="1410">MARTINIQUES</option>
+                                                <option value="3025">MAURICIANA</option>
+                                                <option value="3026">MAURITANA</option>
+                                                <option value="1103">MEXICANA</option>
+                                                <option value="2023">MONEGASCA</option>
+                                                <option value="4025">MONGOLA</option>
+                                                <option value="5002">NAURUANA</option>
+                                                <option value="5003">NEOZELANDES</option>
+                                                <option value="4026">NEPALI</option>
+                                                <option value="1204">NICARAGÜENSE</option>
+                                                <option value="3028">NIGERIANA</option>
+                                                <option value="3027">NIGERINA</option>
+                                                <option value="2024">NORUEGA</option>
+                                                <option value="4034">NORVIETNAMITA</option>
+                                                <option value="4024">OMANESA</option>
+                                                <option value="4027">PAKISTANI</option>
+                                                <option value="1404">PANAMEÃ‘A</option>
+                                                <option value="1205">PANAMEÑA</option>
+                                                <option value="1308">PARAGUAYA</option>
+                                                <option value="1309" selected="selected">PERUANA</option>
+                                                <option value="2025">POLACA</option>
+                                                <option value="2026">PORTUGUESA</option>
+                                                <option value="4038">POSESIONES EUROPEAS</option>
+                                                <option value="1411">PUERTORRIQUEÑA</option>
+                                                <option value="3030">RHODESIA</option>
+                                                <option value="3031">RUANDES</option>
+                                                <option value="2028">RUMANA</option>
+                                                <option value="2032">RUSA</option>
+                                                <option value="9676">RUSO</option>
+                                                <option value="3045">SAHARIANA</option>
+                                                <option value="1206">SALVADOREÑA</option>
+                                                <option value="2029">SAN MARINENSE</option>
+                                                <option value="5004">SAOMANA</option>
+                                                <option value="4002">SAUDITA</option>
+                                                <option value="3032">SENEGALES</option>
+                                                <option value="2041">SERBIA</option>
+                                                <option value="3033">SIERRALEONESA</option>
+                                                <option value="4028">SIKKIMESES</option>
+                                                <option value="4029">SINGAPURENSE</option>
+                                                <option value="4030">SIRIA</option>
+                                                <option value="3034">SOMALI</option>
+                                                <option value="3038">SUAZI</option>
+                                                <option value="3036">SUDAFRICANA</option>
+                                                <option value="3037">SUDANES</option>
+                                                <option value="2030">SUECA</option>
+                                                <option value="2031">SUIZA</option>
+                                                <option value="1313">SURINAMES</option>
+                                                <option value="4035">SURVIETNAMITA</option>
+                                                <option value="4031">TAILANDESA</option>
+                                                <option value="4032">TAIWANESA</option>
+                                                <option value="3039">TANZANA</option>
+                                                <option value="3040">TOGOLES</option>
+                                                <option value="1412">TRINITENSE</option>
+                                                <option value="3041">TUNECINA</option>
+                                                <option value="4033">TURCA</option>
+                                                <option value="9830">UCRANIANO</option>
+                                                <option value="3042">UGANDES</option>
+                                                <option value="1310">URUGUAYA</option>
+                                                <option value="2034">VATICANA</option>
+                                                <option value="1311">VENEZOLANA</option>
+                                                <option value="4043">VIETNAMITA</option>
+                                                <option value="4037">YEMENÍ</option>
+                                                <option value="4036">YEMENÍ</option>
+                                                <option value="2033">YUGOSLAVA</option>
+                                                <option value="3044">ZAIREÑA</option>
+                                                <option value="3043">ZAMBIANA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col s5"><label>País</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPPais_APOADD" name="cboIPPais_POADD"
+                                                class="browser-default valid" aria-invalid="false">
+
+                                                <option value="">Seleccionar</option>
+                                                <option value="4001">AFGANISTAN</option>
+                                                <option value="2001">ALBANIA</option>
+                                                <option value="2002">ALEMANIA</option>
+                                                <option value="2003">ALEMANIA R.D.</option>
+                                                <option value="3001">ALTO VOLTA</option>
+                                                <option value="2004">ANDORRA</option>
+                                                <option value="1401">ANTILLAS BRITANICAS</option>
+                                                <option value="1408">ANTILLAS HOLANDESAS</option>
+                                                <option value="4002">ARABIA SAUDITA</option>
+                                                <option value="3002">ARGELIA</option>
+                                                <option value="1301">ARGENTINA</option>
+                                                <option value="9027">ARUBA</option>
+                                                <option value="5001">AUSTRALIA</option>
+                                                <option value="2005">AUSTRIA</option>
+                                                <option value="9074">AZERBAIYAN</option>
+                                                <option value="9077">BAHAMAS</option>
+                                                <option value="4003">BAHREIN</option>
+                                                <option value="4039">BANGLADESH</option>
+                                                <option value="2006">BELGICA</option>
+                                                <option value="1202">BELICE</option>
+                                                <option value="1402">BERMUDAS</option>
+                                                <option value="4004">BIRMANIA</option>
+                                                <option value="1302">BOLIVIA</option>
+                                                <option value="3003">BOTSWANA</option>
+                                                <option value="1303">BRASIL</option>
+                                                <option value="4040">BRUNEI DARUSSALAM</option>
+                                                <option value="2007">BULGARIA</option>
+                                                <option value="3004">BURUNDI</option>
+                                                <option value="4005">BUTAN</option>
+                                                <option value="4006">CAMBOYA</option>
+                                                <option value="3005">CAMERUN</option>
+                                                <option value="1101">CANADA</option>
+                                                <option value="4007">CEILAN</option>
+                                                <option value="3009">CHAD</option>
+                                                <option value="1305">CHILE</option>
+                                                <option value="4009">CHINA</option>
+                                                <option value="4010">CHIPRE</option>
+                                                <option value="1304">COLOMBIA</option>
+                                                <option value="3007">CONGO REP. DEL</option>
+                                                <option value="4008">COREA</option>
+                                                <option value="4042">COREA DEL NORTE</option>
+                                                <option value="3008">COSTA DE MARFIL</option>
+                                                <option value="1201">COSTA RICA</option>
+                                                <option value="2039">CROACIA</option>
+                                                <option value="1403">CUBA</option>
+                                                <option value="3010">DAHOMEY</option>
+                                                <option value="2009">DINAMARCA</option>
+                                                <option value="1413">DOMINICA</option>
+                                                <option value="1306">ECUADOR</option>
+                                                <option value="1206">EL SALVADOR</option>
+                                                <option value="4041">EMIRATOS ARABES UNIDOS</option>
+                                                <option value="2035">ESCOCIA</option>
+                                                <option value="2040">ESLOVAQUIA</option>
+                                                <option value="2010">ESPAÑA</option>
+                                                <option value="1102">ESTADOS UNIDOS</option>
+                                                <option value="2036">ESTONIA</option>
+                                                <option value="3011">ETIOPIA</option>
+                                                <option value="4011">FILIPINAS</option>
+                                                <option value="2011">FINLANDIA</option>
+                                                <option value="2012">FRANCIA</option>
+                                                <option value="3012">GABON</option>
+                                                <option value="3013">GAMBIA</option>
+                                                <option value="3014">GHANA</option>
+                                                <option value="2013">GIBRALTAR</option>
+                                                <option value="2014">GRECIA</option>
+                                                <option value="1406">GUADALUPE</option>
+                                                <option value="1207">GUATEMALA</option>
+                                                <option value="1312">GUAYANA FRANCESA</option>
+                                                <option value="3015">GUINEA</option>
+                                                <option value="3016">GUINEA ECUATORIAL</option>
+                                                <option value="1307">GUYANA</option>
+                                                <option value="1407">HAITI</option>
+                                                <option value="2015">HOLANDA</option>
+                                                <option value="1203">HONDURAS</option>
+                                                <option value="2016">HUNGRÍA</option>
+                                                <option value="4012">INDIA</option>
+                                                <option value="4013">INDONESIA</option>
+                                                <option value="4014">IRAK</option>
+                                                <option value="4015">IRAN</option>
+                                                <option value="2017">IRLANDA</option>
+                                                <option value="2018">ISLANDIA</option>
+                                                <option value="4016">ISRAEL</option>
+                                                <option value="2019">ITALIA</option>
+                                                <option value="1409">JAMAICA</option>
+                                                <option value="4017">JAPON</option>
+                                                <option value="4018">JORDANIA</option>
+                                                <option value="3017">KENIA</option>
+                                                <option value="4019">KOWEIT</option>
+                                                <option value="4020">LAOS</option>
+                                                <option value="3018">LESOTHO</option>
+                                                <option value="2037">LETONIA</option>
+                                                <option value="4021">LIBANO</option>
+                                                <option value="3019">LIBERIA</option>
+                                                <option value="3020">LIBIA</option>
+                                                <option value="2020">LIECHTENSTEIN</option>
+                                                <option value="2038">LITUANIA</option>
+                                                <option value="2021">LUXEMBURGO</option>
+                                                <option value="3021">MADAGASCAR</option>
+                                                <option value="4022">MALASIA</option>
+                                                <option value="3022">MALAWI</option>
+                                                <option value="4023">MALDIVAS</option>
+                                                <option value="3023">MALI</option>
+                                                <option value="2022">MALTA</option>
+                                                <option value="3024">MARRUECOS</option>
+                                                <option value="1410">MARTINICA</option>
+                                                <option value="4024">MASCATE Y OMAN</option>
+                                                <option value="3025">MAURICIO</option>
+                                                <option value="3026">MAURITANIA</option>
+                                                <option value="1103">MEXICO</option>
+                                                <option value="2023">MONACO</option>
+                                                <option value="4025">MONGOLIA</option>
+                                                <option value="5002">NAURU</option>
+                                                <option value="4026">NEPAL</option>
+                                                <option value="1204">NICARAGUA</option>
+                                                <option value="3027">NIGER</option>
+                                                <option value="3028">NIGERIA</option>
+                                                <option value="2024">NORUEGA</option>
+                                                <option value="5003">NUEVA ZELANDA</option>
+                                                <option value="9573">PAISES BAJOS</option>
+                                                <option value="4027">PAKISTAN</option>
+                                                <option value="1205">PANAMA</option>
+                                                <option value="1308">PARAGUAY</option>
+                                                <option value="1309" selected="">PERU</option>
+                                                <option value="5006">POLINESIA FRANCESA</option>
+                                                <option value="2025">POLONIA</option>
+                                                <option value="2026">PORTUGAL</option>
+                                                <option value="4038">POSESIONES EUROPEAS</option>
+                                                <option value="1411">PUERTO RICO</option>
+                                                <option value="2027">REINO UNIDO</option>
+                                                <option value="3006">REP.CENTROAFRICANA</option>
+                                                <option value="3029">REPUBLICA ARABE DE EGIPTO</option>
+                                                <option value="2008">REPÚBLICA CHECA</option>
+                                                <option value="5005">REPUBLICA DE FIJI</option>
+                                                <option value="1404">REPUBLICA DE PANAMA</option>
+                                                <option value="3036">REPUBLICA DE SUDAFRICA</option>
+                                                <option value="1405">REPUBLICA DOMINICANA</option>
+                                                <option value="3035">REPUBLICA MALGACHE</option>
+                                                <option value="3030">RHODESIA</option>
+                                                <option value="3031">RUANDA</option>
+                                                <option value="2028">RUMANIA</option>
+                                                <option value="9676">RUSIA</option>
+                                                <option value="3045">SAHARA OCCIDENTAL</option>
+                                                <option value="5004">SAMOA OCCIDENTAL</option>
+                                                <option value="2029">SAN MARINO</option>
+                                                <option value="3032">SENEGAL</option>
+                                                <option value="2041">SERBIA</option>
+                                                <option value="3033">SIERRA LEONA</option>
+                                                <option value="4028">SIKKIM</option>
+                                                <option value="4029">SINGAPUR</option>
+                                                <option value="4030">SIRIA</option>
+                                                <option value="3034">SOMALIA</option>
+                                                <option value="3038">SUAZILANDIA</option>
+                                                <option value="3037">SUDAN</option>
+                                                <option value="2030">SUECIA</option>
+                                                <option value="2031">SUIZA</option>
+                                                <option value="1313">SURINAM</option>
+                                                <option value="4031">TAILANDIA</option>
+                                                <option value="4032">TAIWAN</option>
+                                                <option value="3039">TANZANIA</option>
+                                                <option value="3040">TOGO</option>
+                                                <option value="1412">TRINIDAD-TOBAGO</option>
+                                                <option value="3041">TUNEZ</option>
+                                                <option value="4033">TURQUIA</option>
+                                                <option value="9830">UCRANIA</option>
+                                                <option value="3042">UGANDA</option>
+                                                <option value="2032">URSS</option>
+                                                <option value="1310">URUGUAY</option>
+                                                <option value="2034">VATICANO</option>
+                                                <option value="1311">VENEZUELA</option>
+                                                <option value="4043">VIETNAM</option>
+                                                <option value="4034">VIETNAM DEL NORTE</option>
+                                                <option value="4035">VIETNAM DEL SUR</option>
+                                                <option value="4036">YEMEN</option>
+                                                <option value="4037">YEMEN MERIDIONAL</option>
+                                                <option value="2033">YUGOSLAVIA</option>
+                                                <option value="3044">ZAIRE</option>
+                                                <option value="3043">ZAMBIA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col s5"><label>Departamento</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDepartamento_APOADD" name="cboIPDepartamento_POADD"
+                                                class="browser-default ">
+                                                <option value="01">AMAZONAS</option>
+                                                <option value="02">ANCASH</option>
+                                                <option value="03">APURIMAC</option>
+                                                <option value="04">AREQUIPA</option>
+                                                <option value="05">AYACUCHO</option>
+                                                <option value="06">CAJAMARCA</option>
+                                                <option value="07">CALLAO.PRV.CONST.</option>
+                                                <option value="08">CUZCO</option>
+                                                <option value="09">HUANCAVELICA</option>
+                                                <option value="10">HUANUCO</option>
+                                                <option value="11">ICA</option>
+                                                <option value="12">JUNIN</option>
+                                                <option value="13">LA LIBERTAD</option>
+                                                <option value="14">LAMBAYEQUE</option>
+                                                <option value="15" selected="selected">LIMA</option>
+                                                <option value="16">LORETO</option>
+                                                <option value="17">MADRE DE DIOS</option>
+                                                <option value="18">MOQUEGUA</option>
+                                                <option value="19">PASCO</option>
+                                                <option value="20">PIURA</option>
+                                                <option value="21">PUNO</option>
+                                                <option value="22">SAN MARTIN</option>
+                                                <option value="23">TACNA</option>
+                                                <option value="24">TUMBES</option>
+                                                <option value="25">UCAYALI</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Provincia</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPProvincia_APOADD" name="cboIPProvincia_POADD"
+                                                class="browser-default ">
+                                                <option value="02">BARRANCA</option>
+                                                <option value="03">CAJATAMBO</option>
+                                                <option value="05">CAÑETE</option>
+                                                <option value="04">CANTA</option>
+                                                <option value="06">HUARAL</option>
+                                                <option value="07">HUAROCHIRI</option>
+                                                <option value="08">HUAURA</option>
+                                                <option value="01" selected="selected">LIMA</option>
+                                                <option value="09">OYON</option>
+                                                <option value="10">YAUYOS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Distrito</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDIstrito_APOADD" name="cboIPDIstrito_POADD"
+                                                class="browser-default ">
+                                                </option>
+                                                <option value="01">LIMA</option>
+                                                <option value="02">ANCON</option>
+                                                <option value="03">ATE</option>
+                                                <option value="04">BARRANCO</option>
+                                                <option value="05">BREÑA</option>
+                                                <option value="06">CARABAYLLO</option>
+                                                <option value="07">CHACLACAYO</option>
+                                                <option value="08">CHORRILLOS</option>
+                                                <option value="09">CIENEGUILLA</option>
+                                                <option value="10">COMAS</option>
+                                                <option value="11">EL AGUSTINO</option>
+                                                <option value="12">INDEPENDENCIA</option>
+                                                <option value="13">JESUS MARIA</option>
+                                                <option value="14">LA MOLINA</option>
+                                                <option value="15">LA VICTORIA</option>
+                                                <option value="16">LINCE</option>
+                                                <option value="17">LOS OLIVOS</option>
+                                                <option value="18">LURIGANCHO</option>
+                                                <option value="19">LURIN</option>
+                                                <option value="20">MAGDALENA DEL MAR</option>
+                                                <option value="21">PUEBLO LIBRE</option>
+                                                <option value="22">MIRAFLORES</option>
+                                                <option value="23">PACHACAMAC</option>
+                                                <option value="24">PUCUSANA</option>
+                                                <option value="25">PUENTE PIEDRA</option>
+                                                <option value="26">PUNTA HERMOSA</option>
+                                                <option value="27">PUNTA NEGRA</option>
+                                                <option value="28">RIMAC</option>
+                                                <option value="29">SAN BARTOLO</option>
+                                                <option value="30">SAN BORJA</option>
+                                                <option value="31">SAN ISIDRO</option>
+                                                <option value="32">SAN JUAN DE LURIGANCHO</option>
+                                                <option value="33">SAN JUAN DE MIRAFLORES</option>
+                                                <option value="34">SAN LUIS</option>
+                                                <option value="35">SAN MARTIN DE PORRES</option>
+                                                <option value="36">SAN MIGUEL</option>
+                                                <option value="37">SANTA ANITA</option>
+                                                <option value="38">SANTA MARIA DEL MAR</option>
+                                                <option value="39">SANTA ROSA</option>
+                                                <option value="40">SANTIAGO DE SURCO</option>
+                                                <option value="41">SURQUILLO</option>
+                                                <option value="42">VILLA EL SALVADOR</option>
+                                                <option value="43">VILLA MARIA DEL TRIUNFO</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Dirección</label></div>
+                                        <div class="col s7">
+                                            <input placeholder="Dirección" id="Direccion_APOADD" type="text"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                                    <!--comienzo modal-->
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div id="TEST_ADD" style="">
+                                </br>
+                                <hr>
+                                <div class="card-content p-3">
+                                    <h6><strong>TESTIGO A RUEGO</strong></h6>
+                                    <div class="row">
+                                        </br>
+                                        <div class="col s1" style="margin-top:3px;"><label>Doc.</label></div>
+
+                                        <div class="col s4">
+                                            <select class="browser-default" style="margin-left:10px;"
+                                                id="CBO_T_DOC_PO_SM_T"></select>
+
+
+
+                                        </div>
+
+
+                                        <div class="col s5">
+
+                                            <div class="cold s6">
+                                                <input placeholder="N° Doc" id="TXT_N_PSM_T" name="TXT_N_PSM_T"
+                                                    type="number" class="form-control">
+                                                <input placeholder="N° Doc" id="autocodT" name="autocodT" type="hidden"
+                                                    class="form-control">
+                                            </div>
+
+                                        </div>
+                                        <div class="cold s2" style="font-size:28px;">
+                                            <a class="fas fa-search prefix" id="buscarapoT"
+                                                href="javascript:fnBuscarCliente();"></a>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col s6">
+                                                <div><label>Nombres</label></div>
+
+                                            </div>
+
+
+
+                                            <div class="col s6">
+                                                <input placeholder="Nombres" id="txtNombresPT" name="txtNombresP"
+                                                    type="text" class="form-control col s12">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <div><label>Apellido Pat.</label></div>
+
+                                            </div>
+                                            <div class="col s6">
+                                                <input placeholder="A.Paterno" id="ApellidoPaternoT" type="text"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+
+                                                <div><label>Apellido Mat.</label></div>
+                                            </div>
+                                            <div class="col s6">
+                                                <input placeholder="A.Materno" id="ApellidoMaternoT" type="text"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        <!--<div class="col s1">
+    
+                                    <a class="fas fa-search prefix " href="javascript:FnBuscarPerPadre();"></a>
+    
+                                </div>-->
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+
+                        </div>
+                        <!-- <div class="card-action p-2">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div> -->
+                    </div>
+                </div>
+            </form>
+            <!-- FIN DATOS DE LA MADRE -->
+            <!-- PERSONAS DISTINTAS A LOS PADRES -->
+            <div class="col s12" id="DivCSDatosVehiculo" name="DivCSDatosVehiculo">
+
+                <div class="card">
+                    <div class="" id="responsableTrasladod">
+                        <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                            <span class="font-weight-bold red darken-4 colorwhite" style="font-size: 16px;">
+                                Poderes - Cobro de pensión ONP
+                            </span>
+                        </div>
+                        <!--checks box aceptar declaraciones-->
+
+                        <div class="card-content p-3">
+                            <div class="row">
+
+                                <div class="col s3">
+                                    <div class="switch">
+                                        <label>
+                                            No
+
+                                            <input type="checkbox" id="CHK_DEC_INFO" name="CHK_DEC_INFO">
+                                            <span class="lever"></span>
+                                            Si
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col s9"><label>Declaro que la información consignada es correcta y verdadera
+                                    </label></div>
+                                <input type="hidden" id="CHK_VAL_INFO" name="CHK_VAL_INFO" class="" />
+
+
+
+                            </div>
+
+
+
+
+                            <hr />
+                            <div class="row">
+                                <div class="col s3">
+                                    <div class="switch">
+                                        <label>
+                                            No
+
+                                            <input type="checkbox" id="CHK_DEC_CONS" name="CHK_DEC_CONS">
+                                            <span class="lever"></span>
+                                            Si
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col s9"><label>Declaro dar consentimiento expreso para el tratamiento de los
+                                        datos personales y la finalidad que se le daran de conformidad con lo
+                                        establecido por la ley 29733 y su reglamento </label></div>
+                            </div>
+
+
+
+                            <br />
+
+
+
+                            <input type="hidden" id="CHK_VAL_CONS" name="CHK_VAL_CONS" class="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer style="width:100%; bottom: 0; position: fixed;" id="BtnSAS">
+            <div class="row" style="background-color:#a73924;margin-bottom:0px">
+                <div class="col s4">
+                    <a id="ahrefatras" name="ahrefatras" href="javascript:fnNextAVEMadre();"
+                        style="color:white;font-size:120%">
+                        <i class="fas fa-chevron-left"> </i>Anterior
+                    </a>
+                </div>
+                <div class="col s4 btn_guardar">
+                    <a id="btn_Guardar_PSM" name="btn_Guardar_PSM" style="color:white;font-size:120%"><i
+                            class="fas fa-save"></i> Guardar</a>
+                </div>
+
+
+                <div class="col s4 actualizar_all">
+                    <a id="btnactualizar_all" name="btn_Guardar_PSM" style="color:white;font-size:120%"><i
+                            class="fas fa-save"></i> Actualizar</a>
+                </div>
+                <div class="col s4" style="text-align:right">
+                    <a id="ahrefSiguiente" name="ahrefSiguiente" href="javascript:fnNextCSDatosCompra();"
+                        style="color:white;font-size:120%">
+                        Siguiente<i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="modalb fade" id="ModalEdicionDomicilioApo" tabindex="-1" role="dialog"
+        aria-labelledby="modalDepartamentoLabel" aria-hidden="true">
+        <div class="modalb-dialog" role="document">
+            <div class="modalb-content">
+                <div class="modalb-header">
+                    <h5 class="modalb-title" id="modalDepartamentoTitle">Domicilio</h5>
+                </div>
+                <div class="modalb-body">
+                    <input placeholder="Dirección" id="txtCodigoDomicilioAPO" type="text" class="form-control">
+                    <div class="row">
+                        <div class="col s5"><label>País</label></div>
+                        <div class="col s7">
+                            <select id="cboIPPaisEdicionAPO" name="cboIPPaisEdicionAPO" class="browser-default valid"
+                                aria-invalid="false"></select>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col s5"><label>Departamento</label></div>
+                        <div class="col s7">
+                            <select id="cboIPDepartamentoEdicionAPO" name="cboIPDepartamentoEdicionAPO"
+                                class="browser-default "></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Provincia</label></div>
+                        <div class="col s7">
+                            <select id="cboIPProvinciaEdicionAPO" name="cboIPProvinciaEdicionAPO"
+                                class="browser-default "></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Distrito</label></div>
+                        <div class="col s7">
+                            <select id="cboIPDIstritoEdicionAPO" name="cboIPDIstritoEdicionAPO"
+                                class="browser-default ">
+                                <option value="02" selected="selected">ANCON</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <input placeholder="Dirección" id="txtIPDireccionEdicionAPO" name="txtIPDireccionEdicionAPO"
+                                type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modalb-footer">
+                        <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+                        <button type="button" id="btnGrabarIPDir_po_editapo" name="btnGrabarIPDir_po_editapo"
+                            class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="scripts/TramiteEnLinea/Poderes/PoderCobroONP.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <form class="col s12" id="divBusqueda" style="margin-top:3em;">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0">
+                    <span class="font-weight-bold red darken-4 colorwhite" style="font-size: 14px;">Busquedas</span>
+                </div>
+                <div class="card-content p-3">
+
+                    <div class="row">
+                        <div class="col s5"><label>Criterio</label></div>
+                        <div class="col s7">
+                            <select class="browser-default" id="CboCriterio">
+                                <option value="A">Criterio</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <input placeholder="Dato" id="txtDato" name="txtDato" type="text" class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <input placeholder="Fecha" id="txtFecha" name="txtFecha" type="text" class="form-control col s10">&nbsp;
+                            <i class="far fa-calendar-day center-align" style="font-size:34px;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-content p-3">
+                            <div class="row">
+                                <div class="col s4">
+                                    <label>AI</label>
+                                </div>
+                                <div class="col s12">
+                                    <input placeholder="Fecha" id="txtFecha" name="txtFecha" type="text" class="form-control col s10">&nbsp;
+                                    <i class="far fa-calendar-day center-align" style="font-size:34px;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Encargado de Cuenta</label></div>
+                        <div class="col s7">
+                            <select class="browser-default" id="CboCriterio">
+                                <option value="1">Encargado de Cuenta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Gestor de Cuenta</label></div>
+                        <div class="col s7">
+                            <select class="browser-default" id="CboCriterio">
+                                <option value="1">Gestor de Cuenta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <input placeholder="Estudio Asociado" id="txtEstudioAsociado" name="txtEstudioAsociado" type="text" class="form-control col s12">
+                        </div>
+                    </div>
+
+                    <div style="text-align:center;margin-top:2em;" class="col-lg-6">
+                        <a class="btn waves-effect waves-light red" href="javascript:fnpintarformMenu('ConsultasCorporativos/ResultadoBusqueda/ResultadoBusqueda.html');">Buscar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

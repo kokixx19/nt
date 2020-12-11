@@ -1,0 +1,642 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/Estilos.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <style>
+
+        @font-face
+        {
+            font-family: fu_usu;
+            font-style: normal;
+            font-weight: normal;
+            src: url(font/jackinput.TTF);
+        }
+        #toast {
+            visibility: hidden;
+            max-width: 50px;
+            height: 50px;
+            /*margin-left: -125px;*/
+            margin: auto;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2em;
+
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            font-size: 20px;
+            white-space: nowrap;
+            font-family: Arial;
+
+        }
+
+        #toast #img {
+            width: 50px;
+            height: 50px;
+
+            float: left;
+
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+            box-sizing: border-box;
+
+
+            background-color: #4E4D4D;  
+            color: #fff;
+
+        }
+
+        #toast #desc {
+
+
+            color: #fff;
+
+            padding: 16px;
+
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: tahoma;
+        }
+
+        #toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 3.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes expand {
+            from {
+                min-width: 50px
+            }
+
+            to {
+                min-width: 350px
+            }
+        }
+
+        @keyframes expand {
+            from {
+                min-width: 50px
+            }
+
+            to {
+                min-width: 350px
+            }
+        }
+
+        @-webkit-keyframes stay {
+            from {
+                min-width: 350px
+            }
+
+            to {
+                min-width: 350px
+            }
+        }
+
+        @keyframes stay {
+            from {
+                min-width: 350px
+            }
+
+            to {
+                min-width: 350px
+            }
+        }
+
+        @-webkit-keyframes shrink {
+            from {
+                min-width: 350px;
+            }
+
+            to {
+                min-width: 50px;
+            }
+        }
+
+        @keyframes shrink {
+            from {
+                min-width: 350px;
+            }
+
+            to {
+                min-width: 50px;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 60px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 60px;
+                opacity: 0;
+            }
+        }
+    </style>
+    <!-- navbar content here  -->
+    <div>
+
+        <div id="toast" style="border-radius: red 5px;">
+            <div id="img"><img style="width: 23px;" src="images/logo/Android/Logo_Paino.png" alt=""></div>
+            <div style="margin-top: -3px;" id="desc"><i class="fa fa-info-circle" aria-hidden="true"><strong
+                        style="font-family:sans-serif ;">&nbsp;Nueva Notificación.</strong></i></div>
+        </div>
+
+
+        <nav class="" style="background-color:#a73924; height: 90px;">
+        
+            <div class="">
+                <div class="" >
+                    <div class="row col s12">
+                        <div class="col s3" style="margin-top: 20px;">
+                            <a href="#" data-target="slide-out" class="sidenav-trigger  ">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </div>
+                        <div class="col s5"  style="margin-top: 20px; margin-left: 10px;">
+                            <center><a class="header" style="font-size:20px;"
+                                    onclick="fnpintarpaginas('Menu/Menu.html');"><strong>Notaria Paino</strong> </a>
+                            </center>
+                        </div>
+                        <div class="col s3" style="margin-top: 20px;     margin-left: 20px;">
+                            <center><a onclick="fnUpdateContador()" id="btnNotificacion" style="
+                                /*font-size: 20px;
+                                padding: 5px 5px;
+                                border: white 5px solid;
+                                border-radius: 1113px;*/
+                               "><i class="fa fa-bell" aria-hidden="true"></i> <strong id="lblCantidad1"
+                                        style="font-size: 20px;">
+                                        0</strong></a></center>
+                            <center><a id="btnNotificacion2" style="font-size: 20px;
+                                padding: 5px 5px;
+                                border: white 5px solid;
+                                border-radius: 1113px;
+                                "><i class="fa fa-bell" aria-hidden="true"></i> <strong id="lblCantidad2"
+                                        style="font-size: 20px;">
+                                        0</strong></a></center>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <ul id="slide-out" name="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="images/Menu/office.jpg" style="background-color: rgba(0,0,0,0.8); filter:brightness(0.4);">
+                    </div>
+                    <a href="#user"><img style="width :100px; " src="images/Menu/logo.svg"></a>
+                    <div class="">
+                        <!--<img src="images/img/usermen.png" alt="" style="margin-top: -10px;
+                        width: 70px;
+                        position: fixed;">-->
+                    </div>
+                    <a href="#name"><strong class="white-text name" style="    text-align: center; font-weight: bold; font-family: fu_usu;" id="Usuario">Notaria paino</strong></a>
+                    <br>
+
+                </div>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header waves-effect waves-red"><i class="fas fa-desktop"
+                                style="font-size:200%"></i>Consultas en línea</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="javascript:fnpintarformMenu('ConsultasEnLinea/ConsultasDeContrato.html')"><i
+                                            class="fal fa-handshake" style="font-size:200%"></i> Consulta de
+                                        contratos</a></li>
+                                <li><a
+                                        href="javascript:fnpintarformMenu('ConsultasEnLinea/ConsContratosCorporativos.html')"><i
+                                            class="fal fa-users" style="font-size:200%"></i>Cons. contratos corp.</a>
+                                </li>
+                                <li><a href="javascript:fnpintarformMenu('ConsultasEnLinea/CartasNotarialesC.html')"><i
+                                            class="fal fa-typewriter" style="font-size:200%"></i>Cartas notariales
+                                        corp.</a></li>
+                                <li><a
+                                        href="javascript:fnpintarformMenu('ConsultasEnLinea/VerificadordeDocumentoElectronico.html')"><i
+                                            class="fal fa-file-search" style="font-size:200%"></i>Autenticidad docs.</a>
+                                </li>
+                                <!-- <li><a href="javascript:fnpintarformMenu('ConsultasEnLinea/SolicituddeServiciosEmpre.html')"><i class="fal fa-building" style="font-size:200%"></i>Solic. Servicios empresariales</a></li>-->
+                                <li><a
+                                        href="javascript:fnpintarformMenu('ConsultasEnLinea/ConsultaDeDocumentosElect.html')"><i
+                                            class="fal fa-file-invoice-dollar" style="font-size:200%"></i>Facturación
+                                        elect.</a></li>
+                                <li><a
+                                            href="javascript:fnpintarformMenu('ConsultasEnLinea/SolicituddeServiciosEmpre.html')"><i
+                                                class="fal fa-file-invoice-dollar" style="font-size:200%"></i>Sol. de Servicios Empresariales
+                                        </a></li>
+
+                            </ul>
+
+                            <hr />
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header waves-effect waves-red"><i class="fas fa-scroll stroke-transparent"
+                                style="font-size:200%"></i>Trámites en línea</a>
+                        <div class="collapsible-body">
+
+                            <ul class="collapsible collapsible-accordion">
+                                <li>
+                                    <a class="collapsible-header waves-effect"><i class="fal fa-child"
+                                            style="font-size:200%"></i>Autoriza viaje de menores</a>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible collapsible-accordion">
+                                            <li style="padding: 0 19.5px 0 16px;"><a
+                                                    href="javascript:fnpintarformMenu('TramiteEnLinea/InteriorPaisM.html');"><i
+                                                        class="far fa-flag" style="font-size:200%"></i>Al interior del
+                                                    pais</a></li>
+                                            <li style="padding: 0 19.5px 0 16px;"><a
+                                                    href="javascript:fnpintarformMenu('TramiteEnLinea/ExteriorPaisM.html');"><i
+                                                        class="fal fa-globe-europe" style="font-size:200%"></i>Al
+                                                    exterior del pais</a></li>
+
+                                        </ul>
+                                        <hr />
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="collapsible collapsible-accordion">
+                                <li>
+                                    <a class="collapsible-header waves-effect waves-red"><i
+                                            class="fas fa-car stroke-transparent"
+                                            style="font-size:200%"></i>Transferencia vehicular</a>
+                                    <div class="collapsible-body">
+                                        <ul>
+                                            <li style="padding: 0 19.5px 0 16px;"><a
+                                                    href="javascript:fnpintarformMenu('TramiteEnLinea/TransferVehicular/CrearSolicitud2.html');"><i
+                                                        class="fal fa-cars" style="font-size:200%"></i>Crear
+                                                    Solicitud </a></li>
+                                            <li style="padding: 0 19.5px 0 16px;"><a
+                                                    href="javascript:fnpintarformMenu('TramiteEnLinea/TransferVehicular/ReporteVehiculo.html');"><i
+                                                        class="fal fa-clipboard" style="font-size:200%"></i>Consultar 
+                                                    Solicitud</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="collapsible collapsible-accordion">
+                                <li>
+                                    <a class="collapsible-header waves-effect waves-red"><i class="fal fa-gavel"
+                                            style="font-size:200%"></i>Poderes</a>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible collapsible-accordion">
+                                            <li style="padding: 0 19.5px 0 16px;"><a
+                                                    href="javascript:fnpintarformMenu('TramiteEnLinea/Poderes/PoderSinMinuta.html');"><i
+                                                        class="fal fa-money-bill-wave" style="font-size:200%"></i>Poder
+                                                    sin minuta</a></li>
+                                            <li style="padding: 0 19.5px 0 16px;"><a
+                                                    href="javascript:fnpintarformMenu('TramiteEnLinea/Poderes/PoderFueraRegistro.html');"><i
+                                                        class="fal fa-cabinet-filing" style="font-size:200%"></i>Poder
+                                                    fuera de Reg.</a></li>
+                                            <li style="padding: 0 19.5px 0 16px;"><a
+                                                    href="javascript:fnpintarformMenu('TramiteEnLinea/Poderes/CobroDePensionONP.html');"><i
+                                                        class="fal fa-building" style="font-size:200%"></i>Cobro
+                                                    pensión(ONP)</a></li>
+                                            <li style="padding: 0 19.5px 0 16px;"><a
+                                                    href="javascript:fnpintarformMenu('TramiteEnLinea/Poderes/CobroDePensionBancoNacional.html');"><i
+                                                        class="fal fa-university" style="font-size:200%"></i>Cobro
+                                                    pens.(BCO Nación)</a></li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="no-padding">
+                                    <a class="collapsible-header waves-effect waves-red"
+                                        href="javascript:fnpintarformMenu('Testimonio/Testimonio.html');"><i
+                                            class="fal fa-file" style="font-size:200%"></i>Testimonio</a>
+                                </li>
+                                <li class="no-padding">
+                                    <a class="collapsible-header waves-effect waves-red"
+                                        href="javascript:fnpintarformMenu('SolicitudHipoteca/SolitudHipoteca.html');"><i
+                                            class="fal fa-home" style="font-size:200%"></i>Hipoteca</a>
+                                </li>
+                            </ul>
+                            <hr />
+                        </div>
+
+                    </li>
+                </ul>
+
+            </li>
+
+
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header waves-effect waves-red"><i class="fas fa-paste stroke-transparent"
+                                style="font-size:200%"></i>Servicios notariales</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <ul class="collapsible collapsible-accordion">
+                                        <li>
+                                            <a class="collapsible-header waves-effect"><i class="fal fa-pen-alt"
+                                                    style="font-size:200%"></i>Escrituras públicas</a>
+                                            <div class="collapsible-body">
+                                                <ul class="collapsible collapsible-accordion">
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('EscriturasPublicas/ComprasYVentas.html');"><i
+                                                                class="far fa-money-bill"
+                                                                style="font-size:200%"></i>Compra y Venta</a></li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('EscriturasPublicas/Poderes.html');"><i
+                                                                class="fal fa-gavel"
+                                                                style="font-size:200%"></i>Poderes</a></li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('EscriturasPublicas/ConstitucionDeSociedades.html');"><i
+                                                                class="fal fa-car" style="font-size:200%"></i>Const. de
+                                                            Sociedades</a></li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('EscriturasPublicas/ConstitucionDeHipotecas.html');"><i
+                                                                class="fal fa-file" style="font-size:200%"></i>Const. de
+                                                            Hipotecas</a></li>
+
+                                                </ul>
+                                                <hr />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="collapsible collapsible-accordion">
+                                        <li>
+                                            <a class="collapsible-header waves-effect"><i class="fal fa-file-contract"
+                                                    style="font-size:200%"></i>Asuntos no contenciosos</a>
+                                            <div class="collapsible-body">
+                                                <ul class="collapsible collapsible-accordion">
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('AsuntosNoContenciosos/RectificacionPartidas.html');"><i
+                                                                class="far fa-newspaper"
+                                                                style="font-size:200%"></i>Rectificación de Partidas</a>
+                                                    </li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('AsuntosNoContenciosos/SucesionIntestada.html');"><i
+                                                                class="fal fa-file" style="font-size:200%"></i>Sucesión
+                                                            Intestada</a></li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('AsuntosNoContenciosos/PatrimonioFamiliar.html');"><i
+                                                                class="fal fa-car" style="font-size:200%"></i>Patrimonio
+                                                            Familiar</a></li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('AsuntosNoContenciosos/Divorcios.html');"><i
+                                                                class="fal fa-folder"
+                                                                style="font-size:200%"></i>Divorcios</a></li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('AsuntosNoContenciosos/AdopcionPerCapaces.html');"><i
+                                                                class="fal fa-book" style="font-size:200%"></i>Adopción
+                                                            de Pers. Capaces</a></li>
+
+                                                </ul>
+                                                <hr />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="collapsible collapsible-accordion">
+                                        <li>
+                                            <a class="collapsible-header waves-effect"><i class="fal fa-balance-scale"
+                                                    style="font-size:200%"></i>Legalizaciones</a>
+                                            <div class="collapsible-body">
+                                                <ul class="collapsible collapsible-accordion">
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('Legalizaciones/DeFirmas.html');"><i
+                                                                class="far fa-pencil-alt" style="font-size:200%"></i>De
+                                                            Firmas</a></li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('Legalizaciones/DeCopias.html');"><i
+                                                                class="fal fa-file" style="font-size:200%"></i>De
+                                                            Copias</a></li>
+                                                    <li style="padding: 0 19.5px 0 16px;"><a
+                                                            href="javascript:fnpintarformMenu('Legalizaciones/DeLibros.html');"><i
+                                                                class="fal fa-book" style="font-size:200%"></i>De
+                                                            Libros</a></li>
+                                                </ul>
+                                                <hr />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:fnpintarformMenu('Protestos/Protestos.html');"><i
+                                            class="fal fa-person-sign" style="font-size:200%"></i>Protestos</a></li>
+                                <li><a href="javascript:fnpintarformMenu('CartasNotariales/CartasNotariales.html')"><i
+                                            class="fal fa-mail-bulk" style="font-size:200%"></i>Cartas notariales</a>
+                                </li>
+                                <!--<li><a href="#!"><i class="fal fa-gavel" style="font-size:200%"></i>Poderes</a></li>-->
+                            </ul>
+                            <hr />
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="no-padding">
+                <a class="collapsible-header waves-effect waves-red"
+                    href="javascript:fnpintarformMenu('Perfil/Perfil.html');"><i
+                        class="fas fa-address-card stroke-transparent" style="font-size:200%"></i>Perfil</a>
+            </li>
+            <li class="no-padding">
+                <a href="javascript:fnpintarformMenu('MisTramites/Tramites.html');"
+                    class="collapsible-header waves-effect waves-red"><i class="fas fa-archive stroke-transparent"
+                        style="font-size:200%"></i>Mis trámites</a>
+            </li>
+            <li class="no-padding">
+                <a href="javascript:fnpintarformMenu('Contactenos/Contactenos.html');"
+                    class="collapsible-header waves-effect waves-red"><i class="fas fa-phone stroke-transparent"
+                        style="font-size:200%"></i>Contáctenos</a>
+            </li>
+            <li class="no-padding">
+                <a id="CerrarSession"
+                    class="collapsible-header waves-effect waves-red"><i class="fas fa-times-circle stroke-transparent"
+                        style="font-size:200%"></i>Cerrar Sesión</a>
+            </li>
+
+           
+
+
+        </ul>
+
+    </div>
+
+
+
+    <div class="container">
+        <div>
+            <div style="
+                position: absolute;
+    left: 38%;
+    top: 77px;
+    width: 235px;
+    z-index: 1;
+        ">
+                <ul class="collection" id="notificaciones" >
+                    <li id="testli"
+                        style="background:#e8e8e8;padding-left: 38px;padding-bottom: 10px;border-bottom-width: 23.25;margin-bottom: 0px;"
+                        class="collection-item avatar">
+                        <span style="color: black;font-size:15px" class="title">
+
+                        </span>
+                        <p style="color: black;">
+                            <b>Cargando...</b>
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div id="DivContenidoMenu" name="DivContenidoMenu">
+        <div style="text-align:center">
+            <img src="images/Menu/NotariaPaino.jpg" style="width:60%;" />
+        </div>
+
+        <div class="container">
+            <p>
+                Misión:
+                <br />
+                <br />
+                Brindamos seguridad jurídica de confianza, oportuna, con soluciones integrales, innovadoras, de calidad,
+                actualizadas, personalizadas, con una comunicación permanente, con responsabilidad social y
+                profesionalismo.
+                <br />
+                <br />
+                <br />
+                Visión:
+                <br />
+                <br />
+                Ser la Notaría líder a nivel nacional, ofreciendo a nuestros usuarios plena satisfacción en el servicio
+                prestado.
+            </p>
+        </div>
+
+
+        <div id="WelcomeMessage">
+            <div id="intercom-container" class="intercom-container intercom-reset">
+                <div id="intercom-launcher"
+                    class="intercom-launcher intercom-launcher-active intercom-launcher-with-message intercom-launcher-with-updated-avatar intercom-launcher-with-avatar intercom-launcher-with-badge intercom-launcher-with-preview">
+                    <div class="intercom-launcher-button" style="background-image: url(images/img/236832.png)"></div>
+                    <div class="intercom-launcher-preview">
+                        <div class="intercom-launcher-preview-body">
+                            <p class="intercom-align-left">Hola Bienvenido <spam id="NombreCUser"></spam>
+                            </p>
+                        </div>
+                        <div class="intercom-launcher-preview-caret"></div>
+                        <div><i onclick="CloseWelcomeMessage" class="intercom-launcher-preview-close"></i></div>
+                    </div>
+                </div>
+                <div id="intercom-messenger" class="intercom-messenger intercom-messenger-inactive"></div>
+            </div>
+        </div>
+
+        <!-- <div id="WelcomeMessageNewUser">
+            <div id="intercom-container" class="intercom-container intercom-reset">
+                <div id="intercom-launcher" class="intercom-launcher intercom-launcher-active intercom-launcher-with-message intercom-launcher-with-updated-avatar intercom-launcher-with-avatar intercom-launcher-with-badge intercom-launcher-with-preview">
+                    <div class="intercom-launcher-button" style="background-image: url(images/img/236832.png)"></div>
+                    <div class="intercom-launcher-preview">
+                        <div class="intercom-launcher-preview-body">
+                            <p class="intercom-align-left">Hola Bienvenido <spam id="NewUser">Nuevo Usuario</spam></p>
+                        </div>
+                        <div class="intercom-launcher-preview-caret"></div>
+                        <div class="intercom-launcher-preview-close"></div>
+                    </div>
+                </div>
+                <div id="intercom-messenger" class="intercom-messenger intercom-messenger-inactive"></div>
+            </div>
+        </div> -->
+
+        <footer style="width:100%; bottom: 0; position: fixed">
+            <div class="valign-wrapper center-block" style="margin:0;padding:0 19% 0 19%;">
+                <div style="text-align:center;"> <label style="font-size: 13px;color: #3b3b3b;">Versión
+                        2020.11.07</label></div>
+            </div>
+        </footer>
+
+
+    </div>
+
+
+    <br />
+
+
+
+    <script>
+        var fecha = new Date(); //Fecha actual
+        var mes = fecha.getMonth() + 1; //obteniendo mes
+        var dia = fecha.getDate(); //obteniendo dia
+        var ano = fecha.getFullYear(); //obteniendo año
+        if (dia < 10)
+            dia = '0' + dia; //agrega cero si el menor de 10
+        if (mes < 10)
+            mes = '0' + mes //agrega cero si el menor de 10
+        //document.getElementById('version').text = dia + "" + mes + "" + ano+"X";
+    </script>
+    <script src="scripts/Menu/Menu.js"></script>
+    <!-- <script src="scripts/Register.js"></script> -->
+
+</body>
+
+</html>

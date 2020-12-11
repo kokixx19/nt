@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+</head>
+<body>
+    <link href="css/Preload.css" rel="stylesheet" />
+
+
+    <div class="loader" id="contenerdor_Carga">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            
+        </div>
+        <div id="textopre"><span>Cargando, Espere...</span></div>
+    </div>
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <div class="row">
+
+        <div class="col s1" style="margin-top:3px;"><label>Doc.</label></div>
+
+        <div class="col s4">
+            <select class="browser-default" style="margin-left:10px;" id="CBO_T_DOC_PO_SM" disabled><option value="D">DNI</option><option value="CE">C. EXTRANJ</option><option value="TI">TARJ IDENT</option><option value="SR">SIN RUC</option><option value="SD">SIN DNI</option><option value="R">RUC</option><option value="PS">PASAPORTE</option><option value="LE">LIB ELECTO</option><option value="FP">C.FF POLIC</option><option value="FA">C.FF ARMAD</option><option value="CI">C. IDENTID</option><option value="VC">VIPCAM</option></select>
+
+
+
+        </div>
+
+
+        <div class="col s5">
+
+            <div class="cold s6">
+                <input placeholder="N° Doc" id="txtNroDoc" name="txtNroDoc" type="text" class="form-control">
+
+            </div>
+
+        </div>
+        <div class="cold s2" style="font-size:28px;">
+            <a class="fas fa-search prefix" id="buscar"></a>
+        </div>
+        <!--<div class="col s1">
+
+            <a class="fas fa-search prefix " href="javascript:FnBuscarPerPadre();"></a>
+
+        </div>-->
+
+    </div>
+
+    <div class="col s12 container" style="margin-top:3em">
+
+
+        <div class="row">
+            <div class="input-field">
+                <div class="col s6">
+                    <label>Fecha de Inicio</label>
+                    <input type="date" value=""  id="FechaInicio">
+                </div>
+                <div class="col s6">
+                    <label>Fecha de Final</label>
+                    <input type="date" value="" id="FechaFin" >
+                </div>
+            </div>
+        </div>
+<br>
+    <hr>
+    <br>
+        <div class="row">
+            <div class="col s6"><label>POR CATEGORIA <i class="fa fa-filter" aria-hidden="true"></i></label></div>
+            <div class="col s6">
+                <select class="browser-default " id="cbocat">
+                    <option value="00" >SELECCIONAR</option>
+                    
+                    <option value="01">PODERES</option>
+                    <option value="02">SOLICITUD HIPOTECA</option>
+                    <option value="05">SOLICITUD TESTIMONIO</option>
+                    <option value="03">INTERIOR Y EXTERIOR</option>
+                    <option value="04">TRAMITE VEHICULAR</option>
+                
+                </select>
+            </div>
+        </div>
+
+
+        <br />
+        <br />
+        <!--<div class="row">
+            <div class="container">
+                <div class="col s12">
+                    <table id="tbTramistes">
+                        <thead style="background-color:#a73924;color:white">
+                            <tr>
+                                <th data-priority="1">Fecha</th>
+                                <th>Kardex</th>
+                                <th>Nro/Ope</th>
+                                <th data-priority="2">Detalle</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableResult"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>-->
+       
+
+        <div class="modalb fade" id="modalDetalle" tabindex="-1" role="dialog" aria-labelledby="modalDetalleLabel" aria-hidden="true">
+            <div class="modalb-dialog" role="document">
+                <div class="modalb-content">
+                    <div class="modalb-header">
+                        <h5 class="modalb-title" id="modalDepartamentoTitle">Detalles de Registro</h5>
+                    </div>
+                    <div class="modalb-body">
+
+                        <div id="contenido">
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>ID:</label>
+                                </div>
+                                <div class="col s6">
+                                    <label><span id="id"></span></label>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>Documento:</label>
+                                </div>
+                                <div class="col s6">
+                                    <label><span id="doc"></span></label>
+                                </div>
+                            </div>
+                            <hr />
+                           
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>Nombres de Usuario:</label>
+                                </div>
+                                <div class="col s6">
+                                    <label><span id="nombre"></span></label>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>Rol:</label>
+                                </div>
+                                <div class="col s6">
+                                    <label><span id="cargo"></span></label>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>Proceso:</label>
+                                </div>
+                                <div class="col s6">
+                                    <label><span id="modulo"></span></label>
+                                </div>
+                            </div>
+                            <hr />
+                            <div id="tsoli">
+
+                                <div class="row">
+                                    <div class="col s6">
+                                        <label>Tip. Solicitud:</label>
+                                    </div>
+                                    <div class="col s6">
+                                        <label><span id="tsolic"></span></label>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+
+                            </div>
+
+                            <div id="precio">
+
+                                <div class="row">
+                                    <div class="col s6">
+                                        <label>Precio  Envio:</label>
+                                    </div>
+                                    <div class="col s6">
+                                        <label><span id="preciot"></span></label>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+
+                            </div>
+
+
+                            <div id="direccion">
+
+                                <div class="row">
+                                    <div class="col s6">
+                                        <label>Direccion  Envio:</label>
+                                    </div>
+                                    <div class="col s6">
+                                        <label><span id="direcciont"></span></label>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+
+                            </div>
+
+                            <div id="banco">
+
+                                <div class="row">
+                                    <div class="col s6">
+                                        <label>Banco Emisor:</label>
+                                    </div>
+                                    <div class="col s6">
+                                        <label><span id="bancot"></span></label>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+
+                            </div>
+
+                            <div id="contacto">
+
+                                <div class="row">
+                                    <div class="col s6">
+                                        <label>Contacto:</label>
+                                    </div>
+                                    <div class="col s6">
+                                        <label><span id="contactot"></span></label>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>Fecha</label>
+                                </div>
+                                <div class="col s6">
+                                    <label><span id="fecha"></span></label>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>Acciones:</label>
+                                </div>
+                                <div class="col s6">
+                                    <label><span id="acciones"></span></label>
+                                </div>
+                            </div>
+
+
+                            <hr />
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>Datos adicionales:</label>
+                                </div>
+                                <div class="col s6">
+                                    <div id="obs"></div>
+                                    
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <label>Estado</label>
+                                </div>
+                                <div class="col s6" id="est">
+                                    <div id="mensajeicon">
+
+
+                                    </div>
+
+
+                                    <div id="iconespera" ></div>
+
+                               
+                                </div>
+                            </div>
+
+                            <div id="poadd">
+
+                                
+
+
+                            </div>
+
+                            <div id="apoadd">
+
+                                
+
+
+                            </div>
+
+                            <div id="testadd">
+
+                                
+
+
+                            </div>
+                            <div id="codpen">
+
+                                
+
+
+                            </div>
+
+                            <div id="tippen">
+
+                                
+
+
+                            </div>
+
+                            <div id="ncuenta">
+
+                                
+
+
+                            </div>
+                        </div>
+
+                        <!--<div class="circulo">
+                            <div class="preloader-background">
+                                <div class="preloader-wrapper big active">
+                                    <div class="spinner-layer spinner-blue-only">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                       
+
+
+
+
+
+                        <div class="modalb-footer">
+                            <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Termino del Modal-->
+        <div class="col s12">
+            <label style="text-align:center;">HISTORIAL DE TRAMITES</label>
+        </div>
+        <br />
+        <div class="row">
+
+            <div id="DivTraTB">
+
+
+            </div>
+
+        </div>
+    </div>
+    <script src="scripts/MisTramites/MisTramites.js"></script>
+    <script>
+        var PerTide = sessionStorage.getItem('PerTide');
+        var PerIdenro = sessionStorage.getItem('PerIdenro');
+        $("#txtNroDoc").val(PerIdenro);
+    </script>
+</body>
+</html>

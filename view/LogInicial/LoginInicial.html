@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+   
+</head>
+<body>
+    <div id="divLogeo" class="center-block">
+        <nav class="top-nav" style="background-color:#a73924" id="este">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="row">
+
+                     
+
+                     </div>
+                     <a class="btn " href="javascript:fnpintarpaginas('Logon/Login.html');" style="margin-top:-10px;border-radius:20px;background-color: tomato;font-size: 14px;    width: 23%;"><label  href="javascript:fnpintarpaginas('Logon/Login.html');" style="color: white;
+                        font-size: 9px;
+                        font-weight: 500;"for="">retornar</label></a>
+                        <div class="" style="text-align: center;    margin-top: -16%;">
+                            
+                            <span style="font-size: 25px;" class="header" >Registro Inicial</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <br />
+
+        <div class="valign-wrapper" center_block style="margin:0; padding:0 19% 0 19%;">
+            <div class="col z-depth-6">
+                <strong style="font-size:25px;">¡Bienvenido!</strong>
+                <p>Para poder usar los servicios y ver la información que brinda esta aplicación debe registrarse previamente.</p>
+            </div>
+        </div>
+
+        <br />
+        <div class="valign-wrapper center-block" style="margin:0;padding:0 19% 0 19%;">
+            <div class="col z-depth-6">
+                <form>
+
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <i class="fas fa-id-card"></i>
+                            <input id="dni-ce" type="text" name="dni-ce" maxlength="11">
+                            <label>DNI/CE</label>
+                            
+                        </div>
+
+                        <div class="col s2" id="msg" style="    margin-top: 40px;">
+                                
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <i class="fas fa-user"></i>
+                            <input id="user-register" type="text" name="user">
+                            <label for="user">Usuario</label>
+
+                            
+                        </div>
+                        <div class="col s2" id="msg1" style="    margin-top: 40px;">
+                                
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field col s12">
+                            
+                            <i class="fas fa-lock"></i>
+                            <input id="pass-register" type="password" name="pass">
+                            <label id="lblPass"  for="password">Password</label>
+                            <i style="    font-size: 25px;
+                            float: right;
+                            margin-top: 2%;
+                            position: absolute;
+                            height: 43px;
+                            padding-bottom: 48px;
+                            border-bottom-width: 44px;
+                            margin-bottom: 88px;
+                            left: 83%;
+                        " id="verpass" class="far fa-eye"></i>
+                            <i style="    font-size: 25px;
+                            float: right;
+                            margin-top: -10%;
+                            position: absolute;
+                            height: 43px;
+                            padding-bottom: 48px;
+                            border-bottom-width: 44px;
+                            margin-bottom: 88px;
+                            left: 100%;
+                        " id="verpass2" class="far fa-eye-slash"></i>
+                           
+                        </div>
+                    </div>
+                    
+
+                    
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-phone"></i>
+                            <input id="telf" type="text" name="telf" maxlength="9" >
+                            <label for="tef">Teléfono</label>
+                        </div>
+
+                        
+                    </div>
+                    
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-envelope"></i>
+                            <input id="email" type="email" name="email">
+                            <label for="email">email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <a value="Registrar" id="btnSession" class="btn col s12" name="login" style="background:#a73924;border-radius: 20px;">Registrar</a>
+                        </div>
+                    </div>
+
+
+                    
+
+                </form>
+            </div>
+
+
+            <!--<label >  </label>-->
+
+
+
+            <br />
+
+            <div class="row">
+
+                <div class="col s12" style="text-align:center;">
+                    <a  style="color:#a73924 ;" href="javascript:fnpintarpaginas('Logon/Login.html');"><strong>¡Ya tengo una cuenta!</strong></a>
+                </div>
+
+            </div>
+
+            <div id="WelcomeMessageNewUser">
+                <div id="intercom-container" class="intercom-container intercom-reset">
+                    <div id="intercom-launcher" class="intercom-launcher intercom-launcher-active intercom-launcher-with-message intercom-launcher-with-updated-avatar intercom-launcher-with-avatar intercom-launcher-with-badge intercom-launcher-with-preview">
+                        <div class="intercom-launcher-button" style="background-image: url(images/img/236832.png)"></div>
+                        <div class="intercom-launcher-preview">
+                            <div class="intercom-launcher-preview-body">
+                                <p class="intercom-align-left">Hola Bienvenido <spam id="NewUser">Nuevo Usuario</spam></p>
+                            </div>
+                            <div class="intercom-launcher-preview-caret"></div>
+                            <div ><i class="intercom-launcher-preview-close" onclick="CloseWelcomeMessageNewUser()"></i></div>
+                        </div>
+                    </div>
+                    <div id="intercom-messenger" class="intercom-messenger intercom-messenger-inactive"></div>
+                </div>
+            </div>
+
+
+            <div style="text-align:center;"> <label>Copyright 2020 Notaria Paino</label></div>
+        </div>
+    </div>
+
+    <script src="scripts/Register.js"></script>
+</body>
+</html>

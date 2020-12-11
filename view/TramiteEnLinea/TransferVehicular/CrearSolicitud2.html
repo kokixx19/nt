@@ -1,0 +1,1194 @@
+<link href="css/Preload.css" rel="stylesheet" />
+<style>
+    .CentrarDiv {
+
+
+        padding-left: 70px;
+
+    }
+</style>
+
+<div class="loader" id="contenerdor_Carga">
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+    <div id="textopre"><span>Cargando, Espere...</span></div>
+</div>
+
+
+<div class="" id="LineaDeTiempo">
+    <div class="containertimeline">
+        <ul class="timeline centrartimeline" style="padding-left: 10%;">
+            <li id="liAVIPDatosVendedor" name="liAVIPDatosVendedor" class="pgactual"></li>
+            <li id="liAVIPDatosVendedorRepre" name="liAVIPDatosVendedorRepre"> </li>
+            <li id="liAVPIComprador" name="liAVPIComprador"> </li>
+            <li id="liAVPICompradorRepre" name="liAVPICompradorRepre"> </li>
+            <li id="liAVPIDeclaracionDatos" name="liAVPIDeclaracionDatos"> </li>
+        </ul>
+        <br />
+        <br />
+    </div>
+</div>
+
+<!--<input  id="txtFechaSYSTEM" name="txtFechaSYSTEM" type="text">
+
+<input id="txtAutoCod" name="txtAutoCod" type="text">-->
+
+<div class="container" id="DivContenedorDIVS">
+
+    <div class="col s12" id="DivInfoViajeIP" style="margin-top:3em;">
+        <div class="card">
+            <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Tramite Vehicular -
+                    Crear Solicitud</span>
+            </div>
+            <div class="card-content p-3">
+                <div class="row ">
+                    <div class="col s12">
+                        <span class=" font-weight-bold" style="font-size: 14px;color:#a73924;"></span>
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="container">
+                                <p style="font-size: 12px;">
+                                    Requisitos:</br></br>
+                                    1- Proporcionar copia de la tarjeta de propiedad. Presentar original y copia de los
+                                    documentos de identidad (DNI, CIP, Carnet de Extranjería, Etc.) de los contratantes,
+                                    el DNI deberá contar con la constancia de votación al día, dispensa o pago de
+                                    multa.</br></br>
+
+                                    2- En caso de personas jurídicas, presentar vigencia de poderes.</br>
+
+                                    3- En caso de vehículo con una antigüedad de in matriculación no mayor a 3 años,
+                                    presentar el debido comprobante que acredite el pago del impuesto al patrimonio
+                                    vehicular.</br></br>
+
+                                    4- Presentar original y copia del Seguro Obligatorio de Accidentes de Tránsito
+                                    (SOAT) vigente.</br></br>
+
+                                    5- Cuando se trate de un vehículo de propiedad común de los cónyuges, se requiere la
+                                    intervención de ambos por propio derecho o poder.</br></br>
+
+                                    Nota:</br></br>
+                                    Deberán estar presentes comprador(es) y vendedor(es) conjuntamente.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+
+                </div>
+
+                <div style="text-align:center;margin-top:3em;" class="col-lg-3">
+                    <button id="btnFrmVIP" name="btnFrmVIP" class="waves-effect red darken-4 btn">Formulario</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <form id="DivAVIPDatosVendedor">
+        <div class="col s12" id="">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Tramite Vehicular -
+                        Crear Solicitud</span>
+                </div>
+                <div class="card-content p-3 ">
+
+                    <div class="row">
+                        <h6 style="text-align: center;"><strong style="font-weight:bold;">Datos del Vendedor </strong>
+                        </h6>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Persona</label></div>
+                        <div class="col s7">
+                            <select class="browser-default" id="CboPersonaVendedor">
+                                <option value="J">JURIDICO</option>
+                                <option value="N" selected="selected">NATURAL</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Documento</label></div>
+                        <div class="col s7">
+                            <select id="CboTipoDocumentoVendedor" name="CboTipoDocumentoVendedor"
+                                class="browser-default" style="">
+                                <option value="D">DNI</option>
+                                <option value="CE">C. EXTRANJ</option>
+                                <option value="PS">PASAPORTE</option>
+                                <option value="TI">T. IDENTIDAD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s10 ">
+                            <input placeholder="Numero" id="txtNumDocumentoVendedor" name="txtNumDocumentoVendedor"
+                                type="number" class="form-control">
+                        </div>
+                        <div class="col s2">
+                            <a class="fas fa-search prefix" style="font-size:2rem;top: -0.2px;left: -5px;"
+                                href="javascript:fnBuscarPerVendedor();"></a>
+                        </div>
+                    </div>
+                    <div class="row " id="RazonSocial">
+                        <div class="col s12">
+                            <input placeholder="Razon Social" id="txtRazonSocialVendedor" name="txtRazonSocialVendedor"
+                                type="text" class="form-control col s12 hide">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="Nombres" id="txtNombrePVendedor" name="txtNombrePVendedor" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="A.Paterno" id="txtApePaternoVendedor" name="txtApePaternoVendedor"
+                                type="text" class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="A.Materno" id="txtApeMaternoVendedor" name="txtApeMaternoVendedor"
+                                type="text" class="form-control col s12">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="E-Mail " id="txtEmailVendedor" name="txtEmailVendedor" type="text"
+                                class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 ">
+                            <input placeholder="Telefono " id="txtTelefonoVendedor" name="txtTelefonoVendedor"
+                                type="number" class="form-control col s12">
+                        </div>
+                    </div>
+                    <div class="row" id="DivEstadoCivilVendedor">
+                        <div class="col s5"><label>Estado Civil</label></div>
+                        <div class="col s5">
+                            <select id="cboEstadoCivilVendedor" name="cboEstadoCivilVendedor" class="browser-default ">
+                                <option value="" selected="selected">(Ninguno)</option>
+                                <option value="06">(NO DEFINIDO)</option>
+                                <option value="08">CASADO(A)</option>
+                                <option value="10">DIVORCIADO(A)</option>
+                                <option value="13">SEPARACION PATRIM.</option>
+                                <option value="11">SEPARADO(A)</option>
+                                <option value="07">SOLTERO(A)</option>
+                                <option value="12">UNION LIBRE</option>
+                                <option value="09">VIUDO(A)</option>
+                            </select>
+                        </div>
+                        <div class="col s2 hide" id="married">
+                            <a class="btn-floating waves-effect waves-light blue" data-toggle="modalb"
+                                data-target="#ModalConyugueVendedor"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Nacionalidad</label></div>
+                        <div class="col s7">
+                            <select id="cboNacionalidadVendedor" name="cboNacionalidadVendedor"
+                                class="browser-default "></select>
+                        </div>
+                    </div>
+                    <div class="row" id="OcupacionV">
+                        <div class="col s5"><label>Ocupación</label></div>
+                        <div class="col s7">
+                            <select id="cboTVOcupacionVendedor" name="cboTVOcupacionVendedor" class="browser-default ">
+                                <option value="" selected="selected">Ninguno</option>
+                                <option value="001">ABOGADO</option>
+                                <option value="002">ACTOR / ARTISTA / ESCRITOR</option>
+                                <option value="003">ACTUARIO</option>
+                                <option value="004">ADMINISTRADOR</option>
+                                <option value="005">ADUANERO/AGENTE DE ADUANAS/INS</option>
+                                <option value="006">AEROMOZO/ AZAFATA</option>
+                                <option value="007">AGENTE / INTERMEDIARIO / CORRE</option>
+                                <option value="008">AGENTE DE BOLSA</option>
+                                <option value="010">AGENTE DE TURISMO/VIAJES</option>
+                                <option value="011">AGENTE/INTERMEDIARIO/CORREDOR</option>
+                                <option value="012">AGRICULTOR / GANADERO Y AFINES</option>
+                                <option value="013">ALBAÑIL / OBRERO / ELECTRICIST</option>
+                                <option value="014">AMA DE CASA</option>
+                                <option value="015">ANALISTAS / TÉCNICOS / PROGRAM</option>
+                                <option value="016">APODERADO(A)</option>
+                                <option value="019">ARQUITECTO</option>
+                                <option value="021">ASISTENTE SOCIAL</option>
+                                <option value="024">BACTERIÓLOGO / FARMACÓLOGO / B</option>
+                                <option value="OT008">BIOLOGO</option>
+                                <option value="028">CAMBISTA / COMPRA/VENTA DE MON</option>
+                                <option value="OT004">CHEF</option>
+                                <option value="COMER">COMERCIANTE</option>
+                                <option value="036">COMERCIANTE / VENDEDOR</option>
+                                <option value="OT005">COMUNICADOR</option>
+                                <option value="037">CONDUCTOR / CHOFER / TAXISTA /</option>
+                                <option value="039">CONSTRUCTOR</option>
+                                <option value="040">CONTADOR</option>
+                                <option value="041">CONTRATISTA</option>
+                                <option value="042">CORTE Y CONFECCIÓN DE ROPA/ FA</option>
+                                <option value="044">DECORADOR, DIBUJANTE, PUBLICIS</option>
+                                <option value="045">DENTISTA / ODONTÓLOGO</option>
+                                <option value="046">DEPORTISTA PROFESIONAL, ATLETA</option>
+                                <option value="DIRECT">DIRECTOR</option>
+                                <option value="DIGRA">DISEÑADOR GRAFICO</option>
+                                <option value="047">DISTRIBUIDOR</option>
+                                <option value="048">DOCENTE</option>
+                                <option value="049">ECONOMISTA</option>
+                                <option value="051">EMPLEADA (O) DEL HOGAR / NANA</option>
+                                <option value="EMPL">EMPLEADO(A)</option>
+                                <option value="115">EMPRESARIO</option>
+                                <option value="052">EMPRESARIO EXPORTADOR/ EMPRESA</option>
+                                <option value="078">ENFERMERO / OBSTETRIZ / PARAMÉ</option>
+                                <option value="056">ESTUDIANTE</option>
+                                <option value="FUNC">FUNCIONARIO(A)</option>
+                                <option value="GEREN">GERENTE</option>
+                                <option value="GEREAA">GERENTE ADJUNTO DE AREA</option>
+                                <option value="GERENC">GERENTE COMERCIAL</option>
+                                <option value="GERENA">GERENTE DE ADMINISTRACION</option>
+                                <option value="GEREAR">GERENTE DE AREA</option>
+                                <option value="GERVEN">GERENTE DE VENTAS</option>
+                                <option value="GERENG">GERENTE GENERAL</option>
+                                <option value="OT002">INDEPENDIENTE</option>
+                                <option value="061">INGENIERO</option>
+                                <option value="066">JUBILADO / PENSIONISTA</option>
+                                <option value="068">LIQUIDADOR, RECLAMACIONES/SEGU</option>
+                                <option value="070">MARTILLERO / SUBASTADOR</option>
+                                <option value="071">MAYORISTA, COMERCIO AL POR MAY</option>
+                                <option value="OT001">MECANICO</option>
+                                <option value="073">MÉDICO / CIRUJANO</option>
+                                <option value="075">MIEMBRO DE LA POLICÍA / FUERZA</option>
+                                <option value="998">NO DECLARA</option>
+                                <option value="OFTAL">OFTALMÓLOGO</option>
+                                <option value="999">OTROS</option>
+                                <option value="082">PERIODISTA</option>
+                                <option value="085">PILOTO</option>
+                                <option value="PRESID">PRESIDENTE DEL DIRECTORIO</option>
+                                <option value="089">PRODUCTOR DE CINE / RADIO / TE</option>
+                                <option value="092">PSICÓLOGO/ TERAPEUTA</option>
+                                <option value="OT006">PUBLICISTA</option>
+                                <option value="OT007">QUIMICO FARMACEUTICO</option>
+                                <option value="REPRES">REPRESENTANTE</option>
+                                <option value="099">SACERDOTE / MONJA / RELIGIOSO</option>
+                                <option value="100">SECRETARIA, RECEPCIONISTA, TEL</option>
+                                <option value="SUBG">SUB GERENTE</option>
+                                <option value="GERENT">TITULAR - GERENTE</option>
+                                <option value="OT003">TRADUCTORA</option>
+                                <option value="TRANSP">TRANSPORTISTA</option>
+                                <option value="112">VENDEDOR AMBULANTE</option>
+                                <option value="113">VETERINARIO, ZOÓLOGO, ZOOTÉCNI</option>
+                                <option value="114">VISITADOR MÉDICO</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- Modal -->
+                    <div class="modalb fade" id="ModalDomicilioVendedor" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modalb-dialog" role="document">
+                            <div class="modalb-content">
+                                <div class="modalb-header">
+                                    <h5 class="modalb-title" id="exampleModalLabel">Domicilio</h5>
+                                </div>
+                                <div class="modalb-body">
+                                    <div class="row">
+                                        <div class="col s5"><label>País</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPPaisVendedor" name="cboIPPaisVendedor"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Departamento</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDepartamentoVendedor" name="cboIPDepartamentoVendedor"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Provincia</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPProvinciaVendedor" name="cboIPProvinciaVendedor"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Distrito</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDIstritoVendedor" name="cboIPDIstritoVendedor"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 ">
+                                            <input placeholder="Dirección" id="txtIPDireccionVendedor"
+                                                name="txtIPDireccionVendedor" type="text" class="form-control col s12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modalb-footer">
+                                    <button type="button" id="btnGrabarIPDireccionVendedor"
+                                        name="btnGrabarIPDireccionVendedor" class="btn btn-primary"
+                                        data-dismiss="modalb">Grabar</button>
+                                    <button type="button" class="btn red lighten-1"
+                                        data-dismiss="modalb">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+
+                    <div class="modalb fade" id="ModalEdicionVendedorDomicilio" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modalb-dialog" role="document">
+                            <div class="modalb-content">
+                                <div class="modalb-header">
+                                    <h5 class="modalb-title" id="exampleModalLabel">Actualizar Domicilio</h5>
+                                </div>
+                                <div class="modalb-body">
+
+                                    <input id="txtCodigoDomicilio" readonly name="txtCodigoDomicilio" type="text">
+
+                                    <div class="row">
+                                        <div class="col s5"><label>País</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPPaisEdicionVendedor" name="cboIPPaisEdicionVendedor"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Departamento</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDepartamentoEdicionVendedor"
+                                                name="cboIPDepartamentoEdicionVendedor"
+                                                class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Provincia</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPProvinciaEdicionVendedor"
+                                                name="cboIPProvinciaEdicionVendedor" class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s5"><label>Distrito</label></div>
+                                        <div class="col s7">
+                                            <select id="cboIPDIstritoEdicionVendedor"
+                                                name="cboIPDIstritoEdicionVendedor" class="browser-default "></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 ">
+                                            <input placeholder="Dirección" id="txtIPDireccionEdicionVendedor"
+                                                name="txtIPDireccionEdicionVendedor" type="text"
+                                                class="form-control col s12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modalb-footer">
+                                    <button type="button" id="btnActualizarDomicilioVendedor"
+                                        name="btnActualizarDomicilioVendedor" class="btn btn blue lighten-1"
+                                        data-dismiss="modalb">Actualizar</button>
+                                    <button type="button" class="btn red lighten-1"
+                                        data-dismiss="modalb">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class=" col s12">
+            <p id="lblDomicilio">Domicilio</p>
+            <hr>
+        </div>
+        <div class=" col s12" id="DivDomicilioTBVendedor">
+
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col s12">
+                <button type="button" class="btn btn-primary" data-toggle="modalb"
+                    data-target="#ModalDomicilioVendedor">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        <br />
+        <br />
+    </form>
+
+    <form id="DivAVIPDatosVendedorRepre">
+        <div class="">
+            <div class="col s12" id="">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Tramite
+                            Vehicular - Crear Solicitud</span>
+                    </div>
+
+                    <!-- Tabla Hijo -->
+                    <div class="card-content p-3">
+                        <div class="row">
+                            <h6 style="text-align: center;"><strong style="font-weight:bold;">Datos del Vendedor
+                                    Adicional</strong>
+                            </h6>
+                            <div class="" style="text-align: center;">
+                            <label for="" style="font-size: 11px;">Llenar en caso de existir un vendedor adicional</label><strong style="font-size: 11px;">(opcional)</strong>
+                            </div>  
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col s12">
+                                <button type="button" class="btn btn-primary" data-toggle="modalb"
+                                    data-target="#ModalVendedorAdd">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12" id="DivVendedorAddTB">
+
+        </div>
+
+
+    </form>
+
+    <div class="">
+        <form id="DivAVIDatosComprador">
+            <div class="col s12" id="">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Tramite
+                            Vehicular - Crear Solicitud</span>
+                    </div>
+                    <div class="card-content p-3 ">
+
+                        <div class="row">
+                            <h6 style="text-align: center;"><strong style="font-weight:bold;">Datos del Comprador
+                                </strong></h6>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Persona</label></div>
+                            <div class="col s7">
+                                <select class="browser-default" id="CboPersonaComprador">
+                                    <option value="J">JURIDICO</option>
+                                    <option value="N" selected="selected">NATURAL</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Documento</label></div>
+                            <div class="col s7">
+                                <select id="CboTipoDocumentoComprador" name="CboTipoDocumentoComprador"
+                                    class="browser-default">
+                                    <option value="D">DNI</option>
+                                    <option value="CE">C. EXTRANJ</option>
+                                    <option value="PS">PASAPORTE</option>
+                                    <option value="TI">T. IDENTIDAD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s10 ">
+                                <input placeholder="Numero" id="txtNumDocumentoComprador"
+                                    name="txtNumDocumentoComprador" type="number" class="form-control">
+                            </div>
+                            <div class="col s2">
+                                <a class="fas fa-search prefix" style="font-size:2rem;top: -0.2px;left: -5px;"
+                                    href="javascript:fnBuscarPerComprador();"></a>
+                            </div>
+                        </div>
+                        <div class="row " id="RazonSocial">
+                            <div class="col s12">
+                                <input placeholder="Razon Social" id="txtRazonSocialComprador"
+                                    name="txtRazonSocialComprador" type="text" class="form-control col s12 hide">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Nombres" id="txtNombrePComprador" name="txtNombrePComprador"
+                                    type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="A.Paterno" id="txtApePaternoComprador" name="txtApePaternoComprador"
+                                    type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="A.Materno" id="txtApeMaternoComprador" name="txtApeMaternoComprador"
+                                    type="text" class="form-control col s12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="E-Mail " id="txtEmailComprador" name="txtEmailComprador" type="text"
+                                    class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Telefono " id="txtTelefonoComprador" name="txtTelefonoComprador"
+                                    type="number" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row" id="DivEstadoCivilComprador">
+                            <div class="col s5"><label>Estado Civil</label></div>
+                            <div class="col s5">
+                                <select id="cboEstadoCivilComprador" name="cboEstadoCivilComprador"
+                                    class="browser-default ">
+                                    <option value="" selected="selected">(Ninguno)</option>
+                                    <option value="06">(NO DEFINIDO)</option>
+                                    <option value="08">CASADO(A)</option>
+                                    <option value="10">DIVORCIADO(A)</option>
+                                    <option value="13">SEPARACION PATRIM.</option>
+                                    <option value="11">SEPARADO(A)</option>
+                                    <option value="07">SOLTERO(A)</option>
+                                    <option value="12">UNION LIBRE</option>
+                                    <option value="09">VIUDO(A)</option>
+                                </select>
+                            </div>
+                            <div class="col s2 hide" id="marriedC">
+                                <a class="btn-floating waves-effect waves-light blue" data-toggle="modalb"
+                                    data-target="#ModalConyugueComprador"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Nacionalidad</label></div>
+                            <div class="col s7">
+                                <select id="cboNacionalidadComprador" name="cboNacionalidadComprador"
+                                    class="browser-default "></select>
+                            </div>
+                        </div>
+                        <div class="row" id="OcupacionC">
+                            <div class="col s5"><label>Ocupación</label></div>
+                            <div class="col s7">
+                                <select id="cboTVOcupacionComprador" name="cboTVOcupacionComprador"
+                                    class="browser-default ">
+                                    <option value="" selected="selected">Ninguno</option>
+                                    <option value="001">ABOGADO</option>
+                                    <option value="002">ACTOR / ARTISTA / ESCRITOR</option>
+                                    <option value="003">ACTUARIO</option>
+                                    <option value="004">ADMINISTRADOR</option>
+                                    <option value="005">ADUANERO/AGENTE DE ADUANAS/INS</option>
+                                    <option value="006">AEROMOZO/ AZAFATA</option>
+                                    <option value="007">AGENTE / INTERMEDIARIO / CORRE</option>
+                                    <option value="008">AGENTE DE BOLSA</option>
+                                    <option value="010">AGENTE DE TURISMO/VIAJES</option>
+                                    <option value="011">AGENTE/INTERMEDIARIO/CORREDOR</option>
+                                    <option value="012">AGRICULTOR / GANADERO Y AFINES</option>
+                                    <option value="013">ALBAÑIL / OBRERO / ELECTRICIST</option>
+                                    <option value="014">AMA DE CASA</option>
+                                    <option value="015">ANALISTAS / TÉCNICOS / PROGRAM</option>
+                                    <option value="016">APODERADO(A)</option>
+                                    <option value="019">ARQUITECTO</option>
+                                    <option value="021">ASISTENTE SOCIAL</option>
+                                    <option value="024">BACTERIÓLOGO / FARMACÓLOGO / B</option>
+                                    <option value="OT008">BIOLOGO</option>
+                                    <option value="028">CAMBISTA / COMPRA/VENTA DE MON</option>
+                                    <option value="OT004">CHEF</option>
+                                    <option value="COMER">COMERCIANTE</option>
+                                    <option value="036">COMERCIANTE / Comprador</option>
+                                    <option value="OT005">COMUNICADOR</option>
+                                    <option value="037">CONDUCTOR / CHOFER / TAXISTA /</option>
+                                    <option value="039">CONSTRUCTOR</option>
+                                    <option value="040">CONTADOR</option>
+                                    <option value="041">CONTRATISTA</option>
+                                    <option value="042">CORTE Y CONFECCIÓN DE ROPA/ FA</option>
+                                    <option value="044">DECORADOR, DIBUJANTE, PUBLICIS</option>
+                                    <option value="045">DENTISTA / ODONTÓLOGO</option>
+                                    <option value="046">DEPORTISTA PROFESIONAL, ATLETA</option>
+                                    <option value="DIRECT">DIRECTOR</option>
+                                    <option value="DIGRA">DISEÑADOR GRAFICO</option>
+                                    <option value="047">DISTRIBUIDOR</option>
+                                    <option value="048">DOCENTE</option>
+                                    <option value="049">ECONOMISTA</option>
+                                    <option value="051">EMPLEADA (O) DEL HOGAR / NANA</option>
+                                    <option value="EMPL">EMPLEADO(A)</option>
+                                    <option value="115">EMPRESARIO</option>
+                                    <option value="052">EMPRESARIO EXPORTADOR/ EMPRESA</option>
+                                    <option value="078">ENFERMERO / OBSTETRIZ / PARAMÉ</option>
+                                    <option value="056">ESTUDIANTE</option>
+                                    <option value="FUNC">FUNCIONARIO(A)</option>
+                                    <option value="GEREN">GERENTE</option>
+                                    <option value="GEREAA">GERENTE ADJUNTO DE AREA</option>
+                                    <option value="GERENC">GERENTE COMERCIAL</option>
+                                    <option value="GERENA">GERENTE DE ADMINISTRACION</option>
+                                    <option value="GEREAR">GERENTE DE AREA</option>
+                                    <option value="GERVEN">GERENTE DE VENTAS</option>
+                                    <option value="GERENG">GERENTE GENERAL</option>
+                                    <option value="OT002">INDEPENDIENTE</option>
+                                    <option value="061">INGENIERO</option>
+                                    <option value="066">JUBILADO / PENSIONISTA</option>
+                                    <option value="068">LIQUIDADOR, RECLAMACIONES/SEGU</option>
+                                    <option value="070">MARTILLERO / SUBASTADOR</option>
+                                    <option value="071">MAYORISTA, COMERCIO AL POR MAY</option>
+                                    <option value="OT001">MECANICO</option>
+                                    <option value="073">MÉDICO / CIRUJANO</option>
+                                    <option value="075">MIEMBRO DE LA POLICÍA / FUERZA</option>
+                                    <option value="998">NO DECLARA</option>
+                                    <option value="OFTAL">OFTALMÓLOGO</option>
+                                    <option value="999">OTROS</option>
+                                    <option value="082">PERIODISTA</option>
+                                    <option value="085">PILOTO</option>
+                                    <option value="PRESID">PRESIDENTE DEL DIRECTORIO</option>
+                                    <option value="089">PRODUCTOR DE CINE / RADIO / TE</option>
+                                    <option value="092">PSICÓLOGO/ TERAPEUTA</option>
+                                    <option value="OT006">PUBLICISTA</option>
+                                    <option value="OT007">QUIMICO FARMACEUTICO</option>
+                                    <option value="REPRES">REPRESENTANTE</option>
+                                    <option value="099">SACERDOTE / MONJA / RELIGIOSO</option>
+                                    <option value="100">SECRETARIA, RECEPCIONISTA, TEL</option>
+                                    <option value="SUBG">SUB GERENTE</option>
+                                    <option value="GERENT">TITULAR - GERENTE</option>
+                                    <option value="OT003">TRADUCTORA</option>
+                                    <option value="TRANSP">TRANSPORTISTA</option>
+                                    <option value="112">Comprador AMBULANTE</option>
+                                    <option value="113">VETERINARIO, ZOÓLOGO, ZOOTÉCNI</option>
+                                    <option value="114">VISITADOR MÉDICO</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" id="">
+                            <div class="col s8"><label>Vendedor Adicional</label></div>
+                            <div class="col s4 switch">
+                                <label>
+                                    <input type="checkbox" id="chkCompradorAdd" name="chkCompradorAdd"
+                                        style="margin-left: 50px;">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col s12">
+                <p id="lblDomicilioC">Domicilio</p>
+                <hr>
+            </div>
+            <div class=" col s12" id="DivDomicilioTBComprador">
+
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col s12">
+                    <button type="button" class="btn btn-primary" data-toggle="modalb"
+                        data-target="#ModalDomicilioComprador">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <br />
+            <br />
+        </form>
+    </div>
+
+    <form id="DivAVIPDatosCompradorRepre">
+        <div class="">
+            <div class="col s12" id="">
+                <div class="card">
+                    <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                        <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Tramite
+                            Vehicular - Crear Solicitud</span>
+                    </div>
+
+
+                    <div class="card-content p-3">
+                        <div class="row">
+                            <h6 style="text-align: center;"><strong style="font-weight:bold;">Datos del Comprador
+                                    Adicional</strong>
+                            </h6>
+                            <div class="" style="
+                            text-align: center;">
+                                <label for="" style="
+                                font-size: 11px;">Llenar en caso de existir un comprador adicional</label><strong style="
+    font-size: 11px;">(opcional)</strong>
+                                </div>  
+
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col s12">
+                                <button type="button" class="btn btn-primary" data-toggle="modalb"
+                                    data-target="#ModalCompradorAdd">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12" id="DivCompradorAddTB">
+
+        </div>
+
+
+    </form>
+
+
+    <div class="">
+        <form class="col s12" id="DIvAVPIDeclaracionDatos" name="DIvAVPIDeclaracionDatos">
+            <div class="card">
+                <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                    <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">Tramite Vehicular -
+                        Crear Solicitud</span>
+                </div>
+
+                <!-- Tabla Hijo -->
+
+                <div class="card-content p-3">
+                    <div class="row">
+                        <h6 style="text-align: center;"><strong style="font-weight:bold;">Datos del Vehiculo
+                            </strong></h6>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <input placeholder="Placa" id="Placa" maxlength="7" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5"><label>Moneda</label></div>
+                        <div class="col s7">
+                            <select id="vKVEHMONC1" name="vKVEHMONC1" class="browser-default">
+                                <option value="US$" selected="selected">DOLARES</option>
+                                <option value="S/.">SOLES</option>
+                                <option value="EUR">EUROS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <input placeholder="Monto" maxlength="17" id="Monto" type="number" step=".01"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <br />
+                    <a class="btn-floating  pulse" id="agregarsoli"><i class="fas fa-plus"></i></i></a>
+                    <div class="row">
+                        <div class="col s12" id="tbPlaca">
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+<div class="modalb fade" id="ModalConyugueVendedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modalb-dialog" role="document">
+        <div class="modalb-content">
+            <div class="modalb-header">
+                <h5 class="modalb-title" id="exampleModalLabel">Datos Conyugue</h5>
+            </div>
+            <div class="modalb-body">
+
+                <div class="row">
+                    <div class="col s5"><label>Documento</label></div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="col s5">
+                            <select class="browser-default" id="CboTipoDocumentoCVendedor"
+                                name="CboTipoDocumentoCVendedor"></select>
+                        </div>
+                        <input placeholder="Número" id="txtNumeroCVendedor" name="txtNumeroCVendedor" type="number"
+                            class="form-control col s5">
+                        <a href="javascript:LlenarCamposVendedor();" class="fas fa-search prefix col s2"></a>
+                    </div>
+                </div>
+                <div class="row" id="">
+                    <div class="col s12">
+
+                        <input placeholder="Nombres" id="txtNombresCVendedor" name="txtNombresCVendedor" type="text"
+                            class="form-control col s12">
+                    </div>
+                </div>
+                <div class="row" id="">
+                    <div class="col s12">
+                        <input placeholder="A.Paterno" id="ApellidoPaternoCVendedor" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row" id="">
+                    <div class="col s12">
+                        <input placeholder="A.Materno" id="ApellidoMaternoCVendedor" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modalb-footer">
+                <button type="button" id="btnGuardarConjuge" name="btnGuardarConjuge" class="btn btn-primary"
+                    data-dismiss="modalb">Grabar</button>
+                <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modalb fade" id="ModalConyugueComprador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modalb-dialog" role="document">
+        <div class="modalb-content">
+            <div class="modalb-header">
+                <h5 class="modalb-title" id="exampleModalLabel">Datos Conyugue</h5>
+            </div>
+            <div class="modalb-body">
+
+                <div class="row">
+                    <div class="col s5"><label>Documento</label></div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="col s5">
+                            <select class="browser-default" id="CboTipoDocumentoCComprador"
+                                name="CboTipoDocumentoCComprador"></select>
+                        </div>
+                        <input placeholder="Número" id="txtNumeroCComprador" name="txtNumeroCComprador" type="text"
+                            class="form-control col s5">
+                        <a href="javascript:LlenarCamposComprador();" class="fas fa-search prefix col s2"></a>
+                    </div>
+                </div>
+                <div class="row" id="">
+                    <div class="col s12">
+
+                        <input placeholder="Nombres" id="txtNombresCComprador" name="txtNombresCComprador" type="text"
+                            class="form-control col s12">
+                    </div>
+                </div>
+                <div class="row" id="">
+                    <div class="col s12">
+                        <input placeholder="A.Paterno" id="ApellidoPaternoCComprador" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row" id="">
+                    <div class="col s12">
+                        <input placeholder="A.Materno" id="ApellidoMaternocComprador" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modalb-footer">
+                <button type="button" id="btnGuardarConjugeC" name="btnGuardarConjugeC" class="btn btn-primary"
+                    data-dismiss="modalb">Grabar</button>
+                <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="width:100%; bottom: 0; position: fixed;" id="BtnSAS">
+    <div class="row" style="background-color:#a73924;margin-bottom:0px">
+        <div class="col s4">
+            <a id="ahrefatras" name="ahrefatras" href="javascript:fnNextRepresentante();"
+                style="color:white;font-size:120%">
+                <i class="fas fa-chevron-left"> </i>Anterior
+            </a>
+        </div>
+        <div class="col s4">
+            <a id="btnGrabarIntPais" name="btnGrabarIntPais" href="#" style="color:white;font-size:120%">
+                <i class="fas fa-save"> </i> Guardar
+            </a>
+        </div>
+
+        <div class="col s4" style="text-align:right">
+            <a id="ahrefSiguiente" name="ahrefSiguiente" href="javascript:fnNextAVIDatosVendedor();"
+                style="color:white;font-size:120%">
+                Siguiente<i class="fas fa-chevron-right"></i>
+            </a>
+            <a id="ahrefSiguiente2" name="ahrefSiguiente2" href="javascript:fnNextAVIDatosVendedor();"
+                style="color:white;font-size:120%">
+                Siguiente<i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+    </div>
+</footer>
+
+
+<div class="modalb fade" id="ModalDomicilioComprador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modalb-dialog" role="document">
+        <div class="modalb-content">
+            <div class="modalb-header">
+                <h5 class="modalb-title" id="exampleModalLabel">Domicilio</h5>
+            </div>
+            <div class="modalb-body">
+                <div class="row">
+                    <div class="col s5"><label>País</label></div>
+                    <div class="col s7">
+                        <select id="cboIPPaisComprador" name="cboIPPaisComprador" class="browser-default "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5"><label>Departamento</label></div>
+                    <div class="col s7">
+                        <select id="cboIPDepartamentoComprador" name="cboIPDepartamentoComprador"
+                            class="browser-default "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5"><label>Provincia</label></div>
+                    <div class="col s7">
+                        <select id="cboIPProvinciaComprador" name="cboIPProvinciaComprador"
+                            class="browser-default "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5"><label>Distrito</label></div>
+                    <div class="col s7">
+                        <select id="cboIPDIstritoComprador" name="cboIPDIstritoComprador"
+                            class="browser-default "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 ">
+                        <input placeholder="Dirección" id="txtIPDireccionComprador" name="txtIPDireccionComprador"
+                            type="text" class="form-control col s12">
+                    </div>
+                </div>
+            </div>
+            <div class="modalb-footer">
+                <button type="button" id="btnGrabarIPDireccionComprador" name="btnGrabarIPDireccionComprador"
+                    class="btn btn-primary" data-dismiss="modalb">Grabar</button>
+                <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modalb fade" id="ModalEdicionCompradorDomicilio" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modalb-dialog" role="document">
+        <div class="modalb-content">
+            <div class="modalb-header">
+                <h5 class="modalb-title" id="exampleModalLabel">Actualizar Domicilio</h5>
+            </div>
+            <div class="modalb-body">
+
+                <input id="txtCodigoDomicilioC" readonly name="txtCodigoDomicilioC" type="text">
+
+                <div class="row">
+                    <div class="col s5"><label>País</label></div>
+                    <div class="col s7">
+                        <select id="cboIPPaisEdicionComprador" name="cboIPPaisEdicionComprador"
+                            class="browser-default "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5"><label>Departamento</label></div>
+                    <div class="col s7">
+                        <select id="cboIPDepartamentoEdicionComprador" name="cboIPDepartamentoEdicionComprador"
+                            class="browser-default "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5"><label>Provincia</label></div>
+                    <div class="col s7">
+                        <select id="cboIPProvinciaEdicionComprador" name="cboIPProvinciaEdicionComprador"
+                            class="browser-default "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5"><label>Distrito</label></div>
+                    <div class="col s7">
+                        <select id="cboIPDIstritoEdicionComprador" name="cboIPDIstritoEdicionComprador"
+                            class="browser-default "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 ">
+                        <input placeholder="Dirección" id="txtIPDireccionEdicionComprador"
+                            name="txtIPDireccionEdicionComprador" type="text" class="form-control col s12">
+                    </div>
+                </div>
+            </div>
+            <div class="modalb-footer">
+                <button type="button" id="btnActualizarDomicilioComprador" name="btnActualizarDomicilioComprador"
+                    class="btn btn blue lighten-1" data-dismiss="modalb">Actualizar</button>
+                <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modalb fade" id="ModalVendedorAdd" tabindex="-1" role="dialog" aria-labelledby="ModalVendedorAdd"
+    aria-hidden="true">
+    <div class="modalb-dialog" role="document">
+        <div class="modalb-content">
+            <div class="modalb-header">
+                <h5 class="modalb-title" id="exampleModalLabel">Adicionar Vendedor</h5>
+            </div>
+            <div class="card-content p-3" id="">
+                <div class="">
+
+                    <div class="card-content p-3">
+                        <div class="row">
+                            <div class="col s5"><label>Documento</label></div>
+                            <div class="col s7">
+                                <select id="CboTipoDocumentoVendedorAdd" name="CboTipoDocumentoVendedorAdd"
+                                    class="browser-default" >
+                                    <option value="D">DNI</option>
+                                    <option value="CE">C. EXTRANJ</option>
+                                    <option value="PS">PASAPORTE</option>
+                                    <option value="TI">T. IDENTIDAD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Numero" id="txtNumDocumentoVendedorAdd"
+                                    name="txtNumDocumentoVendedorAdd" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Ficha Registral" id="txtFichaRVendedorAdd"
+                                    name="txtFichaRVendedorAdd" type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Nombres" id="txtNombrePVendedorAdd" name="txtNombrePVendedorAdd"
+                                    type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="A.Paterno" id="txtApePaternoVendedorAdd"
+                                    name="txtApePaternoVendedorAdd" type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="A.Materno" id="txtApeMaternoVendedorAdd"
+                                    name="txtApeMaternoVendedorAdd" type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modalb-footer">
+                <button type="button" id="btnGrabarVendedorAdd" name="btnGrabarVendedorAdd" class="btn btn-primary"
+                    data-dismiss="modalb">Grabar</button>
+                <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modalb fade" id="ModalCompradorAdd" tabindex="-1" role="dialog" aria-labelledby="ModalCompradorAdd"
+    aria-hidden="true">
+    <div class="modalb-dialog" role="document">
+        <div class="modalb-content">
+            <div class="modalb-header">
+                <h5 class="modalb-title" id="exampleModalLabel">Adicionar Comprador</h5>
+            </div>
+            <div class="card-content p-3" id="">
+                <div class="">
+
+                    <div class="card-content p-3">
+                        <div class="row">
+                            <div class="col s5"><label>Documento</label></div>
+                            <div class="col s7">
+                                <select id="CboTipoDocumentoCompradorAdd" name="CboTipoDocumentoCompradorAdd"
+                                    class="browser-default" style="">
+                                    <option value="D">DNI</option>
+                                    <option value="CE">C. EXTRANJ</option>
+                                    <option value="PS">PASAPORTE</option>
+                                    <option value="TI">T. IDENTIDAD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Numero" id="txtNumDocumentoCompradorAdd"
+                                    name="txtNumDocumentoCompradorAdd" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Ficha Registral" id="txtFichaRCompradorAdd"
+                                    name="txtFichaRCompradorAdd" type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Nombres" id="txtNombrePCompradorAdd" name="txtNombrePCompradorAdd"
+                                    type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="A.Paterno" id="txtApePaternoCompradorAdd"
+                                    name="txtApePaternoCompradorAdd" type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="A.Materno" id="txtApeMaternoCompradorAdd"
+                                    name="txtApeMaternoCompradorAdd" type="text" class="form-control col s12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modalb-footer">
+                <button type="button" id="btnGrabarCompradorAdd" name="btnGrabarCompradorAdd" class="btn btn-primary"
+                    data-dismiss="modalb">Grabar</button>
+                <button type="button" class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/TramiteEnLinea/TransferVehicular/CrearSolicitud2.js"></script>

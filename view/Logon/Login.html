@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="css/Estilos.css" rel="stylesheet" />
+    <script src="css/materialize.min.js"></script>
+
+    <link href="css/icon.css" rel="stylesheet">
+    <title></title>
+
+
+</head>
+<body>
+    <div id="divLogeo" class="center-block">
+        <nav class="top-nav" style="background-color:#a73924;" id="este">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <div class="col s12 m10 offset-m1" style="text-align:center">
+                            <span class="header" style="font-size:25px">Inicio de sesión</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <br />
+        <br />
+        <img class="center-block" src="images/Menu/NotariaPaino.jpg" style="width:50%; height:50%;" />
+
+        <br /><br />
+        <div class="valign-wrapper center-block" style="margin:0;padding:0 19% 0 19%;">
+            <div class="col z-depth-6">
+                <div>
+                    <div class="row">
+                        <!--ELIMINAR AL IDENTIFICAR-->
+                        <input type="hidden" id="tdoc">
+                        <input type="hidden" id="dni">
+                        <input type="hidden" id="us">
+                        <input type="hidden" id="pa">
+
+                        <!--ELIMINAR AL IDENTIFICAR-->
+
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">perm_identity</i>
+                            <input id="user" type="text" name="user">
+                            <label id="lblUser" for="user">Usuario</label>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock_outline</i>
+                            <input id="password" type="password" name="password">
+                            <label id="lblPass"  for="password">Clave</label>
+                            <i style="    font-size: 25px;
+                            float: right;
+                            margin-top: 2%;
+                            position: absolute;
+                            height: 43px;
+                            padding-bottom: 48px;
+                            border-bottom-width: 44px;
+                            margin-bottom: 88px;
+                            left: 83%;" id="verpass" class="far fa-eye"></i>
+                            <i style="    font-size: 25px;
+                            float: right;
+                            margin-top: 2%;
+                            position: absolute;
+                            height: 43px;
+                            padding-bottom: 48px;
+                            border-bottom-width: 44px;
+                            margin-bottom: 88px;
+                            left: 83%;
+                            bottom: 0px;
+                            top: 0px;" id="verpass2" class="far fa-eye-slash"></i>
+                        </div>                       
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <label style="margin-left:30px;">Recordar</label>
+                        </div>
+                        <div class="col s6" >
+                            <div class="switch">
+                                <label>
+                                   
+                                    <input type="checkbox" id="chksaveuser" name="chksaveuser" style="margin-left: 50px;">
+                                    <span class="lever"></span>
+                                  
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="lbutton"class="row">
+                        <div class="input-field col s12">
+                            <!--onclick="fnpintarpaginas('Menu/Menu.html');"-->
+                            <button id="login_store" class="btn col s12" name="login" style="background:#a73924;border-radius: 20px;"><span id="tlogin"><div id="load-img"></div></span></button>
+                            
+                            
+                        </div>
+                    </div>
+                    <div id="preload-init" class="row" >
+                        <div class="col s12">
+                            <img  style="    width: 100px;
+                            /* margin-top: 200px; */
+                            /* text-align: center; */
+                            display: block;
+                            margin: auto;
+                            margin-top: 20px; margin-top: -36px;"src="images/loading-true.svg" alt="">
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--<label >  </label>-->
+
+            <div class="row">
+                <div class="col s12" style="text-align:center;">
+                    <a onclick="" style="color:#a73924 ;" href="#"><strong>¿Olvidaste tu Contraseña?</strong></a>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col s12" style="text-align:center;">
+                    <a style="color:#a73924 ;" href="javascript:fnpintarpaginas('LogInicial/LoginInicial.html');"><strong>¿No estás registrado?</strong></a>
+                </div>
+            </div>
+
+
+            <!--<div class="row" style="background:black;">
+                <div class="col-s3"></div>
+                <div class="col s6">
+                    <label>Copyright 2020 Notaria Paino</label>
+                </div>
+                <div class="col s3"></div>
+            </div> -->
+
+            <br />
+
+
+        </div>
+    </div>
+    <footer style="width:100%; bottom: 0; position: fixed">
+        <div style="text-align:center;">
+            <label style="font-size: .8rem;color: #3b3b3b;">©Copyright 2020 Notaria Paino</label>
+        </div>
+    </footer>
+
+    <script src="scripts/LoginCookies.js">
+    </script>
+    <script src="scripts/index.js">
+    </script>
+   
+    </script>
+</body>
+</html>

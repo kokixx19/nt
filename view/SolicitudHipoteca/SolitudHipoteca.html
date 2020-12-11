@@ -1,0 +1,162 @@
+<link href="css/Preload.css" rel="stylesheet" />
+
+
+<div class="loader" id="contenerdor_Carga">
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div id="textopre"><span>Cargando, Espere...</span></div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="col s12" id="DivInfo" style="margin-top:3em;">
+        <div class="card">
+            <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">
+                    Solicitud Levantamiento de Hipoteca
+                </span>
+            </div>
+            <div class="card-content p-3">
+                <div class="row ">
+                    <div class="col s12">
+                        <span class=" font-weight-bold" style="font-size: 14px;color:#a73924;">
+
+                        </span>
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="container">
+                                <p style="font-size: 12px;">
+                                    Requisitos:<br /><br />
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+
+                </div>
+
+                <div style="text-align:center;margin-top:3em;" class="col-lg-3">
+                    <button id="btnFrmVIP" name="btnFrmVIP" class="waves-effect red darken-4 btn">Formulario</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col s12" id="DivForm" style="margin-top:3em;">
+        <div class="card">
+            <div class="card-panel m-0 p-3 red darken-4 rounded-0" style="text-align:center;">
+                <span class="red darken-4 colorwhite font-weight-bold" style="font-size: 16px;">
+                    Solicitud Levantamiento de Hipoteca
+                </span>
+            </div>
+            <div class="card-content p-3">
+                    <div class="row ">
+                    <div class="col s12">
+                        <span class=" font-weight-bold" style="font-size: 14px;color:#a73924;">
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="container">
+                    <div class=" col s12">
+                        <p>Solicitante</p>
+                        <hr>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s5"><label>Documento</label></div>
+                            <div class="col s7">
+                                <select id="CboTipoDocumento" name="CboTipoDocumento" class="browser-default" style="">
+                                    <option value="D">DNI</option>
+                                    <option value="CE">C. EXTRANJ</option>
+                                    <option value="PS">PASAPORTE</option>
+                                    <option value="TI">T. IDENTIDAD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s10 ">
+                                <input placeholder="Numero" id="txtNumDocumento" name="txtNumDocumento" type="number"
+                                    class="form-control">
+                            </div>
+                            <div class="col s2">
+                                <a class="fas fa-search prefix" style="font-size:2rem;top: -0.2px;left: -5px;"
+                                    href="javascript:fnBuscarPerPadres();"></a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Nombres" id="txtNombreP" name="txtNombreP" type="text"
+                                    class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="Celular " id="txtTelefono" name="txtTelefono" type="number"
+                                    class="form-control col s12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <input placeholder="E-Mail " id="txtEmail" name="txtEmail" type="text"
+                                    class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Banco </label></div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6 ">
+                                <input placeholder="Ruc" id="txtRuc" name="txtRuc" type="text"
+                                    class="form-control col s12">
+                            </div>
+                            <div class="col s6 ">
+                                <input placeholder="Razon Social" id="txtRazon" name="txtRazon" type="text"
+                                    class="form-control col s12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5"><label>Adjuntar Minuta</label></div>
+                            <div class="col s7">
+                                <input placeholder="Razon Social" id="txtAdjuntar" name="txtAdjuntar" type="file"
+                                    class="form-control col s12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="text-align:center;margin-top:3em;" class="col-lg-3">
+                    <button id="btnAceptar" name="btnAceptar" class="waves-effect red darken-4 btn">Enviar Solicitud</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="scripts/SolicitudHipoteca/SolicitudHipoteca.js"></script>

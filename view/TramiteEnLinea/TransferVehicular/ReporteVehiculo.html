@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/Preload.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <script>
+        //Global Variable Declaration
+        var base64Img = null;
+        margins = {
+          top: 70,
+          bottom: 40,
+          left: 30,
+          width: 550
+          
+        };
+        
+        /* append other function below: */
+        
+        </script>
+    <div class="loader" id="contenerdor_Carga">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+        <div id="textopre"><span>Cargando, Espere...</span></div>
+    </div>
+
+
+    
+        <h6 style="text-align: center;"><strong style="font-weight:bold; text-transform: uppercase;">CONSULTAR SOLICITUD</strong></h6>
+       
+        <div class="row">
+            <div class="col s12" style="text-align:center;    margin-top: 20px;">
+                <div>
+                <input  style = "margin-left: 8em;"placeholder="Placa" id="placa" maxlength="7" name="txtNroDoc" type="text" class="form-control col s5">
+               
+               
+                <a style="font-size: 30px;     margin-top: 3px;" class="fas fa-search col s2" href="javascript:generarReporteVH();"></a>
+            </div>
+            </div>
+        </div>
+
+       
+
+
+        <style>
+            label {
+                float: left;
+            }
+        </style>
+        <div class="col s12" id="GenerarReporte" style="    padding: 20px;">
+            <div class="card"  style="border-radius: 20px;"id="">
+                <div class="card-content p-3">
+                    <div class="row">
+                        <div class="col s12" style="    margin-top: 5px;">
+                            <div class="col s12" style="text-align:center;"><span class=" font-weight-bold"
+                                    style="font-size:14px;font-family: sans-serif; text-transform: uppercase;"> REPORTE DE TRANSFERENCIA VEHICULAR </span></div>
+                        </div>
+                    </div>
+                    <div class="row col s12">
+                        <div class="col s6"><label style="font-size:11px;color:black;text-transform: uppercase;"><b>Fecha:</b></label></div>
+                        <div class="col s6"><label style="font-size:11px" id="lblFecha">  </label></div>
+                    </div>
+                    <div class="row col s12" id="DNIV">
+                        <div class="col s6"><label style="font-size:11px;color:black;text-transform: uppercase;"><b>Kardex:</b></label></div>
+                        <div class="col s6"><label style="font-size:11px" id="lblKardex">  </label></div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <center>
+                        <div class="col s12">
+                            <span class="new badge" data-badge-caption="" style="/* padding: 0 20%; */font-weight: 600;/* float: none; */font-size: inherit;background-color: #a73924;/* box-sizing: content-box; */width: 100%;/* border: solid #5B6DCD 10px; text-transform: uppercase;*//* padding: 5px; */text-transform: uppercase;     border-radius: 50px;">Datos de la venta</span>
+                        </div>
+                    </center>
+                    </div>
+                    <div style="margin-top:10px;">
+                    <div class="row col s12">
+                        <div class="col s6"><label style="font-size:11px;color:black; text-transform: uppercase;"><b>Placa:</b></label></div>
+                        <div class="col s6"><label style="font-size:11px" id="lblPlaca"> </label></div>
+                    </div>
+                    <div class="row col s12">
+                        <div class="col s6"><label style="font-size:11px;color:black; text-transform: uppercase;"><b>Moneda:</b></label></div>
+                        <div class="col s6"><label style="font-size:11px" id="lblMoneda">  </label></div>
+                    </div>
+                    <div class="row col s12">
+                        <div class="col s6"><label style="font-size:11px;color:black;text-transform: uppercase;"><b>Monto:</b></label></div>
+                        <div class="col s6"><label style="font-size:11px" id="lblMonto">  </label></div>
+                    </div>
+                </div>
+
+                    
+                
+
+                    <div class="row">
+                        <center>
+                        <div class="col s12">
+                            <span class="new badge" data-badge-caption="" style="/* padding: 0 20%; */font-weight: 600;/* float: none; */font-size: inherit;background-color: #a73924;/* box-sizing: content-box; */width: 100%;/* border: solid #5B6DCD 10px; text-transform: uppercase; *//* padding: 5px; */text-transform: uppercase;    border-radius: 50px;">Datos del vendedor</span>
+                        </div>
+                    </center>
+                    </div>
+
+                   
+                    
+
+                    <div class="" style="margin-top:10px;">
+                    <div class="row col s12" id="V">
+                        <div class="col s6"><label style="font-size:11px;color:black; text-transform: uppercase;"><b>Documento:</b></label></div>
+                        <div class="col s6"><label style="font-size:11px; text-transform: uppercase;" id="lblDocumentos">  </label></div>
+                    </div>
+                    <div class="row col s12" id="DNIRV">
+                        <div class="col s6"><label style="font-size:11px;color:black; text-transform: uppercase;"><b>Nombre o Razón Social:</b></label></div>
+                        <div class="col s6"><label style="font-size:11px;text-transform: uppercase;" id="lblNombres"> </label></div>
+                    </div>
+                </div>
+
+                    <div class="" id="VendedoresAdicionales">
+                 
+                    </div>
+                   
+                  
+                    <div class="row">
+                        <center>
+                        <div class="col s12">
+                            <span class="new badge" data-badge-caption="" style="/* padding: 0 20%; */font-weight: 600;/* float: none; */font-size: inherit;background-color: #a73924;/* box-sizing: content-box; */width: 100%;/* border: solid #5B6DCD 10px;  text-transform: uppercase;*//* padding: 5px; */text-transform: uppercase;    border-radius: 50px;">Datos del comprador</span>
+                        </div>
+                    </center>
+                    </div>
+                    
+                    <div style="margin-top:10px;">
+                    <div class="row col s12" id="DNIC">
+                        <div class="col s6"><label style="font-size:11px;color:black;text-transform: uppercase;"><b>Documento</b></label>
+                        </div>
+                        <div class="col s6"><label style="font-size:11px; text-transform: uppercase;" id="lblDocumentosC"></label></div>
+                    </div>
+                    
+                    <div class="row col s12" id="C">
+                        <div class="col s6"><label style="font-size:11px;color:black;text-transform: uppercase;"><b>Nombre o Razón Social:</b></label></div>
+                        <div class="col s6"><label style="font-size:11px;text-transform: uppercase;" id="lblNombresC"></label></div>
+                    </div>
+                </div>
+
+
+                <div class="" id="CompradoresAdicionalesMaster">
+                    <div class="" id="CompradoresAdicionales">
+                 
+                </div>
+                 
+                </div>
+                  
+                   <!--<div class="row">
+
+                    <div class="col s12" style="text-align: center; float: none;">
+                        <button   class="waves-effect waves-light btn" style="background-color: #a73924;
+                        text-align: center;"onclick="HTMLaPDF()">Exportar en PDF</button>
+                    </div>
+                    
+
+
+                   </div>-->
+                    
+
+
+                
+
+                </div>
+            </div>
+        </div>
+
+
+   
+
+
+        
+        
+        <script  src="js/jspdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="scripts/TramiteEnLinea/TransferVehicular/ReporteVh.js"></script>
+</body>
+
+</html>
