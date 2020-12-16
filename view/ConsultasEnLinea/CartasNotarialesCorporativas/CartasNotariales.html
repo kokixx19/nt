@@ -1,22 +1,67 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
+
 <body>
-    <div class="container">
-        <form class="col s12" id="divBusqueda" style="margin-top:3em;">
-            <div class="card">
-                <div class="card-panel m-0 p-3 blue lighten-4 rounded-0">
-                    <span class="indigo-text font-weight-bold" style="font-size: 14px;">Cartas Notariales</span>
+
+    <style>
+
+    </style>
+
+
+
+    <link href="css/Preload.css" rel="stylesheet" />
+
+    <div class="loader" id="contenerdor_Carga">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+
+        </div>
+        <div id="textopre"><span>Cargando datos...</span></div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div id="return" style="text-align: center;">
+                <a class="btn red" style="font-size:10px; border-radius: 20px;"> Retornar</a>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container" id="busqueda">
+        <form class="col s12" id="divBusqueda" style="">
+            <div class="card" style="    border-radius: 20px;">
+                <div class="card-panel" style="background-color: #a73924;border-radius: 15px; text-align: center;">
+                    <span class="indigo-text font-weight-bold" style="font-size: 14px; font-size: 14px;
+                    color: white !important;text-align: center !;">Cartas Notariales</span>
                 </div>
                 <div class="card-content p-3">
+
                     <div class="row">
                         <div class="col s12">
                             <input placeholder="" id="" name="" type="text" class="form-control col s12">
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col s5"><label>Todos</label></div>
                         <div class="col s7">
@@ -25,46 +70,293 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="text-align: center !important;">
                         <div class="col s12">
-                            <input placeholder="Fecha" id="txtFecha" name="txtFecha" type="text" class="form-control col s10">&nbsp;
-                            <i class="far fa-calendar-day center-align" style="font-size:34px;"></i>
+                            <input placeholder="Fecha" id="txtFecha" name="txtFecha" type="date"
+                                class="form-control col s12">
+
                         </div>
                     </div>
 
-                    <div style="text-align:center;margin-top:2em;" class="col-lg-6">
-                        <a class="btn waves-effect waves-light red" href="">Filtrar</a>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Nro de Carta</th>
-                                        <th>Nombre Remitente</th>
-                                        <th>Estado</th>
-                                        <th>PDF</th>
-                                        <th>Consoli.</th>
-                                        <th>Entreg.</th>
-                                    </tr>
-                                </thead>
+                    <div style="margin-top: 2em;">
 
-                                <tbody>
-                                    <tr>
-                                        <td> </td>
-                                        <td> </td>
-                                        <td> </td>
-                                        <td><a class="far fa-eye"></a></td>
-                                        <td><a class="far fa-file"></a></td>
-                                        <td><a class="far fa-user"></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div style="text-align:center;" class="col-lg-6">
+                            <a class="btn waves-effect waves-light red"
+                                style=" border-radius: 15px; background-color: #a73924 !important;">Filtrar</a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card" style="border-radius: 20px; border: #a73924;
+                    border-style: groove;">
+                        <div class="card-content p-3">
+
+                            <div id="lista-corp"></div>
+                            <!--<div class="row ">
+                                <div class="col s6">
+                                    <span style="font-size:12px; color: black;font-weight: 600;">Fecha ing. : </span>
+                                    <span class=""
+                                        style="font-size: 12px;font-weight: 600; color: black;">03-11-20</span>
+
+
+
+
+
+
+                                </div>
+                                <div class="col s6">
+
+
+                                    <label style="font-size: 12px; font-weight: 600;">Nro Carta : <span
+                                            style="font-weight: 600; font-size: 12px;">762547</span> </label>
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                            <div class="row">
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Nom. Remitente:</b></label></div>
+                                <div class="col s3"><label style="font-size:10px">GLORIA MERCEDES FAC 36263 -
+                                        954743734</label></div>
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Nom. Destinatario:</b></label></div>
+                                <div class="col s3"><label style="font-size:10px">ELMER REYSON CARRANZA MERCEDES</label>
+                                </div>
+
+
+
+
+                            </div>
+                          
+
+                            <div class="row">
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Nom. Afianzado</b></label></div>
+                                <div class="col s3"><label style="font-size:10px">No hay</label></div>
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Distrito</b></label></div>
+                                <div class="col s3"><label style="font-size:10px">SAN BORJA</label></div>
+
+
+
+
+                            </div>
+
+                            <div class="row">
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Est. Cert.</b></label></div>
+                                <div class="col s3"><label style="font-size:10px">
+                                        <span class="new badge" data-badge-caption="">Listo</span></label></div>
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Fech. Entrega </b></label></div>
+                                <div class="col s3"><label style="font-size:10px">05-11-20</label></div>
+
+
+
+
+                            </div>
+
+
+
+                            <div class="row">
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Estado </b></label></div>
+                                <div class="col s3"><label style="font-size:10px">
+                                        <label style="font-size: 10px;">No entregado</label></div>
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>PDF </b></label></div>
+                                <div class="col s3"><img style="
+                                    width: 50%;
+                                " src="images/img/pdf.svg" id="pdf"><img style="
+                                    width: 35%;padding: 3px;
+                                " src="images/img/success.svg" alt=""></div>
+
+
+
+
+                            </div>
+
+                            <div class="row">
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Estregado: </b></label></div>
+                                <div class="col s3"><label style="font-size:10px"><img data-target="#modalDetalle"
+                                            data-toggle="modalb" style="width: 40%;" src="images/img/user.svg"
+                                            alt=""><img style="width: 35%" src="images/img/cross_svg.svg"
+                                            alt=""></span></label></div>
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Cod. Recla.: </b></label></div>
+                                <div class="col s3"><label style="font-size:10px">No</label></div>
+
+
+
+
+                            </div>
+
+                            <div class="row">
+
+
+                                <div class="col s3" style="justify-items: right;"><label
+                                        style="font-size:11px;color:black"><b>Consol.: </b></label></div>
+                                <div class="col s3"><img style="
+                                width: 50%;
+                            " src="images/img/pdf.svg" id="pdf_con"><img style="
+                                width: 35%;padding: 3px;
+                            " src="images/img/success.svg" alt=""></div>
+
+
+
+
+                            </div>
+
+
+
+                        </div>-->
+
+                        <br />
+
+                        <!--<div class="row">
+                                <div class="col s12" style="margin-top: 2%;">
+                                    <div class="col s12 " style="justify-items: center;">
+                                        <a class="btn btn-primary col s12" style="font-size:10px; border-radius: 20px;"
+                                            data-toggle="modalb" data-target="#modalDetalle">
+                                            <i class="fas fa-info " style="font-size: 12px;"></i>
+                                            <labe style="font-size:9px"> Ver más</labe>
+                                        </a>
+                                    </div>
+                                   
+                                </div>
+                            </div>-->
+
+
+                        <div class="modalb fade" id="modalDetalle" tabindex="-1" role="dialog"
+                            aria-labelledby="modalDetalleLabel" aria-hidden="true">
+                            <div class="modalb-dialog" role="document">
+                                <div class="modalb-content">
+                                    <div class="modalb-header">
+                                        <h5 class="modalb-title" id="modalDepartamentoTitle"
+                                            style="color:black; justify-content: center;">Datos Entregado</h5>
+                                    </div>
+                                    <div class="modalb-body">
+
+                                        <div id="contenido">
+                                            <div class="row">
+                                                <div class="col s6">
+                                                    <label>Fecha: </label>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><span id="fecha_entregado">27-10-2020</span></label>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col s6">
+                                                    <label>Entregado a:</label>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><span id="entregado_nombres">JUAN CARLOS
+                                                            MARQUINO</span></label>
+                                                </div>
+                                            </div>
+                                            <hr />
+
+
+                                            <div class="row">
+                                                <div class="col s6">
+                                                    <label>DNI: </label>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><span id="dni_entregado">12345678</span></label>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <!--<div class="circulo">
+                                                <div class="preloader-background">
+                                                    <div class="preloader-wrapper big active">
+                                                        <div class="spinner-layer spinner-blue-only">
+                                                            <div class="circle-clipper left">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="gap-patch">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="circle-clipper right">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+
+
+
+
+
+
+                                    <div class="modalb-footer">
+                                        <button type="button"
+                                            style="border-radius: 15px; background-color: #a73924 !important;"
+                                            class="btn red lighten-1" data-dismiss="modalb">Cerrar</button>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-        </form>
+    </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div id="pdf_form"></div>
+        </div>
+
+    </div>
+
+    </div>
+    </form>
     </div>
 </body>
+
 </html>
+
+<script src="scripts/ConsultasEnLinea/formCartasNotarialesCorporativas.js"></script>
