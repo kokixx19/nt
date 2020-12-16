@@ -108,7 +108,6 @@ function BuscarPDF() {
                 text: "verifique el codigo",
                 confirmButtonText: "Aceptar",
                 icon: 'warning',
-
             })
 
             

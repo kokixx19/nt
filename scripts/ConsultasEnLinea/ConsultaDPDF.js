@@ -15,10 +15,6 @@ function Preload() {
 }
 
 
-
-
-
-
 function MostrarPreload() {
     // window.setTimeout(function () {
     $("#contenerdor_Carga").fadeTo(980, 1);

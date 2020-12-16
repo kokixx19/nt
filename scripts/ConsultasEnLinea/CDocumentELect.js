@@ -95,7 +95,7 @@ function BuscarPDF() {
                 title: "Documento no encontrado",
                 text: "verifique el codigo",
                 confirmButtonText: "Aceptar",
-                icon: 'waring',
+                icon: 'warning',
 
             })
         }else{
@@ -105,7 +105,7 @@ function BuscarPDF() {
                 title: "Documento no encontrado",
                 text: "verifique el codigo",
                 confirmButtonText: "Aceptar",
-                icon: 'waring',
+                icon: 'warning',
 
             })
         }
