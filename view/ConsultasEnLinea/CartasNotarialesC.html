@@ -5,6 +5,30 @@
     <title></title>
 </head>
 <body>
+
+    <link href="css/Preload.css" rel="stylesheet" />
+
+    <div class="loader" id="contenerdor_Carga">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            
+        </div>
+        <div id="textopre"><span>Cargando datos...</span></div>
+    </div>
     <div class="container">
 
         <form class="col s12" id="DivConsultasDeContrato" style="margin-top:3em;">
@@ -27,7 +51,7 @@
                         </div>
                     </div>
                     <div style="text-align:center" class="col-lg-3">
-                        <a class="btn waves-effect waves-light red" href="javascript:fnpintarformMenu('ConsultasEnLinea/CartasNotarialesCorporativas/CartasNotariales.html')">Ingresar</a>
+                        <a class="btn waves-effect waves-light red" id="logincorp">Ingresar</a>
                     </div>
                     <div class="row">
 
@@ -49,4 +73,6 @@
 
     </div>
 </body>
+
+<script src="scripts/ConsultasEnLinea/cartasNotarialesCorporativas.js"></script>
 </html>
