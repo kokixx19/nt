@@ -18,7 +18,7 @@
             <div class="loader-line"></div>
         </div>
     </div>
-    <div id="textopre"><span>Cargando, Espere...</span></div>
+    <div id="textopre"><span>Cargando datos...</span></div>
 </div>
 
 
@@ -794,12 +794,12 @@
 </div>
 
 
-<footer style="width:100%; bottom: 0; position: fixed;" id="BtnSAS">
+<footer style="width:100%; bottom: 0; position: fixed;z-index: 99" id="BtnSAS">
     <div class="row" style="background-color:#a73924;margin-bottom:0px">
         <div class="col s4">
-            <a id="ahrefatras" name="ahrefatras" href="javascript:fnNextRepresentante();"
+            <a id="ahrefatras" name="ahrefatras" href="javascript:fnRetornar();"
                 style="color:white;font-size:120%">
-                <i class="fas fa-chevron-left"> </i>Anterior
+                <i class="fas fa-chevron-left"> </i>Retornar
             </a>
         </div>
         <div class="col s4">
@@ -809,11 +809,11 @@
         </div>
 
         <div class="col s4" style="text-align:right">
-            <a id="ahrefSiguiente" name="ahrefSiguiente" href="javascript:fnNextAVIRepresentante();"
+            <a id="ahrefSiguiente" name="ahrefSiguiente" href="javascript:fnSiguiente();"
                 style="color:white;font-size:120%">
                 Siguiente<i class="fas fa-chevron-right"></i>
             </a>
-            <a id="ahrefSiguiente2" name="ahrefSiguiente2" href="javascript:fnNextAVIRepresentante();"
+            <a id="ahrefSiguiente2" name="ahrefSiguiente2" href="javascript:fnSiguiente();"
                 style="color:white;font-size:120%">
                 Siguiente<i class="fas fa-chevron-right"></i>
             </a>
