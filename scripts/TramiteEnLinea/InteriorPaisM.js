@@ -16,13 +16,11 @@ $(document).ready(function () {
     $("#divRepresentanteOn").show();
 
 
-    fnhrefSegAnt("ahrefatras");
-    fnhrefSegAnt("ahrefatras");
     $("#chbRepresentante").prop("checked", false)
     $("#divRepresentanteOn").hide();
     $("#btnGrabarIntPais").hide();
     $("#DivAVIPDatosPadres").hide();
-    $("#BtnSAS").hide();
+   
     $("#LineaDeTiempo").hide();
     $("#ahrefSiguiente2").hide();
     fnComboEstaCivil();
@@ -155,6 +153,9 @@ $("#btnFrmVIP").click(function () {
 
     var cantidadArregloVIPHijos = arregloVIPHijos.length;
     arregloVIPHijos.splice(0, cantidadArregloVIPHijos);
+
+    fnhrefSegAnt("ahrefSiguiente", "fnNextAVIRepresentante");
+    fnhrefSegAnt("ahrefatras", "fnRetornarInfo");
 });
 
 function cargarValidacionpadre() {
@@ -255,6 +256,46 @@ function cargarValidacionRepresentante() {
     });
 }
 
+function fnRetornar() {
+    fnpintarpaginas('Menu/Menu.html');
+}
+
+function fnRetornarInfo() {
+    $('#liAVIDatosRepesentantes').removeClass("active pgactual");
+    $('#liAVIDatosHijos').removeClass("active pgactual");
+    $('#liAVPIDeclaracionDatos').removeClass("active pgactual");
+    $("#divRepresentanteOn").show();
+    $("#DIvAVPIDeclaracionDatos").hide();
+    $("#DivAVIDatosRepesentantes").hide();
+    $("#chbRepresentante").prop("checked", false)
+    $("#divRepresentanteOn").hide();
+    $("#btnGrabarIntPais").hide();
+    $("#DivAVIPDatosPadres").hide();
+    $("#LineaDeTiempo").hide();
+    $("#DivInfoViajeIP").show();
+    fnhrefSegAnt("ahrefSiguiente", "fnSiguiente");
+    fnhrefSegAnt("ahrefatras", "fnRetornar");
+}
+
+
+function fnSiguiente() {
+    $("#DivInfoViajeIP").hide();
+    $("#DivAVIPDatosPadres").show();
+    $("#BtnSAS").show();
+    $("#LineaDeTiempo").show();
+
+    var cantidadArregloDomicilio = arreglo.length;
+    arreglo.splice(0, cantidadArregloDomicilio);
+
+    var cantidadArregloHijos = arregloHijos.length;
+    arregloHijos.splice(0, cantidadArregloHijos);
+
+    var cantidadArregloVIPHijos = arregloVIPHijos.length;
+    arregloVIPHijos.splice(0, cantidadArregloVIPHijos); 
+
+    fnhrefSegAnt("ahrefSiguiente", "fnNextAVIRepresentante");
+    fnhrefSegAnt("ahrefatras", "fnRetornarInfo");
+}
 
 /*Funciones para pasar a la siguiente paguina */
 function fnNextAVIRepresentante() {
@@ -308,7 +349,7 @@ function fnNextAVPIDeclaracionDatos() {
 /* Funciones para retroseder a la pagiona anterior */
 function fnAntAVPIPadreDatos() {
     fnfaschAnteTimeline("DivAVIPDatosPadres", ArregloDivsLineTime, "liAVIPDatosPadres", "liAVIDatosRepesentantes");
-    fnhrefSegAnt("ahrefatras");
+    fnhrefSegAnt("ahrefatras", "fnRetornarInfo");
     fnhrefSegAnt("ahrefSiguiente", "fnNextAVIRepresentante");
 }
 
@@ -1294,7 +1335,7 @@ function LimpiarALL() {
     $("#divRepresentanteOn").hide();
     $("#btnGrabarIntPais").hide();
     $("#DivAVIPDatosPadres").hide();
-    $("#BtnSAS").hide();
+
 
     $("#LineaDeTiempo").hide();
     $("#DivInfoViajeIP").show();
@@ -1307,7 +1348,7 @@ function LimpiarALL() {
 
     $("#ahrefSiguiente").hide();
     $("#ahrefSiguiente2").show();
-    $("#ahrefatras").hide();
+    
 
     ComboDocsIdentidadHijos();
     fnRestFormDocimilio();
@@ -1541,14 +1582,15 @@ function Notif() {
     var estado = 1;
     var mostrado = 0;
     var userID = sessionStorage.getItem('dni_user');
+
     $.post("https://www.dotnetsa.com/PAINOSERVICE/app/controller/ControllerNotificacion.php", 
     "op=sp_InsertNotif&titulo=" + titulo + "&icono=" + icono + "&color=" + color + "&mensaje=" + mensaje +
      "&estado=" + estado + "&mostrado=" + mostrado+ "&userID=" + userID, function (result) {
         console.log(result);
-        if (result == 1) {
-            console.log("Se agrego notif", result);
+        if (result == 'true') {
+            
         } else {
-            console.log("no agrego notif", result);
+
         }
     });
 }
